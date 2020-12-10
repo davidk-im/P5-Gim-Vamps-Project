@@ -11,8 +11,26 @@ Create a chess-based website using Python, Flask, SQLAlchamy, and a Raspberry Pi
 * Be able to replay past games from a database
 * Rules & Settings
 
+##Big Ticket Goals:
+* A working chess game, integrated into our website
+* Profile system using a database, where people can find data such as past games, winrate, etc.
+* Menu to navigate to all parts of the website
 
-Big Ticket Features(with visuals):
+##Incorporating College Board Requirements: 
+* Big Idea 1: Creative Development
+    * Use web and program designs to create a plan for the project(project plan in README.md)
+    * Create Scrum Boards to track progress and development of the project
+    * Use graphics/storyboard to plan the website design 
+* Big Idea 2: Data
+* Big Idea 3: Algorithms and programming
+* Big Idea 4: Computer Systems and Networks
+* Big Idea 5: Impact of computing
+    * Website will not be used for illegal or malicious purposes
+    * Players can learn or strengthen their chess skills by using our website
+    * User credentials are secure and have protection from database leaks
+    * Crediting work from first trimester to those who created that code
+
+
 
 ##Tracking Sheet/Schedule:
 * Found on Repo, created a scrum board found in projects
@@ -21,10 +39,13 @@ Big Ticket Features(with visuals):
 * Big ticket features with visuals
 
 ##Table of Collaborators:
-Name: Github ID
-* Kyle Myint : kylem314
-* Lucas Bruner : notkobalt
-* Ava Brooks : avabrooks
-* David Kim : DavidKim37
+| Name | Github ID |
+| ------------- | ----------- | 
+|Kyle Myint | kylem314 |
+|Lucas Bruner | notkobalt |
+|Ava Brooks | avabrooks |
+|David Kim | DavidKim37 |
+
+
 
 
