@@ -22,15 +22,24 @@ Create a chess-based website using Python, Flask, SQLAlchamy, and a Raspberry Pi
     * Create Scrum Boards to track progress and development of the project
     * Use graphics/storyboard to plan the website design 
 * Big Idea 2: Data
+    * Using a SQLAlchemy database to save user information 
+        *Use this information for user login
+    *Database for storing information such as past chess games with moves, win/loss statistics, and win rates versus other players
 * Big Idea 3: Algorithms and programming
+    * Use graphics/storyboard to plan the website design/UI 
+        * Want a simple, professional look color and design wise
+    *Create design with HTML and CSS
 * Big Idea 4: Computer Systems and Networks
+    * Deploying website using a raspberry pi that runs 24/7
+        * Internet domain
+    * Using GET/POST
+        * User information and login
+        * Past game information
 * Big Idea 5: Impact of computing
     * Website will not be used for illegal or malicious purposes
     * Players can learn or strengthen their chess skills by using our website
     * User credentials are secure and have protection from database leaks
     * Crediting work from first trimester to those who created that code
-
-
 
 ## Tracking Sheet/Schedule:
 * Found on Repo, created a scrum board found in projects
