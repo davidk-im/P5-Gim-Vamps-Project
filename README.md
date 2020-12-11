@@ -16,6 +16,12 @@ Create a chess-based website using Python, Flask, SQLAlchamy, and a Raspberry Pi
 * Profile system using a database, where people can find data such as past games, winrate, etc.
 * Menu to navigate to all parts of the website
 
+## Home Page
+![alt text](https://media.discordapp.net/attachments/596933230129709058/787069555725959188/home.png?width=1205&height=678)
+
+## About Us Page
+![alt text](https://media.discordapp.net/attachments/596933230129709058/787069544501477407/about.png?width=1205&height=678)
+
 ## Incorporating College Board Requirements: 
 * Big Idea 1: Creative Development
     * Use web and program designs to create a plan for the project(project plan in README.md)
