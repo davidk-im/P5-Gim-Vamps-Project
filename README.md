@@ -17,7 +17,7 @@ Create a chess-based website using Python, Flask, SQLAlchamy, and a Raspberry Pi
 * Menu to navigate to all parts of the website
 
 ## Home Page
-https://i.imgur.com/gNVUUmI.png
+![Home](https://i.imgur.com/gNVUUmI.png)
 
 ## About Us Page
 ![About Us](https://i.imgur.com/wd0f1Ut.png)
