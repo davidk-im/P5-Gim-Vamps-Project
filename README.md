@@ -61,6 +61,8 @@ Create a chess-based website using Python, Flask, SQLAlchamy, and a Raspberry Pi
 |Ava Brooks | avabrooks |
 |David Kim | DavidKim37 |
 
+## Link To Project Plan:
+https://docs.google.com/document/d/1ksmFpIRDhS-dvuICdMOBlyGIHcLlXs96FeMo1Ji3Azw/edit
 
 
 
