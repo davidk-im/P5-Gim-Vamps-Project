@@ -17,12 +17,10 @@ Create a chess-based website using Python, Flask, SQLAlchamy, and a Raspberry Pi
 * Menu to navigate to all parts of the website
 
 ## Home Page
-![alt text](https://media.discordapp.net/attachments/596933230129709058/787069555725959188/home.png?width=1205&height=678)
-https://media.discordapp.net/attachments/596933230129709058/787069544501477407/about.png?width=1205&height=678
+https://i.imgur.com/gNVUUmI.png
 
 ## About Us Page
-![alt text](https://media.discordapp.net/attachments/596933230129709058/787069544501477407/about.png?width=1205&height=678)
-https://media.discordapp.net/attachments/596933230129709058/787069544501477407/about.png?width=1205&height=678
+![About Us](https://i.imgur.com/wd0f1Ut.png)
 
 ## Incorporating College Board Requirements: 
 * Big Idea 1: Creative Development
