@@ -36,19 +36,26 @@
                 <a class="nav-link" href="#">Play!</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">My Account</a>
+                <a class="nav-link" href="#">Leaderboards</a>
             </li>
         </ul>
     </div>
-    <!-- alligns right-->
+    <div class="login-container">
+        <form action="/action_page.php">
+            <input type="text" placeholder="Username" name="username">
+            <input type="text" placeholder="Password" name="psw">
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    <div>
+        <!-- alligns right-->
         <ul class="nav navbar-nav navbar-right">
             <li class="nav-item">
                 <a class="nav-link" href="#">Sign Up</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Log In</a>
-            </li>
-            </ul>
+        </ul>
+    </div>
+
 </nav>
 {% block pagecontent %}
 {% endblock %}
