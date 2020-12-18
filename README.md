@@ -65,4 +65,11 @@ Create a chess-based website using Python, Flask, SQLAlchamy, and a Raspberry Pi
 https://docs.google.com/document/d/1ksmFpIRDhS-dvuICdMOBlyGIHcLlXs96FeMo1Ji3Azw/edit
 
 
-
+<div class="row" style="padding-top: 550px;
+                        padding-left: 1000px;">
+    <div class="col-4">
+        <form action="#">
+            <input type="submit" value="Play Chess!" />
+        </form>
+    </div>
+</div>
