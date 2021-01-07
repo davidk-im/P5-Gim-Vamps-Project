@@ -2,6 +2,35 @@
 {% extends "base.html" %}
 {% block pagecontent %}
 
+
+<!-- page title-->
+<h1 style="font-family:verdana"><b>Sign Up!</b></h1>
+
+<!-- Sign up form-->
+<form method="POST" action="contact-form-proc.php" name="contactform" id="contactform" class="form1">
+    <p>
+        <label for="Username" class="floatLabel">Username</label>
+        <input id="Username" name="Username" type="text">
+    </p>
+    <p>
+        <label for="password" class="floatLabel">Password</label>
+        <input id="password" name="password" type="password">
+    </p>
+    <p>
+        <label for="confirm_password" class="floatLabel">Confirm Password</label>
+        <input id="confirm_password" name="confirm_password" type="password">
+    </p>
+    <p> Already have an account? Log in on the navbar!</p>
+    <p>
+        <input type="submit" class="button" value="Create My Account" id="submit">
+    </p>
+</form>
+<!--use if needed in future for javascript
+<script type="text/javascript">
+code goes here
+</script>
+-->
+
 <style>
 /* welcome message formatting and placement */
 h1 {
@@ -53,33 +82,4 @@ body {
   }
 
 </style>
-
-
-<!-- page title-->
-<h1 style="font-family:verdana"><b>Sign Up!</b></h1>
-
-<!-- Sign up form-->
-<form method="POST" action="contact-form-proc.php" name="contactform" id="contactform" class="form1">
-    <p>
-        <label for="Username" class="floatLabel">Username</label>
-        <input id="Username" name="Username" type="text">
-    </p>
-    <p>
-        <label for="password" class="floatLabel">Password</label>
-        <input id="password" name="password" type="password">
-    </p>
-    <p>
-        <label for="confirm_password" class="floatLabel">Confirm Password</label>
-        <input id="confirm_password" name="confirm_password" type="password">
-    </p>
-    <p> Already have an account? Log in on the navbar!</p>
-    <p>
-        <input type="submit" class="button" value="Create My Account" id="submit">
-    </p>
-</form>
-<!--use if needed in future for javascript
-<script type="text/javascript">
-code goes here
-</script>
--->
 {% endblock %}

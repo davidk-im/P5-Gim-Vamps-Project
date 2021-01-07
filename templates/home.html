@@ -2,6 +2,20 @@
 {% extends "base.html" %}
 {% block pagecontent %}
 
+<!-- Welcome message -->
+<h1 style="font-family:verdana"><b>Welcome To Chess Website!</b></h1>
+
+<!-- Play Chess button, image/design created by Lucas -->
+<div class="Play" style="padding-left: 35%; padding-top: 8%">
+<a href="/play"><img src="https://i.imgur.com/1be9h4n.png" style="width:175px; height:125px" title="Play Chess" alt="PlayChess" id="Play"></a>
+</div>
+
+<!-- Sign Up button, image/design created by Lucas -->
+<div class="Sign" style="padding-left: 35%; padding-top:8%">
+<a href="/signup"><img src="https://i.imgur.com/OTgNZAA.png" style="width:170px; height:125px" title="Sign Up" alt="SignUp" id="Sign"></a>
+</div>
+
+
 <style>
 /* formats image buttons to be directly side by side */
     .Play {
@@ -24,20 +38,6 @@ h1 {
     font-size: 70px
     }
 </style>
-<!-- Welcome message -->
-<h1 style="font-family:verdana"><b>Welcome To Chess Website!</b></h1>
-
-<!-- Play Chess button, image/design created by Lucas -->
-<div class="Play" style="padding-left: 35%; padding-top: 8%">
-<a href="/play"><img src="https://i.imgur.com/1be9h4n.png" style="width:175px; height:125px" title="Play Chess" alt="PlayChess" id="Play"></a>
-</div>
-
-<!-- Sign Up button, image/design created by Lucas -->
-<div class="Sign" style="padding-left: 35%; padding-top:8%">
-<a href="/signup"><img src="https://i.imgur.com/OTgNZAA.png" style="width:170px; height:125px" title="Sign Up" alt="SignUp" id="Sign"></a>
-</div>
-
-
 
 
 {% endblock %}
