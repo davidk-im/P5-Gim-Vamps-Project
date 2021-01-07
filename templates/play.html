@@ -1,2 +1,51 @@
 <!DOCTYPE html>
 {% extends "base.html" %}
+{% block pagecontent %}
+
+<style>
+/* welcome message formatting and placement */
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    color: white;
+    font-size: 70px
+    }
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.Computer {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.Computer::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+</style>
+
+<h1 style="font-family:verdana"><b>Play Chess Below!</b></h1>
+
+
+<!-- Play against computer -->
+<div class="Computer" style="padding-left: 20%; padding-top: 10%">
+    <a href="#"><img src="#" style="width:175px; height:125px" title="Computer" alt="Computer" id="Computer"></a>
+</div>
+
+<!-- Multiplayer -->
+<div class="Multiplayer" style="padding-left: 45%; padding-top:10%">
+    <a href="#"><img src="#" style="width:175px; height:125px" title="Multiplayer" alt="Multiplayer" id="Multiplayer"></a>
+</div>
+
+<!-- Replay Game -->
+<div class="replay" style="padding-left: 70%; padding-top: 0%">
+    <a href="#"><img src="#" style="width:175px; height:125px" title="Replay an old game" alt="Replay" id="Replay"></a>
+</div>
+
+
+
+
+{% endblock %}
