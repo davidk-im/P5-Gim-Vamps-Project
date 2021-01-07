@@ -6,7 +6,8 @@
 
 <h1 style="font-family:verdana"><b>Sign Up!</b></h1>
 
-<form action="#" method="post" class="form1">
+
+<form method="POST" action="contact-form-proc.php" name="contactform" id="contactform" class="form1">
     <p>
         <label for="Username" class="floatLabel">Username</label>
         <input id="Username" name="Username" type="text">
@@ -19,13 +20,17 @@
         <label for="confirm_password" class="floatLabel">Confirm Password</label>
         <input id="confirm_password" name="confirm_password" type="password">
     </p>
+    <p> Already have an account? Log in on the navbar!</p>
     <p>
-        <input type="submit" value="Create My Account" id="submit">
+        <input type="submit" class="button" value="Create My Account" id="submit">
     </p>
 </form>
 
-<style>
+<script type="text/javascript">
+//your code goes here
+</script>
 
+<style>
 /* welcome message formatting and placement */
 h1 {
     text-align: center;
@@ -34,8 +39,45 @@ h1 {
     font-size: 70px
     }
 
+}
+.button {
+  transition-duration: 0.4s;
+}
 
-
+.button:hover {
+  background-color: #000000; /* black */
+  color: white;
+}
+body {
+  font-family: verdana;
+  color: white;
+}
+.form1 {
+  padding: 4em 4em 2em;
+  max-width: 400px;
+  margin: 50px auto 0;
+  box-shadow: 0 0 1em #222;
+  border-radius: 2px;
+  h2 {
+    margin:0 0 50px 0;
+    padding:10px;
+    color: white;
+    text-align:center;
+    color:darken(#e5e5e5, 50%);
+    border-bottom:solid 1px #e5e5e5;
+  }
+  p {
+    margin: 0 0 3em 0;
+    position: relative;
+  }
+  input {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    color: white;
+    outline: none;
+    margin:0;
+  }
 
 </style>
 {% endblock %}
