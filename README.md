@@ -64,5 +64,8 @@ Create a chess-based website using Python, Flask, SQLAlchamy, and a Raspberry Pi
 ## Link To Project Plan:
 https://docs.google.com/document/d/1ksmFpIRDhS-dvuICdMOBlyGIHcLlXs96FeMo1Ji3Azw/edit
 
-## Link to Website Running Raspberry Pi
+## Link to Website Running Raspberry Pi(Website URL)
 http://chessthegame.cf
+
+## Link to Direct Website IP
+http://76.176.72.123:3000/
