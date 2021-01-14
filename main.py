@@ -10,13 +10,16 @@ def home():
     return render_template("home.html")
 
 @app.route('/play')
-def play():
-    return render_template("play.html")
+def playmenu():
+    return render_template("playmenu.html")
 
 @app.route('/signup')
 def signup():
     return render_template("signup.html")
 
+@app.route('/AI')
+def AI():
+    return render_template("AI.html")
 
 if __name__ == "__main__":
     app.run(port='3000', host='127.0.0.1')
