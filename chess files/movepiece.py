@@ -53,13 +53,11 @@ two notations:
           savefile.close()
 """
 
-import time
-import random
 from piecedefinitions import *
 from zwhitepersp import *
 from zblackpersp import *
 from checkfunctions import *
-from protectionfunctions import *
+from static.protectionfunctions import *
 #from main import mainmenu, key
 
 

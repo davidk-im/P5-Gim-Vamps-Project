@@ -1,6 +1,5 @@
 import random
 from movepiece import aidictionarything, protdictfunc, storeboardset
-from movepieceai import aimovepiece
 
 print("aibot is running")
 
