@@ -2,11 +2,12 @@
 {% extends "base.html" %}
 {% block pagecontent %}
 
+<h1 style="font-family:verdana"><b>Game Goes Here</b></h1>
 
 <form method="POST" action="contact-form-proc.php" name="contactform" id="contactform" class="form1">
     <p>
         <label for="makemove" class="floatLabel">Input Your Move</label>
-        <input id="makemove" name="makemove" placeholder="Input Your Move" type="text">
+        <input id="makemove" name="makemove" placeholder="Input Your Move" type="text" required="required">
     </p>
     <p>
         <input type="submit" class="button" value="Make Move" id="submit">
@@ -14,6 +15,11 @@
 </form>
 
 <style>
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 70px
+    }
 
 }
 .button {
@@ -45,6 +51,7 @@ body {
     margin: 0 0 3em 0;
     position: relative;
   }
+
 
 
 </style>
