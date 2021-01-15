@@ -20,6 +20,9 @@ def signup():
 def playai():
     return render_template("ai.html")
 
+@app.route('/howtoplay')
+def howtoplay():
+    return render_template("howtoplay.html")
 if __name__ == "__main__":
     app.run(port='3000', host='127.0.0.1')
 

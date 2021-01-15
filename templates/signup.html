@@ -7,7 +7,7 @@
 <h1 style="font-family:verdana"><b>Sign Up!</b></h1>
 
 <!-- Sign up form-->
-<form method="POST" action="contact-form-proc.php" name="contactform" id="contactform" class="form1">
+<form method="POST" ID="myForm" action={{url_for('.create')}} class="form1">
     <p>
         <label for="Username" class="floatLabel">Username</label>
         <input id="Username" name="Username" placeholder="Username" type="text" required="required">
