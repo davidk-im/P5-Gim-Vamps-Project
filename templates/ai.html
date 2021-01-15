@@ -2,19 +2,50 @@
 {% extends "base.html" %}
 {% block pagecontent %}
 
-<!-- Welcome message -->
-<h1 style="font-family:verdana"><b>Play against AI!</b></h1>
 
+<form method="POST" action="contact-form-proc.php" name="contactform" id="contactform" class="form1">
+    <p>
+        <label for="makemove" class="floatLabel">Input Your Move</label>
+        <input id="makemove" name="makemove" placeholder="Input Your Move" type="text">
+    </p>
+    <p>
+        <input type="submit" class="button" value="Make Move" id="submit">
+    </p>
+</form>
 
 <style>
-/* title formatting and placement */
-h1 {
-    text-align: center;
-    margin-top: 250px;
+
+}
+.button {
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: #000000; /* black */
+  color: white;
+}
+body {
+  font-family: verdana;
+  color: white;
+}
+/* form alignment */
+.form1 {
+  padding: 4em 4em 2em;
+  max-width: 400px;
+  margin: 600px auto 0;
+  border-radius: 0px;
+  h2 {
+    margin:0 0 50px 0;
+    padding:10px;
     color: white;
-    font-size: 70px
-    }
+    text-align:center;
+
+  }
+  p {
+    margin: 0 0 3em 0;
+    position: relative;
+  }
+
+
 </style>
-
-
 {% endblock %}
