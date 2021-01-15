@@ -3,8 +3,9 @@ Group Members: Kyle Myint, Lucas Bruner, Ava Brooks, David Kim
 
 ## 1/15 Scrum Team Tickets
 [1.](https://github.com/kylem314/P5-Gim-Vamps-Project/projects/1#card-52921614) Create database to store Username and Password information from completing the signup form on signup.py
-* Created [flaskmain.py](https://gist.github.com/avabrooks/96c41a7a5d4af780af861b4a422f4948) with POST method to push data to database. Else code used, to test for errors in code. 
+* Created [flaskmain.py](https://gist.github.com/avabrooks/96c41a7a5d4af780af861b4a422f4948) with POST method to push username and password information to database. If else statement used, else code used, to test for errors in code. 
 * Created [user.py](https://gist.github.com/avabrooks/ea2f743a91e594ddd5afc01387217f3b) to create functions defining the database and the variables in it. 
+* How to run: From home page select sign up button. From there, fill out the 3 fields, the form will not go through without filling out all fields. After creating your account, you will be redirected to the play menu, where the chess games will soon be implemented.
 
 
 ## Summary: 
@@ -69,6 +70,11 @@ Create a chess-based website using Python, Flask, SQLAlchamy, and a Raspberry Pi
 
 ## Link To Project Plan:
 https://docs.google.com/document/d/1ksmFpIRDhS-dvuICdMOBlyGIHcLlXs96FeMo1Ji3Azw/edit
+
+## Website URL: 
+http://chessthegame.cf
+## Website Direct IP
+http://76.176.72.123:3000/
 
 
 
