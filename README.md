@@ -1,7 +1,7 @@
 # Project Plan
 Group Members: Kyle Myint, Lucas Bruner, Ava Brooks, David Kim
 
-##1/15 Scrum Team Tickets
+## 1/15 Scrum Team Tickets
 [1.](https://github.com/kylem314/P5-Gim-Vamps-Project/projects/1#card-52921614) Create database to store Username and Password information from completing the signup form on signup.py
 * Created [flaskmain.py](https://gist.github.com/avabrooks/96c41a7a5d4af780af861b4a422f4948) with POST method to push data to database. Else code used, to test for errors in code. 
 * Created [user.py](https://gist.github.com/avabrooks/ea2f743a91e594ddd5afc01387217f3b) to create functions defining the database and the variables in it. 
