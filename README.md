@@ -8,8 +8,9 @@ Group Members: Kyle Myint, Lucas Bruner, Ava Brooks, David Kim
 * Created [chess.db](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/chess.db) to store usernames and passwords
 * How to run: 
     1. From home page select sign up button. 
-    2. Fill out the 3 fields, the form will not go through without filling out all fields. 
+    2. Fill out the 3 fields, the form will not go through without filling out all fields.(CSS integration) 
     3. After creating your account, you will be redirected to the play menu, where the chess games will soon be implemented.
+    4. Example of completed code showing data in database [here](https://docs.google.com/document/d/1FsY9-SmcStAdhVpmfUdrwxXERZDZkiBrXjHaocRAvAM/edit)
 
 
 ## Summary: 
