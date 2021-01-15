@@ -11,6 +11,11 @@ Group Members: Kyle Myint, Lucas Bruner, Ava Brooks, David Kim
     2. Fill out the 3 fields, the form will not go through without filling out all fields.(CSS integration) 
     3. After creating your account, you will be redirected to the play menu, where the chess games will soon be implemented.
     4. Example of completed code showing data in database [here](https://docs.google.com/document/d/1FsY9-SmcStAdhVpmfUdrwxXERZDZkiBrXjHaocRAvAM/edit)
+2. 
+3. 
+4. 
+
+(links to each ticket are linked on the number)
 
 
 ## Summary: 
