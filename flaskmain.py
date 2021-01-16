@@ -2,6 +2,8 @@ from flask import Flask, render_template, request
 from user import user_create
 from flask_sqlalchemy import SQLAlchemy
 
+
+
 app = Flask(__name__)
 
 ''' database setup  '''
@@ -39,6 +41,10 @@ def playai():
 @app.route('/howtoplay')
 def howtoplay():
     return render_template("howtoplay.html")
+
+@app.route('/leaderboards')
+def leaderboards():
+    return render_template("leaderboards.html")
 
 if __name__ == "__main__":
     app.run(port='3000', host='127.0.0.1')
