@@ -20,7 +20,15 @@ Group Members: Kyle Myint, Lucas Bruner, Ava Brooks, David Kim
     1. Starting at the home page, select the leaderboards button.
     2. Scroll down and view various users' ELO, their amount of wins, and their spot on the board.
     3. Eventually, upon completion of a game and gaining/losing some ELO, you can then have the option to go straight to the leaderboards to see where you have moved to.
-3. 
+[3.](https://github.com/kylem314/P5-Gim-Vamps-Project/projects/1#card-52619938) Formulate and code the ELO ranking system for users
+* Created a [separate repository](https://repl.it/@KyleMyint/Chess-ELO-System#main.py) to keep code for now
+* Once the database for users is set up on the website, this code could be integrated in order to give or take away ELO points based on games or puzzles a user completes
+* How to run:
+    1. Run repl code
+    2. Type "1" to see the score for running a tactic puzzle
+    3. Type "Alex" to see what score user Alex would recieve after completing said puzzle (Note: in temp 'database', Alex has an initial ELO of 1300 for tactics, and a streak of 3 wins
+    4. Type "y" to see what Alex would get if he were to solve the puzzle correctly - in this case, he gains 11 points
+    5. Read comments on main.py to see the formula and thought process behind our ELO system
 4. 
 
 (links to each ticket are linked on the number)
