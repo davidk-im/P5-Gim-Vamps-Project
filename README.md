@@ -5,10 +5,10 @@ Group Members: Kyle Myint, Lucas Bruner, Ava Brooks, David Kim
 [1.](https://github.com/kylem314/P5-Gim-Vamps-Project/projects/1#card-52921614) Create database to store Username and Password information from completing the signup form on signup.py
 * Created [flaskmain.py](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/flaskmain.py) with POST method to push username and password information to database. If else statement used, else code used, to test for errors in code. 
 * Created [user.py](https://gist.github.com/avabrooks/ea2f743a91e594ddd5afc01387217f3b) to create functions defining the database and the variables in it. 
-* Created [chess.db](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/chess.db) to store usernames and passwords
+* Created [chess.db](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/chess.db) to store usernames and passwords. Also created a blank one in case of error. 
 * How to run: 
     1. From home page select sign up button. 
-    2. Fill out the 3 fields, the form will not go through without filling out all fields.(CSS integration) 
+    2. Fill out the 3 fields, the form will not go through without filling out all fields.The form will also not go through if your passwords do not match(CSS integration).
     3. After creating your account, you will be redirected to the play menu, where the chess games will soon be implemented.
     4. Example of completed code showing data in database [here](https://docs.google.com/document/d/1FsY9-SmcStAdhVpmfUdrwxXERZDZkiBrXjHaocRAvAM/edit)
  
