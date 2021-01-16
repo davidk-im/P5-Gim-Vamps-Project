@@ -30,13 +30,23 @@ Group Members: Kyle Myint, Lucas Bruner, Ava Brooks, David Kim
     3. Type "Alex" to see what score user Alex would recieve after completing said puzzle (Note: in temp 'database', Alex has an initial ELO of 1300 for tactics, and a streak of 3 wins
     4. Type "y" to see what Alex would get if he were to solve the puzzle correctly - in this case, he gains 11 points
     5. Read comments on main.py to see the formula and thought process behind our ELO system
-4. 
+
+[4.](https://github.com/kylem314/P5-Gim-Vamps-Project/projects/1#card-52935460) Set up board analysis
+* Created a [separate repository](https://repl.it/@Ironfire/ChessBoardAnalyze#main.py) to test outside of the main project.
+* With replaygame, we have access to all prior boards, so running analysis on these boards would help players improve.
+* How to run:
+    1. Run repl code
+    2. Typing "1" at the menu will analyze a game one move in.
+    3. Typing "2" at the menu will analyze a developed but not yet finished game.
+    4. Typing "3" at the menu will analyze a game that you input (note that this takes a long time and a lot of precision).
+    5. Comments show reasoning behind analysis.
 
 (links to each ticket are linked on the number)
 
 ### Scrum Master Grading: 
-Score: number/20<br>
-Highlight 3-4 goals completed by team here
+Score: 19/20<br>
+* good progress on essential parts of project
+* on task throughout
 
 
 ## Website URL: 
