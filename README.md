@@ -11,7 +11,7 @@ Group Members: Kyle Myint, Lucas Bruner, Ava Brooks, David Kim
     2. Fill out the 3 fields, the form will not go through without filling out all fields.(CSS integration) 
     3. After creating your account, you will be redirected to the play menu, where the chess games will soon be implemented.
     4. Example of completed code showing data in database [here](https://docs.google.com/document/d/1FsY9-SmcStAdhVpmfUdrwxXERZDZkiBrXjHaocRAvAM/edit)
-[2.](https://github.com/kylem314/P5-Gim-Vamps-Project/projects/1#card-52931009) Design, and create the leaderboards page to eventually be used with a database.
+* [2.](https://github.com/kylem314/P5-Gim-Vamps-Project/projects/1#card-52931009) Design, and create the leaderboards page to eventually be used with a database.
 * Created [leaderboards.html](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/leaderboards.html)
 * Used a variety of CSS styles to make it look really beautiful
 * How to run:
