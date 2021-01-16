@@ -24,6 +24,15 @@ Group Members: Kyle Myint, Lucas Bruner, Ava Brooks, David Kim
 
 (links to each ticket are linked on the number)
 
+### Scrum Master Grading: 
+Score: number/20<br>
+Highlight 3-4 goals completed by team here
+
+
+## Website URL: 
+http://chessthegame.cf
+## Website Direct IP
+http://76.176.72.123:3000/
 
 ## Summary: 
 Create a chess-based website using Python, Flask, SQLAlchamy, and a Raspberry Pi with an internet domain that has the following features:
@@ -88,10 +97,6 @@ Create a chess-based website using Python, Flask, SQLAlchamy, and a Raspberry Pi
 ## Link To Project Plan:
 https://docs.google.com/document/d/1ksmFpIRDhS-dvuICdMOBlyGIHcLlXs96FeMo1Ji3Azw/edit
 
-## Website URL: 
-http://chessthegame.cf
-## Website Direct IP
-http://76.176.72.123:3000/
 
 
 
