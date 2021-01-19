@@ -29,7 +29,7 @@ Group Members: Kyle Myint, Lucas Bruner, Ava Brooks, David Kim
     2. Type "1" to see the score for running a tactic puzzle
     3. Type "Alex" to see what score user Alex would recieve after completing said puzzle (Note: in temp 'database', Alex has an initial ELO of 1300 for tactics, and a streak of 3 wins
     4. Type "y" to see what Alex would get if he were to solve the puzzle correctly - in this case, he gains 11 points
-    5. Read comments on main.py to see the formula and thought process behind our ELO system
+    5. Read comments on main.py to see the formula and thought process behind our ELO system.
 
 [4.](https://github.com/kylem314/P5-Gim-Vamps-Project/projects/1#card-52935460) Set up board analysis
 * Created a [separate repository](https://repl.it/@Ironfire/ChessBoardAnalyze#main.py) to test outside of the main project.
