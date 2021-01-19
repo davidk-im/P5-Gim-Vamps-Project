@@ -3,20 +3,56 @@ Group Members: Kyle Myint, Lucas Bruner, Ava Brooks, David Kim
 
 ## 1/15 Scrum Team Tickets
 [1.](https://github.com/kylem314/P5-Gim-Vamps-Project/projects/1#card-52921614) Create database to store Username and Password information from completing the signup form on signup.py
-* Created [flaskmain.py](https://gist.github.com/avabrooks/96c41a7a5d4af780af861b4a422f4948) with POST method to push username and password information to database. If else statement used, else code used, to test for errors in code. 
+* Created [flaskmain.py](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/flaskmain.py) with POST method to push username and password information to database. If else statement used, else code used, to test for errors in code. 
 * Created [user.py](https://gist.github.com/avabrooks/ea2f743a91e594ddd5afc01387217f3b) to create functions defining the database and the variables in it. 
-* Created [chess.db](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/chess.db) to store usernames and passwords
+* Created [chess.db](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/chess.db) to store usernames and passwords. Also created a blank one in case of error. 
 * How to run: 
     1. From home page select sign up button. 
-    2. Fill out the 3 fields, the form will not go through without filling out all fields.(CSS integration) 
+    2. Fill out the 3 fields, the form will not go through without filling out all fields.The form will also not go through if your passwords do not match(CSS integration).
     3. After creating your account, you will be redirected to the play menu, where the chess games will soon be implemented.
     4. Example of completed code showing data in database [here](https://docs.google.com/document/d/1FsY9-SmcStAdhVpmfUdrwxXERZDZkiBrXjHaocRAvAM/edit)
-2. 
-3. 
-4. 
+    5. Goal for next week: Connect database so users can log in. 
+ 
+[2.](https://github.com/kylem314/P5-Gim-Vamps-Project/projects/1#card-52931009) Design, and create the leaderboards page to eventually be used with a database.
+* Created [leaderboards.html](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/leaderboards.html)
+* Used a variety of CSS styles to make it look really beautiful
+* How to run:
+    1. Starting at the home page, select the leaderboards button.
+    2. Scroll down and view various users' ELO, their amount of wins, and their spot on the board.
+    3. Eventually, upon completion of a game and gaining/losing some ELO, you can then have the option to go straight to the leaderboards to see where you have moved to.
+    
+[3.](https://github.com/kylem314/P5-Gim-Vamps-Project/projects/1#card-52619938) Formulate and code the ELO ranking system for users
+* Created a [separate repository](https://repl.it/@KyleMyint/Chess-ELO-System#main.py) to keep code for now
+* Once the database for users is set up on the website, this code could be integrated in order to give or take away ELO points based on games or puzzles a user completes
+* How to run:
+    1. Run repl code
+    2. Type "1" to see the score for running a tactic puzzle
+    3. Type "Alex" to see what score user Alex would recieve after completing said puzzle (Note: in temp 'database', Alex has an initial ELO of 1300 for tactics, and a streak of 3 wins
+    4. Type "y" to see what Alex would get if he were to solve the puzzle correctly - in this case, he gains 11 points
+    5. Read comments on main.py to see the formula and thought process behind our ELO system.
+
+[4.](https://github.com/kylem314/P5-Gim-Vamps-Project/projects/1#card-52935460) Set up board analysis
+* Created a [separate repository](https://repl.it/@Ironfire/ChessBoardAnalyze#main.py) to test outside of the main project.
+* With replaygame, we have access to all prior boards, so running analysis on these boards would help players improve.
+* How to run:
+    1. Run repl code
+    2. Typing "1" at the menu will analyze a game one move in.
+    3. Typing "2" at the menu will analyze a developed but not yet finished game.
+    4. Typing "3" at the menu will analyze a game that you input (note that this takes a long time and a lot of precision).
+    5. Comments show reasoning behind analysis.
 
 (links to each ticket are linked on the number)
 
+### Scrum Master Grading: 
+Score: 19/20<br>
+* good progress on essential parts of project
+* on task throughout
+
+
+## Website URL: 
+http://chessthegame.cf
+## Website Direct IP
+http://76.176.72.123:3000/
 
 ## Summary: 
 Create a chess-based website using Python, Flask, SQLAlchamy, and a Raspberry Pi with an internet domain that has the following features:
@@ -81,10 +117,6 @@ Create a chess-based website using Python, Flask, SQLAlchamy, and a Raspberry Pi
 ## Link To Project Plan:
 https://docs.google.com/document/d/1ksmFpIRDhS-dvuICdMOBlyGIHcLlXs96FeMo1Ji3Azw/edit
 
-## Website URL: 
-http://chessthegame.cf
-## Website Direct IP
-http://76.176.72.123:3000/
 
 
 
