@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block pagecontent %}
+
+<!-- Welcome message -->
+<h1 style="font-family:verdana"><b>You have successfully signed up!</b></h1>
+
+<!-- Play Chess button, image/design created by Lucas -->
+<div class="Play" style="padding-left: 35%; padding-top: 8%">
+<a href="/play"><img src="/static/playchess.png" style="width:300px; height:200px" title="Play Chess" alt="PlayChess" id="Play"></a>
+</div>
+
+
+
+<style>
+.Play {
+width:100px;
+padding-left:100px;
+}
+
+
+/* welcome message formatting and placement */
+h1 {
+    text-align: center;
+    margin-top: 250px;
+    color: white;
+    font-size: 70px
+    }
+</style>
+
+
+{% endblock %}

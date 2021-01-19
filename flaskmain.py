@@ -29,7 +29,7 @@ def signup():
         username = request.form['Username']
         password = request.form['password']
         user_create(username, password)
-        return render_template("playmenu.html")
+        return render_template("signconfirm.html")
     else:
         print('Bar')
     return render_template("signup.html")
@@ -37,6 +37,10 @@ def signup():
 @app.route('/playai')
 def playai():
     return render_template("ai.html")
+
+@app.route('/signinsuccess')
+def signconfirm():
+    return render_template("signconfirm.html")
 
 @app.route('/howtoplay')
 def howtoplay():
