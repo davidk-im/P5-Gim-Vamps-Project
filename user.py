@@ -10,11 +10,16 @@ db = SQLAlchemy(app)
 class User(db.Model):
     username = db.Column(db.String(255), primary_key=True, nullable=False)
     password = db.Column(db.String(255), nullable=False)
+    tactics_elo = db.Column(db.Integer, nullable=False)
+    tactics_streak = db.Column(db.Integer, nullable=False)
+    multiplayer_elo = db.Column(db.Integer, nullable=False)
 
-
+TACTICS_ELO_DEFAULT = 1500
+TACTICS_STREAK_DEFAULT = 0
+MULTIPLAYER_ELO_DEFAULT = 1500
 def user_create(username, password):
     print('User name is ' + username + ' and password is ' + password)
 
-    new_user = User(username=username, password=password)
+    new_user = User(username=username, password=password, tactics_elo=TACTICS_ELO_DEFAULT, tactics_streak=TACTICS_STREAK_DEFAULT, multiplayer_elo=MULTIPLAYER_ELO_DEFAULT)
     db.session.add(new_user)
     db.session.commit()

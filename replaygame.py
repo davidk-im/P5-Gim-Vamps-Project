@@ -1,5 +1,5 @@
 import math
-from main import *
+from chessmain import *
 from zwhitepersp import *
 from zblackpersp import *
 

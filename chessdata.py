@@ -29,7 +29,7 @@ og_board = { #to set the board equal to when the create the board is pressed
 
 keysBoard, valuesBoard = zip(*board.items()) # isolates the board keys and board values
 
-""" from main.py from chessOO neeeded to define the """
+""" from chessmain.py from chessOO neeeded to define the """
 whitemove = "W"
 whitecolor = "red"
 blackcolor = "lighter blue"

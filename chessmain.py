@@ -8,8 +8,8 @@ from zwhitepersp import *
 # exec(open("password.py").read())
 
 
-def replaygame():
-    exec(open("replaygame.py").read())
+#def replaygame():
+    #exec(open("replaygame.py").read())
 
 def key(string_length=10):
     random = str(uuid.uuid4())
