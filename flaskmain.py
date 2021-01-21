@@ -54,6 +54,10 @@ def howtoplay():
 def leaderboards():
     return render_template("leaderboards.html")
 
+@app.route('/logresults')
+def logresults():
+    return render_template("logresults.html")
+
 
 #Colin Test
 @app.route("/createBoardTable", methods=['GET','POST']) #this is is where the website directs to when clicking the submit button

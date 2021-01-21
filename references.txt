@@ -4,6 +4,8 @@ form 2 = user input for game
 
 form 3 = log in
 
+form 4 = elo demo results
+
 Unicode for chess pieces on table:
 1. White Chess King
 Unicode : U+2654
