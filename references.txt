@@ -1,0 +1,5 @@
+form 1 = sign up
+
+form 2 = user input for game
+
+form 3 = log in
