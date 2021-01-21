@@ -3,3 +3,40 @@ form 1 = sign up
 form 2 = user input for game
 
 form 3 = log in
+
+Unicode for chess pieces on table:
+1. White Chess King
+Unicode : U+2654
+
+2. Black Chess King
+Unicode : U+265A
+
+3. White Chess Queen
+Unicode : U+2655
+
+4. Black Chess Queen
+Unicode : U+265B
+
+5. White Chess Rook
+Unicode : U+2656
+
+6. Black Chess Rook
+Unicode : U+265C
+
+7. White Chess Bishop
+Unicode : U+2657
+
+8. Black Chess Bishop
+Unicode : U+265D
+
+9. White Chess Knight
+Unicode : U+2658
+
+10. Black Chess Knight
+Unicode : U+265E
+
+11. White Chess Pawn
+Unicode : U+2659
+
+12. Black Chess Pawn
+Unicode : U+265F

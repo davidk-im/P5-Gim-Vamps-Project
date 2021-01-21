@@ -38,16 +38,9 @@ def signup():
 def playai():
     return render_template("ai.html")
 
-@app.route("/playai", methods=['GET','POST'])
-def createBoardTable():
-    if request.method == 'POST':
-        form = request.form
-        movelist.clear()
-        board = og_board
-        storeboard = ogstoreboard
-        return render_template("playai.html", displayClicked="  ", allBoard=chessData.split_board(board))
-
-
+@app.route('/testchess')
+def testchess():
+    return render_template("testchess.html")
 @app.route('/signinsuccess')
 def signconfirm():
     return render_template("signconfirm.html")
