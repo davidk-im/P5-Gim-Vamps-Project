@@ -23,3 +23,10 @@ def user_create(username, password):
     new_user = User(username=username, password=password, tactics_elo=TACTICS_ELO_DEFAULT, tactics_streak=TACTICS_STREAK_DEFAULT, multiplayer_elo=MULTIPLAYER_ELO_DEFAULT)
     db.session.add(new_user)
     db.session.commit()
+
+def user_update_stats(username, tactics_elo, tactics_streak, multiplayer_elo):
+    user = User.query.filter_by(username=username).first()
+    user.tactics_elo=tactics_elo
+    user.tactics_streak=tactics_streak
+    user.multiplayer_elo=multiplayer_elo
+    db.session.commit()
