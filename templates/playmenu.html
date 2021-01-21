@@ -5,19 +5,16 @@
 <h1 style="font-family:verdana"><b>Play Chess Below!</b></h1>
 
 
-<!-- Play against computer -->
-<div class="Computer" style="padding-left: 20%; padding-top: 10%">
-    <a href="/playai"><img src="/static/bots.png" style="width:175px; height:125px" title="Computer" alt="Computer" id="Computer"></a>
-</div>
-
-<!-- Multiplayer -->
-<div class="Multiplayer" style="padding-left: 45%; padding-top: 10%">
-    <a href=#><img src="/static/multiplayer.png" style="width:175px; height:125px" title="Multiplayer" alt="Multiplayer" id="Multiplayer"></a>
-</div>
-
-<!-- Replay Game -->
-<div class="replay" style="padding-left: 70%; padding-top: 0%">
-    <a href="#"><img src="/static/replays.png" style="width:175px; height:125px" title="Replay an old game" alt="Replay" id="Replay"></a>
+<div class="row">
+    <div class="Computer" style="padding-left: 25%; padding-top:8%">
+        <a href="/playai"><img src="/static/bots.png" style="width:175px; height:125px" title="Computer" alt="Computer" id="Computer"></a>
+    </div>
+    <div class="Multiplayer" style="padding-left: 10%; padding-top:8%">
+        <a href=#><img src="/static/multiplayer.png" style="width:175px; height:125px" title="Multiplayer" alt="Multiplayer" id="Multiplayer"></a>
+    </div>
+    <div class="replay" style="padding-right:20%; padding-bottom:25%">
+        <a href="#"><img src="/static/replays.png" style="width:175px; height:125px" title="Replay an old game" alt="Replay" id="Replay"></a>
+    </div>
 </div>
 
 <style>
@@ -29,18 +26,13 @@ h1 {
     font-size: 80px
     }
 
-/* Three image containers (use 25% for four, and 50% for two, etc) */
-.Computer {
-  float: left;
-  width: 10%;
-  padding: 5px;
+.row {
+  display: flex;
 }
 
-/* Clear floats after image containers */
-.Computer::after {
-  content: "";
-  clear: both;
-  display: table;
+.computer {
+  flex: 33.33%;
+  padding: 5px;
 }
 
 </style>
