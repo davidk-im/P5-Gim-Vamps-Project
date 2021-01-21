@@ -1,3 +1,197 @@
 <!DOCTYPE html>
 {% extends "base.html" %}
 {% block pagecontent %}
+
+<!-- this is the template that allows for the user to  -->
+<head>
+    <title>Chess with Post</title>
+    <meta charset="UTF-8">
+    <!--even style is green, odd styles is white -->
+    <style>
+        #title{
+            font-size:100px;
+            font-weight: bold;
+        }
+        .even {
+        background-color: #4CAF50;
+        border: none;
+        height: 25px;
+        width: 25px;
+        }
+
+        .odd {
+        background-color: #d6d3ba;
+        border: none;
+        height: 25px;
+        width: 25px;
+        }
+
+        .even_black {
+        background-color: #4CAF50;
+        border: none;
+        color: black;
+        }
+        .odd_black {
+        background-color: #d6d3ba;
+        border: none;
+        color: black;
+        }
+        .even_white {
+        background-color: #4CAF50;
+        border: none;
+        color: black;
+        }
+        .odd_black {
+        background-color: #d6d3ba;
+        border: none;
+        color: black;
+        }
+
+        .selected{
+        background-color: #FFFF00;
+        border: none;
+        }
+        .white {
+        color: black;
+        }
+        .black {
+        color: black;
+        }
+
+        #turn__table {
+            width: auto;
+            height: 180px;
+            overflow: auto;
+        }
+        .turn__number {
+        text-align: center;
+        }
+        .turn__values {
+        text-align: center;
+        }
+        .center__table{
+            position: relative;
+            margin: auto;
+            max-width: 500px;
+            top: 50px;
+        }
+        #header-fixed {
+            position: fixed;
+            top: 0px; display:none;
+            background-color:white;
+        }
+        th{
+        /* the cell style of the header there is only one Heade int his case*/
+        padding-right:20px;
+        padding-left:20px;
+        padding-bottom:20px;
+        font-size: 50px;
+        font-family: Segoe UI;
+        }
+        .invalid_move_class {
+        color: red;
+        }
+    </style>
+</head>
+<body onLoad="scrollDiv_init()">
+<table class="center__table">
+    <tr>
+        <th colspan="2"><a>Chess Using POST</a></th>
+    </tr>
+    <tr>
+        <td>
+            <form method="post" id="chessInput"> <!-- this is another post tag to allow for user interaction -->
+                <table>
+                    {%for row in allBoard%}
+                    <tr><!-- if row == board 5 -->
+                        {% if loop.index is divisibleby 2 %} <!-- if the row is even, 8,6,4,2 -->
+                        {% for header,unicode in row.items() %}
+                        {% if unicode == "emptySpace" %}<!-- if there is emtySpace as the value of the dictonary -->
+                        <!-- this is replacing with white space -->
+                        <td><input class = "{{ loop.cycle('even', 'odd') }}" type ="submit" value=&nbsp;&nbsp;&nbsp;&nbsp; inputName="firstButton" formaction={{header}} /></td>
+                        {%else%}
+                        <td><input class = "{{ loop.cycle('even', 'odd') }}" type ="submit" value={{unicode}} inputName="firstButton" formaction={{header}} /></td>
+                        {% endif %}
+                        {% endfor %}
+                        {% else %}
+                        {% for header,unicode  in row.items() %}   <!-- if the row is odd, 7,5,3,1 -->
+                        {% if unicode == "emptySpace" %}<!-- if there is emtySpace as the value of the dictonary -->
+                        <!-- this is replacing with white space -->
+                        <td><input  class = "{{ loop.cycle('odd', 'even') }}" type ="submit" value=&nbsp;&nbsp;&nbsp;&nbsp; inputName="firstButton" formaction={{header}} /></td>
+                        {%else%}
+                        <td><input  class = "{{ loop.cycle('odd', 'even') }}" type ="submit" value={{unicode}} inputName="firstButton" formaction={{header}} /></td>
+                        {% endif %}
+                        {% endfor %}
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+
+                </table>
+            </form>
+        </td>
+        <td>
+            <table>
+                <tr>
+                    <td>move #</td>
+                    <td class="turn__values">&nbsp;&nbsp;&nbsp;&nbsp;values</td>
+                </tr>
+            </table>
+            <div id="turn__table">
+                <table>
+                    {% for row in movelist %}
+                    <tr>
+                        <td class="turn__number">&nbsp;&nbsp;&nbsp;&nbsp;{{ loop.index }}</td>
+                        <td class= "{{ loop.cycle('white', 'black') }}" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{row}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>Previously Selected Cell: {{ displayClicked }}</td><!-- this line is to communicate hints to the player -->
+        <!-- if message == "last two moves were invalid" css = red -->
+        <td>Message to the player: {{message}}</td> <!-- this line is to communicate weather if the move was valid to the player -->
+    </tr>
+    <tr>
+        <td>
+            <a class="nav-link code" style="color:red; margin:auto; text-align: center;" href="/" >Back to Menu</a>
+        </td>
+    </tr>
+</table>
+
+<h1>{{ displayRoutes }}</h1> <!-- this line is for debuggin -->
+
+<img src="{{ displayImage }}"> <!-- this is to display the win image -->
+
+
+<script language="javascript">
+
+//this is what allows the tabel to continously update
+function scrollDiv_init() {
+    DivElmnt = document.getElementById('turn__table');
+      instant_scroll()
+}
+
+function instant_scroll(){
+  DivElmnt.scrollTop = DivElmnt.scrollHeight
+}
+</script>
+
+</body>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
