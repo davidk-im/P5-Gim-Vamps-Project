@@ -226,7 +226,7 @@ def mainmenu(Key, key, replaying, exited, settingexit, whitecolor, blackcolor, c
         replaygame()
 
     elif start == "4" or start == "rules":
-        file = open("zzzrules.txt").read()
+        file = open("chess files/zzzrules.txt").read()
         print("\n" + file + "\n")
         exit = input("Type exit to return to the menu\n")
         exit = exit.lower()
