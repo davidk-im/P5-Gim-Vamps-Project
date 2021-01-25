@@ -6,8 +6,7 @@
 {% set data = data %}
 {% set place = namespace(value=0) %}
 <div class="row justify-content-left" style="margin: 2%;">
-    <h1><strong>Top 100 Chess Players</strong></h1><br>
-    <p style="color:white"> Data from lichess.com</p>
+    <h1><strong>Top 100 Chess Players data from lichess.com</strong></h1>
     <form action={{url_for('.lichesslb')}}>
         <button Class="button2">Refresh</button>
     </form>
@@ -40,12 +39,12 @@
 .button2 {
  background-color: #ffffff;
   color: black;
-  border: 2px solid #0000ff; /* blue */
+  border: 2px solid #000000; /* black */
   transition-duration: 0.4s;
 }
 
 .button2:hover {
-  background-color: #0000ff; /* blue */
+  background-color: #000000; /* blue */
   color: white;
 }
 
