@@ -6,7 +6,8 @@
 {% set data = data %}
 {% set place = namespace(value=0) %}
 <div class="row justify-content-left" style="margin: 2%;">
-    <h1><strong>Top 100 Chess Players from lichess.com</strong></h1>
+    <h1><strong>Top 100 Chess Players</strong></h1><br>
+    <p style="color:white"> Data from lichess.com</p>
     <form action={{url_for('.lichesslb')}}>
         <button Class="button2">Refresh</button>
     </form>
