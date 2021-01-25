@@ -13,6 +13,9 @@ app.config['SQLALCHEMY_DATABASE_URI'] = dbURI
 db = SQLAlchemy(app)
 db.init_app(app)
 
+#import chessData
+#from chessData import board, movelist, allBoard, og_board, ogstoreboard
+
 
 #home page route
 @app.route('/')
