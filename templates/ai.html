@@ -1,178 +1,489 @@
-<!DOCTYPE html>
-{% extends "base.html" %}
-{% block pagecontent %}
 
-<h1 style="font-family:verdana"><b></b></h1>
-<style>
-h1 {
-    text-align: center;
-    color: white;
-    font-size: 70px
-    }
 
-}
-.button {
-  transition-duration: 0.4s;
-}
+<!-- this is the template that allows for the user to  -->
+<head>
+    <meta charset="UTF-8">
+    <!--even style is green, odd styles is white -->
+    <style>
+        #title{
+            font-size:100px;
+            font-weight: bold;
+        }
+        .even {
+        background-color: #4CAF50;
+        border: none;
+        height: 25px;
+        width: 25px;
+        }
 
-.button:hover {
-  background-color: #000000; /* black */
-  color: white;
-}
-body {
+        .odd {
+        background-color: #d6d3ba;
+        border: none;
+        height: 25px;
+        width: 25px;
+        }
 
-  color: white;
-}
-/* form alignment */
-.form2 {
-  text-align:center;
-  margin-top: 75px;
+        .even_black {
+        background-color: #4CAF50;
+        border: none;
+        color: black;
+        }
+        .odd_black {
+        background-color: #d6d3ba;
+        border: none;
+        color: black;
+        }
+        .even_white {
+        background-color: #4CAF50;
+        border: none;
+        color: black;
+        }
+        .odd_black {
+        background-color: #d6d3ba;
+        border: none;
+        color: black;
+        }
 
-}
+        .selected{
+        background-color: #FFFF00;
+        border: none;
+        }
+        .white {
+        color: black;
+        }
+        .black {
+        color: black;
+        }
 
-</style>
+        #turn__table {
+            width: auto;
+            height: 180px;
+            overflow: auto;
+        }
+        .turn__number {
+        text-align: center;
+        }
+        .turn__values {
+        text-align: center;
+        }
+        .center__table{
+            position: relative;
+            margin: auto;
+            max-width: 500px;
+            top: 50px;
+        }
+        #header-fixed {
+            position: fixed;
+            top: 0px; display:none;
 
-<meta charset="UTF-8">
-<style>
-            .chess-board { border-spacing: 0; border-collapse: collapse; }
-            .chess-board th { padding: .5em; }
-            .chess-board th + th { border-bottom: 1px solid #000; }
-            .chess-board th:first-child,
-            .chess-board td:last-child { border-right: 1px solid #000; }
-            .chess-board tr:last-child td { border-bottom: 1px solid; }
-            .chess-board th:empty { border: none; }
-            .chess-board td { width: 1.5em; height: 1.5em; text-align: center; font-size: 32px; line-height: 0;}
-            .chess-board .light { background: #eee; }
-            .chess-board .dark { background: #aaa; }
-            .chess-board {
-            margin-left: auto;
-            margin-right: auto;}
+        }
+        th{
+        /* the cell style of the header there is only one Heade int his case*/
+        padding-right:20px;
+        padding-left:20px;
+        padding-bottom:20px;
+        font-size: 50px;
+        font-family: Segoe UI;
+        }
+        .invalid_move_class {
+        color: red;
+        }
+    </style>
+</head>
+<body onLoad="scrollDiv_init()">
+<table class="center__table">
+    <tr>
+        <th colspan="2"><a>Chess Using POST</a></th>
+    </tr>
+    <tr>
+        <td>
+            <form method="post" id="chessInput"> <!-- this is another post tag to allow for user interaction -->
+                <table>
 
-        </style>
-<body>
-<table class="chess-board">
-    <tbody>
-    <tr>
-        <th></th>
-        <th>a</th>
-        <th>b</th>
-        <th>c</th>
-        <th>d</th>
-        <th>e</th>
-        <th>f</th>
-        <th>g</th>
-        <th>h</th>
+                    <tr><!-- if row == board 5 -->
+
+                        <!-- if the row is odd, 7,5,3,1 -->
+
+                        <td><input  class = "odd" type ="submit" value=♜ inputName="firstButton" formaction=a8 /></td>
+
+                        <!-- if the row is odd, 7,5,3,1 -->
+
+                        <td><input  class = "even" type ="submit" value=♞ inputName="firstButton" formaction=b8 /></td>
+
+                        <!-- if the row is odd, 7,5,3,1 -->
+
+                        <td><input  class = "odd" type ="submit" value=♝ inputName="firstButton" formaction=c8 /></td>
+
+                        <!-- if the row is odd, 7,5,3,1 -->
+
+                        <td><input  class = "even" type ="submit" value=♛ inputName="firstButton" formaction=d8 /></td>
+
+                        <!-- if the row is odd, 7,5,3,1 -->
+
+                        <td><input  class = "odd" type ="submit" value=♚ inputName="firstButton" formaction=e8 /></td>
+
+                        <!-- if the row is odd, 7,5,3,1 -->
+
+                        <td><input  class = "even" type ="submit" value=♝ inputName="firstButton" formaction=f8 /></td>
+
+                        <!-- if the row is odd, 7,5,3,1 -->
+
+                        <td><input  class = "odd" type ="submit" value=♞ inputName="firstButton" formaction=g8 /></td>
+
+                        <!-- if the row is odd, 7,5,3,1 -->
+
+                        <td><input  class = "even" type ="submit" value=♜ inputName="firstButton" formaction=h8 /></td>
+
+
+
+                    </tr>
+
+                    <tr><!-- if row == board 5 -->
+                        <!-- if the row is even, 8,6,4,2 -->
+
+
+                        <td><input class = "even" type ="submit" value=♟︎️︎ inputName="firstButton" formaction=a7 /></td>
+
+
+
+                        <td><input class = "odd" type ="submit" value=♟︎️︎ inputName="firstButton" formaction=b7 /></td>
+
+
+
+                        <td><input class = "even" type ="submit" value=♟︎️︎ inputName="firstButton" formaction=c7 /></td>
+
+
+
+                        <td><input class = "odd" type ="submit" value=♟︎️︎ inputName="firstButton" formaction=d7 /></td>
+
+
+
+                        <td><input class = "even" type ="submit" value=♟︎️︎ inputName="firstButton" formaction=e7 /></td>
+
+
+
+                        <td><input class = "odd" type ="submit" value=♟︎️︎ inputName="firstButton" formaction=f7 /></td>
+
+
+
+                        <td><input class = "even" type ="submit" value=♟︎️︎ inputName="firstButton" formaction=g7 /></td>
+
+
+
+                        <td><input class = "odd" type ="submit" value=♟︎️︎ inputName="firstButton" formaction=h7 /></td>
+
+
+
+                    </tr>
+
+                    <tr><!-- if row == board 5 -->
+
+                        <!-- if the row is odd, 7,5,3,1 -->
+                        <!-- if there is emtySpace as the value of the dictonary -->
+                        <!-- this is replacing with white space -->
+                        <td><input  class = "odd" type ="submit" value=&nbsp;&nbsp;&nbsp;&nbsp; inputName="firstButton" formaction=a6 /></td>
+
+                        <!-- if the row is odd, 7,5,3,1 -->
+                        <!-- if there is emtySpace as the value of the dictonary -->
+                        <!-- this is replacing with white space -->
+                        <td><input  class = "even" type ="submit" value=&nbsp;&nbsp;&nbsp;&nbsp; inputName="firstButton" formaction=b6 /></td>
+
+                        <!-- if the row is odd, 7,5,3,1 -->
+                        <!-- if there is emtySpace as the value of the dictonary -->
+                        <!-- this is replacing with white space -->
+                        <td><input  class = "odd" type ="submit" value=&nbsp;&nbsp;&nbsp;&nbsp; inputName="firstButton" formaction=c6 /></td>
+
+                        <!-- if the row is odd, 7,5,3,1 -->
+                        <!-- if there is emtySpace as the value of the dictonary -->
+                        <!-- this is replacing with white space -->
+                        <td><input  class = "even" type ="submit" value=&nbsp;&nbsp;&nbsp;&nbsp; inputName="firstButton" formaction=d6 /></td>
+
+                        <!-- if the row is odd, 7,5,3,1 -->
+                        <!-- if there is emtySpace as the value of the dictonary -->
+                        <!-- this is replacing with white space -->
+                        <td><input  class = "odd" type ="submit" value=&nbsp;&nbsp;&nbsp;&nbsp; inputName="firstButton" formaction=e6 /></td>
+
+                        <!-- if the row is odd, 7,5,3,1 -->
+                        <!-- if there is emtySpace as the value of the dictonary -->
+                        <!-- this is replacing with white space -->
+                        <td><input  class = "even" type ="submit" value=&nbsp;&nbsp;&nbsp;&nbsp; inputName="firstButton" formaction=f6 /></td>
+
+                        <!-- if the row is odd, 7,5,3,1 -->
+                        <!-- if there is emtySpace as the value of the dictonary -->
+                        <!-- this is replacing with white space -->
+                        <td><input  class = "odd" type ="submit" value=&nbsp;&nbsp;&nbsp;&nbsp; inputName="firstButton" formaction=g6 /></td>
+
+                        <!-- if the row is odd, 7,5,3,1 -->
+                        <!-- if there is emtySpace as the value of the dictonary -->
+                        <!-- this is replacing with white space -->
+                        <td><input  class = "even" type ="submit" value=&nbsp;&nbsp;&nbsp;&nbsp; inputName="firstButton" formaction=h6 /></td>
+
+
+
+                    </tr>
+
+                    <tr><!-- if row == board 5 -->
+                        <!-- if the row is even, 8,6,4,2 -->
+
+                        <!-- if there is emtySpace as the value of the dictonary -->
+                        <!-- this is replacing with white space -->
+                        <td><input class = "even" type ="submit" value=&nbsp;&nbsp;&nbsp;&nbsp; inputName="firstButton" formaction=a5 /></td>
+
+
+                        <!-- if there is emtySpace as the value of the dictonary -->
+                        <!-- this is replacing with white space -->
+                        <td><input class = "odd" type ="submit" value=&nbsp;&nbsp;&nbsp;&nbsp; inputName="firstButton" formaction=b5 /></td>
+
+
+                        <!-- if there is emtySpace as the value of the dictonary -->
+                        <!-- this is replacing with white space -->
+                        <td><input class = "even" type ="submit" value=&nbsp;&nbsp;&nbsp;&nbsp; inputName="firstButton" formaction=c5 /></td>
+
+
+                        <!-- if there is emtySpace as the value of the dictonary -->
+                        <!-- this is replacing with white space -->
+                        <td><input class = "odd" type ="submit" value=&nbsp;&nbsp;&nbsp;&nbsp; inputName="firstButton" formaction=d5 /></td>
+
+
+                        <!-- if there is emtySpace as the value of the dictonary -->
+                        <!-- this is replacing with white space -->
+                        <td><input class = "even" type ="submit" value=&nbsp;&nbsp;&nbsp;&nbsp; inputName="firstButton" formaction=e5 /></td>
+
+
+                        <!-- if there is emtySpace as the value of the dictonary -->
+                        <!-- this is replacing with white space -->
+                        <td><input class = "odd" type ="submit" value=&nbsp;&nbsp;&nbsp;&nbsp; inputName="firstButton" formaction=f5 /></td>
+
+
+                        <!-- if there is emtySpace as the value of the dictonary -->
+                        <!-- this is replacing with white space -->
+                        <td><input class = "even" type ="submit" value=&nbsp;&nbsp;&nbsp;&nbsp; inputName="firstButton" formaction=g5 /></td>
+
+
+                        <!-- if there is emtySpace as the value of the dictonary -->
+                        <!-- this is replacing with white space -->
+                        <td><input class = "odd" type ="submit" value=&nbsp;&nbsp;&nbsp;&nbsp; inputName="firstButton" formaction=h5 /></td>
+
+
+
+                    </tr>
+
+                    <tr><!-- if row == board 5 -->
+
+                        <!-- if the row is odd, 7,5,3,1 -->
+                        <!-- if there is emtySpace as the value of the dictonary -->
+                        <!-- this is replacing with white space -->
+                        <td><input  class = "odd" type ="submit" value=&nbsp;&nbsp;&nbsp;&nbsp; inputName="firstButton" formaction=a4 /></td>
+
+                        <!-- if the row is odd, 7,5,3,1 -->
+                        <!-- if there is emtySpace as the value of the dictonary -->
+                        <!-- this is replacing with white space -->
+                        <td><input  class = "even" type ="submit" value=&nbsp;&nbsp;&nbsp;&nbsp; inputName="firstButton" formaction=b4 /></td>
+
+                        <!-- if the row is odd, 7,5,3,1 -->
+                        <!-- if there is emtySpace as the value of the dictonary -->
+                        <!-- this is replacing with white space -->
+                        <td><input  class = "odd" type ="submit" value=&nbsp;&nbsp;&nbsp;&nbsp; inputName="firstButton" formaction=c4 /></td>
+
+                        <!-- if the row is odd, 7,5,3,1 -->
+                        <!-- if there is emtySpace as the value of the dictonary -->
+                        <!-- this is replacing with white space -->
+                        <td><input  class = "even" type ="submit" value=&nbsp;&nbsp;&nbsp;&nbsp; inputName="firstButton" formaction=d4 /></td>
+
+                        <!-- if the row is odd, 7,5,3,1 -->
+                        <!-- if there is emtySpace as the value of the dictonary -->
+                        <!-- this is replacing with white space -->
+                        <td><input  class = "odd" type ="submit" value=&nbsp;&nbsp;&nbsp;&nbsp; inputName="firstButton" formaction=e4 /></td>
+
+                        <!-- if the row is odd, 7,5,3,1 -->
+                        <!-- if there is emtySpace as the value of the dictonary -->
+                        <!-- this is replacing with white space -->
+                        <td><input  class = "even" type ="submit" value=&nbsp;&nbsp;&nbsp;&nbsp; inputName="firstButton" formaction=f4 /></td>
+
+                        <!-- if the row is odd, 7,5,3,1 -->
+                        <!-- if there is emtySpace as the value of the dictonary -->
+                        <!-- this is replacing with white space -->
+                        <td><input  class = "odd" type ="submit" value=&nbsp;&nbsp;&nbsp;&nbsp; inputName="firstButton" formaction=g4 /></td>
+
+                        <!-- if the row is odd, 7,5,3,1 -->
+                        <!-- if there is emtySpace as the value of the dictonary -->
+                        <!-- this is replacing with white space -->
+                        <td><input  class = "even" type ="submit" value=&nbsp;&nbsp;&nbsp;&nbsp; inputName="firstButton" formaction=h4 /></td>
+
+
+
+                    </tr>
+
+                    <tr><!-- if row == board 5 -->
+                        <!-- if the row is even, 8,6,4,2 -->
+
+                        <!-- if there is emtySpace as the value of the dictonary -->
+                        <!-- this is replacing with white space -->
+                        <td><input class = "even" type ="submit" value=&nbsp;&nbsp;&nbsp;&nbsp; inputName="firstButton" formaction=a3 /></td>
+
+
+                        <!-- if there is emtySpace as the value of the dictonary -->
+                        <!-- this is replacing with white space -->
+                        <td><input class = "odd" type ="submit" value=&nbsp;&nbsp;&nbsp;&nbsp; inputName="firstButton" formaction=b3 /></td>
+
+
+                        <!-- if there is emtySpace as the value of the dictonary -->
+                        <!-- this is replacing with white space -->
+                        <td><input class = "even" type ="submit" value=&nbsp;&nbsp;&nbsp;&nbsp; inputName="firstButton" formaction=c3 /></td>
+
+
+                        <!-- if there is emtySpace as the value of the dictonary -->
+                        <!-- this is replacing with white space -->
+                        <td><input class = "odd" type ="submit" value=&nbsp;&nbsp;&nbsp;&nbsp; inputName="firstButton" formaction=d3 /></td>
+
+
+                        <!-- if there is emtySpace as the value of the dictonary -->
+                        <!-- this is replacing with white space -->
+                        <td><input class = "even" type ="submit" value=&nbsp;&nbsp;&nbsp;&nbsp; inputName="firstButton" formaction=e3 /></td>
+
+
+                        <!-- if there is emtySpace as the value of the dictonary -->
+                        <!-- this is replacing with white space -->
+                        <td><input class = "odd" type ="submit" value=&nbsp;&nbsp;&nbsp;&nbsp; inputName="firstButton" formaction=f3 /></td>
+
+
+                        <!-- if there is emtySpace as the value of the dictonary -->
+                        <!-- this is replacing with white space -->
+                        <td><input class = "even" type ="submit" value=&nbsp;&nbsp;&nbsp;&nbsp; inputName="firstButton" formaction=g3 /></td>
+
+
+                        <!-- if there is emtySpace as the value of the dictonary -->
+                        <!-- this is replacing with white space -->
+                        <td><input class = "odd" type ="submit" value=&nbsp;&nbsp;&nbsp;&nbsp; inputName="firstButton" formaction=h3 /></td>
+
+
+
+                    </tr>
+
+                    <tr><!-- if row == board 5 -->
+
+                        <!-- if the row is odd, 7,5,3,1 -->
+
+                        <td><input  class = "odd" type ="submit" value=♙ inputName="firstButton" formaction=a2 /></td>
+
+                        <!-- if the row is odd, 7,5,3,1 -->
+
+                        <td><input  class = "even" type ="submit" value=♙ inputName="firstButton" formaction=b2 /></td>
+
+                        <!-- if the row is odd, 7,5,3,1 -->
+
+                        <td><input  class = "odd" type ="submit" value=♙ inputName="firstButton" formaction=c2 /></td>
+
+                        <!-- if the row is odd, 7,5,3,1 -->
+
+                        <td><input  class = "even" type ="submit" value=♙ inputName="firstButton" formaction=d2 /></td>
+
+                        <!-- if the row is odd, 7,5,3,1 -->
+
+                        <td><input  class = "odd" type ="submit" value=♙ inputName="firstButton" formaction=e2 /></td>
+
+                        <!-- if the row is odd, 7,5,3,1 -->
+
+                        <td><input  class = "even" type ="submit" value=♙ inputName="firstButton" formaction=f2 /></td>
+
+                        <!-- if the row is odd, 7,5,3,1 -->
+
+                        <td><input  class = "odd" type ="submit" value=♙ inputName="firstButton" formaction=g2 /></td>
+
+                        <!-- if the row is odd, 7,5,3,1 -->
+
+                        <td><input  class = "even" type ="submit" value=♙ inputName="firstButton" formaction=h2 /></td>
+
+
+
+                    </tr>
+
+                    <tr><!-- if row == board 5 -->
+                        <!-- if the row is even, 8,6,4,2 -->
+
+
+                        <td><input class = "even" type ="submit" value=♖ inputName="firstButton" formaction=a1 /></td>
+
+
+
+                        <td><input class = "odd" type ="submit" value=♘ inputName="firstButton" formaction=b1 /></td>
+
+
+
+                        <td><input class = "even" type ="submit" value=♗ inputName="firstButton" formaction=c1 /></td>
+
+
+
+                        <td><input class = "odd" type ="submit" value=♕ inputName="firstButton" formaction=d1 /></td>
+
+
+
+                        <td><input class = "even" type ="submit" value=♔ inputName="firstButton" formaction=e1 /></td>
+
+
+
+                        <td><input class = "odd" type ="submit" value=♗ inputName="firstButton" formaction=f1 /></td>
+
+
+
+                        <td><input class = "even" type ="submit" value=♘ inputName="firstButton" formaction=g1 /></td>
+
+
+
+                        <td><input class = "odd" type ="submit" value=♖ inputName="firstButton" formaction=h1 /></td>
+
+
+
+                    </tr>
+
+
+                </table>
+            </form>
+        </td>
+        <td>
+            <table>
+                <tr>
+                    <td>move #</td>
+                    <td class="turn__values">&nbsp;&nbsp;&nbsp;&nbsp;values</td>
+                </tr>
+            </table>
+            <div id="turn__table">
+                <table>
+
+                </table>
+            </div>
+        </td>
     </tr>
-    <!-- chess symbols retrieved from unicode-->
     <tr>
-        <th>8</th>
-        <td class="light">♜</td>
-        <td class="dark">♞</td>
-        <td class="light">♝</td>
-        <td class="dark">♛</td>
-        <td class="light">♚</td>
-        <td class="dark">♝</td>
-        <td class="light">♞</td>
-        <td class="dark">♜</td>
+        <td>Previously Selected Cell:   </td><!-- this line is to communicate hints to the player -->
+        <!-- if message == "last two moves were invalid" css = red -->
+        <td>Message to the player: </td> <!-- this line is to communicate weather if the move was valid to the player -->
     </tr>
     <tr>
-        <th>7</th>
-        <td class="dark">♟</td>
-        <td class="light">♟</td>
-        <td class="dark">♟</td>
-        <td class="light">♟</td>
-        <td class="dark">♟</td>
-        <td class="light">♟</td>
-        <td class="dark">♟</td>
-        <td class="light">♟</td>
+        <td>
+            <a class="nav-link code" style="color:red; margin:auto; text-align: center;" href="/project/chessMenu/" >Back to Menu</a>
+        </td>
     </tr>
-    <tr>
-        <th>6</th>
-        <td class="light"></td>
-        <td class="dark"></td>
-        <td class="light"></td>
-        <td class="dark"></td>
-        <td class="light"></td>
-        <td class="dark"></td>
-        <td class="light"></td>
-        <td class="dark"></td>
-    </tr>
-    <tr>
-        <th>5</th>
-        <td class="dark"></td>
-        <td class="light"></td>
-        <td class="dark"></td>
-        <td class="light"></td>
-        <td class="dark"></td>
-        <td class="light"></td>
-        <td class="dark"></td>
-        <td class="light"></td>
-    </tr>
-    <tr>
-        <th>4</th>
-        <td class="light"></td>
-        <td class="dark"></td>
-        <td class="light"></td>
-        <td class="dark"></td>
-        <td class="light"></td>
-        <td class="dark"></td>
-        <td class="light"></td>
-        <td class="dark"></td>
-    </tr>
-    <tr>
-        <th>3</th>
-        <td class="dark"></td>
-        <td class="light"></td>
-        <td class="dark"></td>
-        <td class="light"></td>
-        <td class="dark"></td>
-        <td class="light"></td>
-        <td class="dark"></td>
-        <td class="light"></td>
-    </tr>
-    <tr>
-        <th>2</th>
-        <td class="light">♙</td>
-        <td class="dark">♙</td>
-        <td class="light">♙</td>
-        <td class="dark">♙</td>
-        <td class="light">♙</td>
-        <td class="dark">♙</td>
-        <td class="light">♙</td>
-        <td class="dark">♙</td>
-    </tr>
-    <tr>
-        <th>1</th>
-        <td class="dark">♖</td>
-        <td class="light">♘</td>
-        <td class="dark">♗</td>
-        <td class="light">♕</td>
-        <td class="dark">♔</td>
-        <td class="light">♗</td>
-        <td class="dark">♘</td>
-        <td class="light">♖</td>
-    </tr>
-    </tbody>
 </table>
 
+<h1></h1> <!-- this line is for debuggin -->
 
-<form method="POST" action="#"  class="form2">
-    <p>
-        <label for="makemove" class="floatLabel">Input Your Move</label>
-        <input id="makemove" name="makemove" placeholder="Input Your Move" type="text" required="required">
-    </p>
-    <p>
-        <input type="submit" class="button" value="Make Move" id="submit">
-    </p>
-</form>
-
-<script type="text/javascript">
+<img src=""> <!-- this is to display the win image -->
 
 
+<script language="javascript">
+
+//this is what allows the tabel to continously update
+function scrollDiv_init() {
+    DivElmnt = document.getElementById('turn__table');
+      instant_scroll()
+}
+
+function instant_scroll(){
+  DivElmnt.scrollTop = DivElmnt.scrollHeight
+}
 </script>
-
-
 
 </body>
 
-{% endblock %}
+</html>
