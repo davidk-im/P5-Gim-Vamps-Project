@@ -63,7 +63,8 @@ def logresults():
     return render_template("logresults.html")
 
 
-#Colin Test
+
+#Chess code
 @app.route("/createBoardTable", methods=['GET','POST']) #this is is where the website directs to when clicking the submit button
 def createBoardTable():
     if request.method == 'POST': #if the meathod is post

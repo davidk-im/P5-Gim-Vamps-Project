@@ -1,13 +1,19 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
 
-<!-- this is the template that allows for the user to  -->
+
+{% block pagecontent %}
+<!-- this is the template that
+<!-this is the template that allows for the user to  -->
 <head>
-    <title>Chess with Post</title>
+    <title>Play Chess</title>
     <meta charset="UTF-8">
     <!--even style is green, odd styles is white -->
     <style>
         #title{
             font-size:100px;
             font-weight: bold;
+            color: white;
         }
         .even {
         background-color: #4CAF50;
@@ -93,7 +99,7 @@
 <body onLoad="scrollDiv_init()">
 <table class="center__table">
     <tr>
-        <th colspan="2"><a>Chess Using POST</a></th>
+        <th colspan="2" ><a>Chess</a></th>
     </tr>
     <tr>
         <td>
@@ -146,14 +152,12 @@
         </td>
     </tr>
     <tr>
-        <td>Previously Selected Cell: {{ displayClicked }}</td><!-- this line is to communicate hints to the player -->
+        <td style="color:white" >Previously Selected Cell: {{ displayClicked }}</td><!-- this line is to communicate hints to the player -->
         <!-- if message == "last two moves were invalid" css = red -->
-        <td>Message to the player: {{message}}</td> <!-- this line is to communicate weather if the move was valid to the player -->
+        <td style="color: white" >Message to the player: {{message}}</td> <!-- this line is to communicate weather if the move was valid to the player -->
     </tr>
     <tr>
-        <td>
-            <a class="nav-link code" style="color:red; margin:auto; text-align: center;" href="/project/chessMenu/" >Back to Menu</a>
-        </td>
+
     </tr>
 </table>
 
@@ -174,4 +178,6 @@ function instant_scroll(){
   DivElmnt.scrollTop = DivElmnt.scrollHeight
 }
 </script>
+</body>
 
+{% endblock %}
