@@ -4,11 +4,20 @@ from flask_sqlalchemy import SQLAlchemy
 import requests
 import chessdata
 from chessdata import board, movelist, og_board, ogstoreboard
+from flask_login import login_required
+#from models import login_manager
 
 app = Flask(__name__)
 
 # database setup
 dbURI = 'sqlite:///chess1.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_DATABASE_URI'] = dbURI
+db = SQLAlchemy(app)
+db.init_app(app)
+
+# other database setup
+dbURI = 'sqlite:///replaygame.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = dbURI
 db = SQLAlchemy(app)

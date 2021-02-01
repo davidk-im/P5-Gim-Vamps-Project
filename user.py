@@ -1,7 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import login_required
-#from models import login_manager
+
 
 app = Flask(__name__)
 db = SQLAlchemy(app)
