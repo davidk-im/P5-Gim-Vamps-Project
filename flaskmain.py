@@ -1,15 +1,14 @@
 from flask import Flask, render_template, request
 from user import user_create
 from flask_sqlalchemy import SQLAlchemy
-import json
 import requests
 import chessdata
-from chessdata import board, movelist, allBoard, og_board, ogstoreboard
+from chessdata import board, movelist, og_board, ogstoreboard
 
 app = Flask(__name__)
 
 # database setup
-dbURI = 'sqlite:///chess.db'
+dbURI = 'sqlite:///chess1.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = dbURI
 db = SQLAlchemy(app)
