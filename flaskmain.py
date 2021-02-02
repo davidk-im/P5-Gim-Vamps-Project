@@ -31,21 +31,6 @@ db = SQLAlchemy(app)
 db.init_app(app)
 
 
-
-
-
-# give users a way to log out
-#@pythondb_bp.route("/logout")
-#@login_required
-#def logout():
-    #"""User log-out logic."""
-    #model_logout()
-    #return redirect(url_for('pythondb_bp.login'))
-
-
-
-
-
 #home page route
 @app.route('/')
 def home():
