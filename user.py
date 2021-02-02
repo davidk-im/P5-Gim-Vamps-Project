@@ -14,6 +14,7 @@ class User(db.Model):
     tactics_streak = db.Column(db.Integer, nullable=False)
     multiplayer_elo = db.Column(db.Integer, nullable=False)
 
+
 TACTICS_ELO_DEFAULT = 1500
 TACTICS_STREAK_DEFAULT = 0
 MULTIPLAYER_ELO_DEFAULT = 1500
@@ -30,3 +31,4 @@ def user_update_stats(username, tactics_elo, tactics_streak, multiplayer_elo):
     user.tactics_streak=tactics_streak
     user.multiplayer_elo=multiplayer_elo
     db.session.commit()
+

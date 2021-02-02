@@ -4,10 +4,17 @@ from flask_sqlalchemy import SQLAlchemy
 import requests
 import chessdata
 from chessdata import board, movelist, og_board, ogstoreboard
-from flask_login import login_required
+
+# session and database support
+#from flask_login import login_required
 #from models import login_manager
+#from models.lessons import menus
+#from models.crud import model_create, model_read, model_update, model_delete, model_query_all, model_query_emails, \
+    #model_query_phones
+#from models.login import model_authorize, model_login, model_logout
 
 app = Flask(__name__)
+#login_manager = LoginManager()
 
 # database setup
 dbURI = 'sqlite:///chess1.db'
@@ -22,6 +29,19 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = dbURI
 db = SQLAlchemy(app)
 db.init_app(app)
+
+
+
+
+
+# give users a way to log out
+#@pythondb_bp.route("/logout")
+#@login_required
+#def logout():
+    #"""User log-out logic."""
+    #model_logout()
+    #return redirect(url_for('pythondb_bp.login'))
+
 
 
 
@@ -69,6 +89,23 @@ def leaderboards():
 @app.route('/logresults')
 def logresults():
     return render_template("logresults.html")
+
+@app.route('/profile')
+def profile():
+    return render_template("profile.html")
+
+@app.route('/lichesslb', methods=['GET', 'POST'])
+def lichesslb():
+    url = "https://lichess.org/player/top/100/classical/"
+    headers = {
+        'Accept': 'application/vnd.lichess.v3+json'
+    }
+    response = requests.get(url, headers=headers)
+    data = response.json().get('users')
+    print(data)
+    return render_template("webapi2.html", data=data)
+
+
 
 
 
@@ -347,16 +384,7 @@ def h1():
     if request.method == 'POST':
         return render_template("chessDictTable.html", displayClicked="h1" , movelist=chessdata.movesdata("h1"),   message=chessdata.sample(len(movelist),chessdata.movelist[-2:]), allBoard=chessdata.split_board(board))
 
-@app.route('/lichesslb', methods=['GET', 'POST'])
-def lichesslb():
-    url = "https://lichess.org/player/top/100/classical/"
-    headers = {
-        'Accept': 'application/vnd.lichess.v3+json'
-    }
-    response = requests.get(url, headers=headers)
-    data = response.json().get('users')
-    print(data)
-    return render_template("webapi2.html", data=data)
+
 
 if __name__ == "__main__":
     app.run(port='3000', host='127.0.0.1')
