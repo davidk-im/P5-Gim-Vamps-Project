@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request, session, redirect, g, url_for
-import os
 from user import user_create
 from flask_sqlalchemy import SQLAlchemy
 import requests
@@ -12,7 +11,7 @@ app = Flask(__name__)
 
 
 # database setup
-dbURI = 'sqlite:///chess1.db'
+dbURI = 'sqlite:///chess.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = dbURI
 db = SQLAlchemy(app)
@@ -22,14 +21,13 @@ db.init_app(app)
 dbURI = 'sqlite:///replaygame.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = dbURI
-db = SQLAlchemy(app)
+db2 = SQLAlchemy(app)
 db.init_app(app)
 
 
 #home page route
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
 def home():
-    #if request.method == 'POST':
     return render_template("home.html")
 
 @app.route('/play')
