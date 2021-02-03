@@ -1,20 +1,15 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, session, redirect, g, url_for
+import os
 from user import user_create
 from flask_sqlalchemy import SQLAlchemy
 import requests
 import chessdata
 from chessdata import board, movelist, og_board, ogstoreboard
+from flask_login import login_required
 
-# session and database support
-#from flask_login import login_required
-#from models import login_manager
-#from models.lessons import menus
-#from models.crud import model_create, model_read, model_update, model_delete, model_query_all, model_query_emails, \
-    #model_query_phones
-#from models.login import model_authorize, model_login, model_logout
 
 app = Flask(__name__)
-#login_manager = LoginManager()
+
 
 # database setup
 dbURI = 'sqlite:///chess1.db'
@@ -32,8 +27,9 @@ db.init_app(app)
 
 
 #home page route
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def home():
+    #if request.method == 'POST':
     return render_template("home.html")
 
 @app.route('/play')
@@ -76,6 +72,7 @@ def logresults():
     return render_template("logresults.html")
 
 @app.route('/profile')
+@login_required
 def profile():
     return render_template("profile.html")
 

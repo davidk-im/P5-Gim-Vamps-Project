@@ -32,3 +32,13 @@ def user_update_stats(username, tactics_elo, tactics_streak, multiplayer_elo):
     user.multiplayer_elo=multiplayer_elo
     db.session.commit()
 
+
+def user_get_all():
+    """convert Users table into a list of dictionary rows"""
+    records = []
+    user = User.query.all()
+    for user in users:
+        user_dict = {'name': user.username, 'password': user.password}
+        records.append(user_dict)
+    return records
+
