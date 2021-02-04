@@ -96,3 +96,114 @@ def profile():
         return redirect(url_for('login'))
 
     return render_template('profile.html')
+
+########################################################################################################################
+LOGIN TRIAL #2
+class User(db.Model):
+    username = db.Column(db.String(255), primary_key=True, nullable=False)
+    password = db.Column(db.String(255), nullable=False)
+    tactics_elo = db.Column(db.Integer, nullable=False)
+    tactics_streak = db.Column(db.Integer, nullable=False)
+    multiplayer_elo = db.Column(db.Integer, nullable=False)
+
+#login trial pt.2
+class LoginForm(FlaskForm):
+    username = StringField('username', validators=[InputRequired(), Length(min=4, max=15)])
+    password = PasswordField('password', validators=[InputRequired(), Length(min=8, max=80)])
+    remember = BooleanField('remember me')
+
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    form=LoginForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(username=form.username.data).first()
+        if user:
+            if check_password_hash(user.password, form.password.data):
+                login_user(user, remember=form.remember.data)
+                return redirect(url_for('home.html'))
+
+        return '<h1>Invalid username or password</h1>'
+        #return '<h1>' + form.username.data + ' ' + form.password.data + '</h1>'
+
+    return render_template('login.html', form=form)
+
+@app.route('/profile')
+@login_required
+def dashboard():
+    return render_template('profile.html', name=current_user.username)
+
+########################################################################################################################
+PROFILE.HTML WITH TEST 1(g.user VARIABLE)
+
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block pagecontent %}
+<html>
+
+<body>
+<section>
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                {{g.user.username}}'s Profile
+            </h1>
+            <h2 class="usernumber">
+                You are user number #{{g.user.id}}
+                <div>
+                    <br>
+                </div>
+                <div>
+                    Your Current Stats:
+                </div>
+            </h2>
+            <table style="width:100%">
+                <tr>
+                    <th>Tactics Score</th>
+                    <th>Streak Score</th>
+                    <th>Multiplayer Score</th>
+                </tr>
+                <tr>
+                    <td>1500</td>
+                    <td>0</td>
+                    <td>1500</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</section>
+
+</body>
+
+<style>
+
+    h1 {
+    text-align: left;
+    margin-top: 50px;
+    color: white;
+    font-size: 70px;
+    text-decoration: underline
+    }
+
+     h2 {
+    text-align: left;
+    margin-top: px;
+    color: white;
+    font-size: 25px
+    }
+
+    table {
+    font-size: 20px;
+    color: white
+    }
+
+</style>
+
+
+
+
+

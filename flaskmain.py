@@ -30,6 +30,13 @@ login_manager.init_app(app)
 login_manager.login_view = 'login'
 
 
+class User(db.Model):
+    username = db.Column(db.String(255), primary_key=True, nullable=False)
+    password = db.Column(db.String(255), nullable=False)
+    tactics_elo = db.Column(db.Integer, nullable=False)
+    tactics_streak = db.Column(db.Integer, nullable=False)
+    multiplayer_elo = db.Column(db.Integer, nullable=False)
+
 #login trial pt.2
 @login_manager.user_loader
 def load_user(user_id):
