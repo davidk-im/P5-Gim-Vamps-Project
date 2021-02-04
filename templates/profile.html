@@ -4,35 +4,61 @@
 <html>
 
 <body>
-<section class="hero is-success is-fullheight">
+<section>
     <div class="hero-body">
         <div class="container">
             <h1 class="title">
                 {{g.user.username}}'s Profile
             </h1>
-            <h2 class="subtitle">
+            <h2 class="usernumber">
                 You are user number #{{g.user.id}}
+                <div>
+                    <br>
+                </div>
+                <div>
+                    Your Current Stats:
+                </div>
             </h2>
+            <table style="width:100%">
+                <tr>
+                    <th>Tactics Score</th>
+                    <th>Streak Score</th>
+                    <th>Multiplayer Score</th>
+                </tr>
+                <tr>
+                    <td>1500</td>
+                    <td>0</td>
+                    <td>1500</td>
+                </tr>
+            </table>
         </div>
     </div>
 </section>
+
 </body>
 
 <style>
 
     h1 {
-    text-align: center;
+    text-align: left;
     margin-top: 50px;
     color: white;
-    font-size: 70px
+    font-size: 70px;
+    text-decoration: underline
     }
 
      h2 {
-    text-align: center;
-    margin-top: 75px;
+    text-align: left;
+    margin-top: px;
     color: white;
-    font-size: 50px
+    font-size: 25px
     }
+
+    table {
+    font-size: 20px;
+    color: white
+    }
+
 </style>
 </html>
 {% endblock %}
