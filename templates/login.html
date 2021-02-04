@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block pagecontent %}
+
+<html>
+<h1 style="font-family:verdana"><b>Log In!</b></h1>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+<section class="hero is-info is-fullheight">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-half">
+                    <form method="POST" class="form1">
+                        <div class="field">
+                            <label class="label">Username</label>
+                            <div class="control has-icons-left has-icons-right">
+                                <input class="input" type="text" name="username" placeholder="Username">
+                                <span class="icon is-small is-left">
+                    <i class="fas fa-user"></i>
+                  </span>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Password</label>
+                            <p class="control has-icons-left">
+                                <input class="input" type="password" name="password" placeholder="Password">
+                                <span class="icon is-small is-left">
+                    <i class="fas fa-lock"></i>
+                  </span>
+                            </p>
+                        </div>
+                        <div class="field">
+                            <p class="control">
+                                <button type="submit" class="button is-success">
+                                    Login
+                                </button>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+
+</html>
+
+
+<style>
+/* welcome message formatting and placement */
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    color: white;
+    font-size: 70px
+    }
+
+}
+.button {
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: #000000; /* black */
+  color: white;
+}
+body {
+  font-family: verdana;
+  color: white;
+}
+/* form alignment */
+.form1 {
+  padding: 4em 4em 2em;
+  max-width: 400px;
+  margin: 50px auto 0;
+  box-shadow: 0 0 1em #222;
+  border-radius: 2px;
+  h2 {
+    margin:0 0 50px 0;
+    padding:10px;
+    color: white;
+    text-align:center;
+    color:darken(#e5e5e5, 50%);
+    border-bottom:solid 1px #e5e5e5;
+  }
+  p {
+    margin: 0 0 3em 0;
+    position: relative;
+  }
+  input {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    color: white;
+    outline: none;
+    margin:0;
+  }
+
+</style>
+{% endblock %}
