@@ -1,6 +1,17 @@
 # Project Plan
 Group Members: Kyle Myint, Lucas Bruner, Ava Brooks, David Kim
 
+## 2/4 Scrum Team Tickets
+
+[1.](https://github.com/kylem314/P5-Gim-Vamps-Project/projects/1#card-53702943) User login and authentication
+* code link here 
+* code talk
+* more evidence 
+* How to run: 
+    1. something
+    2. another thing
+    3. success!
+
 ## 1/15 Scrum Team Tickets
 [1.](https://github.com/kylem314/P5-Gim-Vamps-Project/projects/1#card-52921614) Create database to store Username and Password information from completing the signup form on signup.py
 * Created [flaskmain.py](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/flaskmain.py) with POST method to push username and password information to database. If else statement used, else code used, to test for errors in code. 
