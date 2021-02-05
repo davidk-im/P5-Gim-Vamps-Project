@@ -28,3 +28,8 @@ def validate_replay_game(gameid):
             testid.is_authenticated = True
             return testid
     return None
+
+def replay_game_data(gameid):
+    testid=replay.query.filter_by(gameid=gamid).first()
+    if testid:
+        return movenumber, blackmove, whitemove

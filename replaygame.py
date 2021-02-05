@@ -58,7 +58,7 @@ while lastturn == False:
     elif forward == "n" or forward == "next" and lastturn == False:
         #os.system("clear")
         turnprint(currentcounter)
-        currentmove = replaygame.db[move]
+        current_move = replay_game_data(Key)[2]
 
         if currentmove != "0-0B " and currentmove != "0-0-B" and currentmove != "0-0W " and currentmove != "0-0-W" and currentmove != "#W   " and currentmove != "#B   ":
             board[currentmove[3:5]] = board[currentmove[0:2]]
