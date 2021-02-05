@@ -102,6 +102,10 @@ def signconfirm():
 def howtoplay():
     return render_template("howtoplay.html")
 
+@app.route('/easter')
+def easter():
+    return render_template("easter.html")
+
 @app.route('/leaderboards')
 def leaderboards():
     return render_template("leaderboards.html")
