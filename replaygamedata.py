@@ -13,8 +13,8 @@ class Replay(db.Model):
     blackmove = db.Column(db.String(255), nullable=False)
     whitemove = db.Column(db.String(255), nullable=False)
 
-def game_create(gameID, movenumber, colormove, move):
-    print('Game ID: ' + gameID )
+def game_create(gameID, movenumber, blackmove, whitemove):
+    print('User name is ' + gameID )
 
     new_game = gameID(gameID=gameID, movenumber=movenumber, blackmove=blackmove, whitemove=whitemove)
     db.session.add(new_game)
