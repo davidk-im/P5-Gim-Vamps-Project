@@ -11,6 +11,17 @@ Group Members: Kyle Myint, Lucas Bruner, Ava Brooks, David Kim
     1. something
     2. another thing
     3. success!
+2.
+
+3. 
+
+4. 
+
+
+## Website URL: 
+http://chessthegame.cf
+## Website Direct IP
+http://76.176.72.123:3000/
 
 ## 1/15 Scrum Team Tickets
 [1.](https://github.com/kylem314/P5-Gim-Vamps-Project/projects/1#card-52921614) Create database to store Username and Password information from completing the signup form on signup.py
@@ -59,11 +70,6 @@ Score: 19/20<br>
 * good progress on essential parts of project
 * on task throughout
 
-
-## Website URL: 
-http://chessthegame.cf
-## Website Direct IP
-http://76.176.72.123:3000/
 
 ## Summary: 
 Create a chess-based website using Python, Flask, SQLAlchamy, and a Raspberry Pi with an internet domain that has the following features:
