@@ -4,12 +4,14 @@
 
 {% block pagecontent %}
 {% set data = data %}
+{% set type = type %}
 {% set place = namespace(value=0) %}
 <div class="row justify-content-left" style="margin: 2%;">
-    <h1><strong>Top 100 Chess Players data from lichess.com</strong></h1>
-    <form action={{url_for('.lichesslb')}}>
+    <h1><strong>Top 100 {{type}} Chess Players <br/> data from lichess.com</strong></h1>
+    <form action={{url_for('.lichesslb', type=type.lower())}}>
         <button Class="button2">Refresh</button>
     </form>
+
 </div>
 <div class="data" style="height: 35vh;">
     <table style="margin: 2%">
@@ -25,9 +27,9 @@
             <td>{{place.value}}</td>
             {% set username = item["username"] %}
             <td>{{username}}</td>
-            {% set rating = item["perfs"]["classical"]["rating"] %}
+            {% set rating = item["perfs"][type.lower()]["rating"] %}
             <td>{{rating}}</td>
-            {% set progress = item["perfs"]["classical"]["progress"] %}
+            {% set progress = item["perfs"][type.lower()]["progress"] %}
             <td>{{progress}}</td>
         </tr>
         {% endfor %}

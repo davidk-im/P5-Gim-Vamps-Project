@@ -1,9 +1,10 @@
 from flask import (Flask, g, redirect, render_template, request, session, url_for)
-from user import user_create
-from flask_sqlalchemy import SQLAlchemy
+#from user import user_create
+#from flask_sqlalchemy import SQLAlchemy
 import requests
 import chessdata
 from chessdata import board, movelist, og_board, ogstoreboard
+from markupsafe import escape
 from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField
@@ -15,13 +16,13 @@ from user import validate_user, User
 app = Flask(__name__)
 
 
-# database setup
+'''# database setup
 dbURI = 'sqlite:///chess.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = dbURI
 db = SQLAlchemy(app)
 db.init_app(app)
-
+'''
 app.config['SECRET_KEY'] = '1234'
 bootstrap = Bootstrap(app)
 db = SQLAlchemy(app)
@@ -110,17 +111,17 @@ def logresults():
     return render_template("logresults.html")
 
 
-@app.route('/lichesslb', methods=['GET', 'POST'])
-def lichesslb():
-    url = "https://lichess.org/player/top/100/classical/"
+@app.route('/lichesslb/<type>/', methods=['GET', 'POST'])
+def lichesslb(type):
+    print(type)
+    url = "https://lichess.org/player/top/100/" + type + "/"
     headers = {
         'Accept': 'application/vnd.lichess.v3+json'
     }
     response = requests.get(url, headers=headers)
     data = response.json().get('users')
-    print(data)
-    return render_template("webapi2.html", data=data)
-
+    type = type.capitalize()
+    return render_template("webapi2.html", data=data, type=type)
 
 
 
