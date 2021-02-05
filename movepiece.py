@@ -92,12 +92,7 @@ def len5(usermove, board, storeboard, whitemove, whitecolor, blackcolor):
                 blackpersp(whitecolor, blackcolor, board)
                 whitemove = "B"
                 storeboard = storeboardset(board, storeboard, whitemove, 1)
-                savefile = open("savereplay.txt", "a")
-                savefile.write(usermove)
-                savefile.close()
-                savefile = open("savenotation.txt", "a")
-                savefile.write(usermove)
-                savefile.close()
+                game_create(gameID, movenumber, whitemove, usermove)
             except:
                 print("Please enter a valid move.")
         elif str(whitemove + "R1n") in storeboard["d8"] and board["e8"] == "BK1n":
@@ -118,12 +113,7 @@ def len5(usermove, board, storeboard, whitemove, whitecolor, blackcolor):
                 whitepersp(whitecolor, blackcolor, board)
                 whitemove = "W"
                 storeboard = storeboardset(board, storeboard, whitemove, 1)
-                savefile = open("savereplay.txt", "a")
-                savefile.write(usermove)
-                savefile.close()
-                savefile = open("savenotation.txt", "a")
-                savefile.write(usermove)
-                savefile.close()
+                game_create(gameID, movenumber, whitemove, usermove)
             except:
                 print("Please enter a valid move.")
         else:
@@ -135,12 +125,7 @@ def len5(usermove, board, storeboard, whitemove, whitecolor, blackcolor):
             if piece in storeboard[usermove[3:5]]:
                 board[startpos] = '  '
                 board[usermove[3:5]] = piece
-                savefile = open("savereplay.txt", "a")
-                savefile.write(usermove)
-                savefile.close()
-                savefile = open("savenotation.txt", "a")
-                savefile.write()
-                savefile.close()
+                game_create(gameID, movenumber, whitemove, usermove)
                 if whitemove == "W":
                     blackpersp(whitecolor, blackcolor, board)
                     whitemove = "B"
