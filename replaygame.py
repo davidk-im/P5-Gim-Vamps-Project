@@ -4,6 +4,9 @@ from zwhitepersp import *
 from zblackpersp import *
 from replaygamedata import *
 
+"""
+note: on checkmate, print the next move as #
+"""
 # Read the database
 replayfile = open("savereplay.txt").read()
 
@@ -65,16 +68,7 @@ while lastturn == False:
     elif forward == "n" or forward == "next" and lastturn == False:
         #os.system("clear")
         turnprint(currentcounter)
-        for i in range(5):
-            if currentletter != "#":
-                currentletter = replayfile[currentcounter + index]
-                currentmove = currentmove + currentletter
-                currentcounter += 1
-            else:
-                lastturn = True
-                currentletter = replayfile[currentcounter + index]
-                currentmove = currentmove + currentletter
-                currentcounter += 1
+        currentmove = replaygame.db[move]
 
         if currentmove != "0-0B " and currentmove != "0-0-B" and currentmove != "0-0W " and currentmove != "0-0-W" and currentmove != "#W   " and currentmove != "#B   ":
             board[currentmove[3:5]] = board[currentmove[0:2]]
