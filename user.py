@@ -21,6 +21,7 @@ class User(db.Model):
 TACTICS_ELO_DEFAULT = 1500
 TACTICS_STREAK_DEFAULT = 0
 MULTIPLAYER_ELO_DEFAULT = 1500
+
 def user_create(username, password):
     print('User name is ' + username + ' and password is ' + password)
 
