@@ -19,3 +19,12 @@ def game_create(gameID, movenumber, colormove, move):
     new_game = gameID(gameID=gameID, movenumber=movenumber, blackmove=blackmove, whitemove=whitemove)
     db.session.add(new_game)
     db.session.commit()
+
+def validate_replay_game(gameid):
+    testid=replay.query.filter_by(gameid=gameid).first()
+    if testid:
+        print("test id exists")
+        if testid == gameid:
+            testid.is_authenticated = True
+            return testid
+    return None

@@ -12,7 +12,6 @@ replayfile = open("savereplay.txt").read()
 
 # Defining Variables
 
-repersp = "white"
 turncounter = 0
 autoplay = False
 
@@ -33,10 +32,13 @@ def turnprint(currentcounter):
 
 # Checking the Key
 
+# Post form for this ***
 def keyAsk():
     Key = input("\nWhat is your game key?\n")
-    if Key not in replaygame.db:
-        print("Please enter a valid game key.\n")
+    if validate_replay_game(Key) == Key:
+        pass
+    else:
+        print("Please enter a valid game key.")
 
 
 print("\nNext Turn: 1 White\n\n")
@@ -44,26 +46,14 @@ whitepersp(whitecolor, blackcolor,board)
 
 while lastturn == False:
     if autoplay == False:
+        # post form ***
         forward = input(
             "\nType 'n' or 'next' to continue, 'f' or 'flip' to change perspectives, 'e' or 'exit' to exit, 'a #' or 'auto #' to automatically play the rest of the game, with each move being made at the specified interval of time.\n")
         forward = forward.lower()
     else:
         forward = "n"
         time.sleep(autotimer)
-    # Code for moving through replay by user input
-    if forward == "e" or forward == "exit":
-        break
 
-    elif forward == "f" or forward == "flip":
-        #os.system("clear")
-        print(turnprintx)
-        if repersp == "white":
-            repersp = "black"
-            blackpersp(whitecolor, blackcolor, board)
-        elif repersp == "black":
-            repersp = "white"
-            print("")
-            whitepersp(whitecolor, blackcolor, board)
 
     elif forward == "n" or forward == "next" and lastturn == False:
         #os.system("clear")
