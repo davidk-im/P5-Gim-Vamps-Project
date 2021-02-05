@@ -4,13 +4,15 @@ Group Members: Kyle Myint, Lucas Bruner, Ava Brooks, David Kim
 ## 2/4 Scrum Team Tickets
 
 [1.](https://github.com/kylem314/P5-Gim-Vamps-Project/projects/1#card-53702943) User login and authentication
-* code link here 
-* code talk
-* more evidence 
+* Created a [validate user function](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/6aec7b701eca6513400c29c0b42a8cf53867f004/user.py#L39-L46) that checks database for correct username and password upon form submission of the login.
+* Created [login.html page](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/login.html) and [profil.html page](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/profile.html) to hold form for logging in and page only accessibly when logged in.
+* Created routes in [flaskmain.py](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/6aec7b701eca6513400c29c0b42a8cf53867f004/flaskmain.py#L27-L62) that calls the validate user function from user.py, and uses flask imports with @login_required and @logout_user.
 * How to run: 
-    1. something
-    2. another thing
-    3. success!
+    1. Try accessing the profile page when not being signed in(the page should redirect you to the login screen rather than letting you see an account).
+    2. Login to your account, and gain access to your profile page. Your current stats will be shown. We are currently working on allowing users to change their profile photos. 
+    3. You are now signed in and successfully authenticated. 
+* [Commit history](https://github.com/kylem314/P5-Gim-Vamps-Project/commits/main) from this week found here. 
+
 2.
 
 3. 
