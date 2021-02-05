@@ -8,8 +8,8 @@ from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField
 from wtforms.validators import InputRequired, Email, Length
-from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
+from user import validate_user, User
 
 
 app = Flask(__name__)
@@ -30,38 +30,25 @@ login_manager.init_app(app)
 login_manager.login_view = 'login'
 
 
-class User(db.Model):
-    username = db.Column(db.String(255), primary_key=True, nullable=False)
-    password = db.Column(db.String(255), nullable=False)
-    tactics_elo = db.Column(db.Integer, nullable=False)
-    tactics_streak = db.Column(db.Integer, nullable=False)
-    multiplayer_elo = db.Column(db.Integer, nullable=False)
-
-#login trial pt.2
 @login_manager.user_loader
 def load_user(user_id):
-    return User.query.get(int(user_id))
-
-class LoginForm(FlaskForm):
-    username = StringField('username', validators=[InputRequired(), Length(min=4, max=15)])
-    password = PasswordField('password', validators=[InputRequired(), Length(min=8, max=80)])
-    remember = BooleanField('remember me')
+    return User.query.filter_by(username=user_id).first()
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    form = LoginForm()
-
-    if form.validate_on_submit():
-        user = User.query.filter_by(username=form.username.data).first()
+    if request.method=='POST':
+        username = request.form['Username']
+        password = request.form['password']
+        print(username +" " + password)
+        user=validate_user(username, password)
         if user:
-            if check_password_hash(user.password, form.password.data):
-                login_user(user, remember=form.remember.data)
-                return redirect(url_for('home.html'))
+            login_user(user)
+            return render_template("profile.html")
+    else:
+          print('Bar')
+    return render_template("login.html")
 
-        return '<h1>Invalid username or password</h1>'
-        #return '<h1>' + form.username.data + ' ' + form.password.data + '</h1>'
 
-    return render_template('login.html', form=form)
 
 @app.route('/profile')
 @login_required

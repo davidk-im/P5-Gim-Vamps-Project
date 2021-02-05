@@ -13,7 +13,11 @@ class User(db.Model):
     tactics_elo = db.Column(db.Integer, nullable=False)
     tactics_streak = db.Column(db.Integer, nullable=False)
     multiplayer_elo = db.Column(db.Integer, nullable=False)
-
+    is_active = True
+    is_anonymous = False
+    is_authenticated = False
+    def get_id(self):
+        return self.username
 
 TACTICS_ELO_DEFAULT = 1500
 TACTICS_STREAK_DEFAULT = 0
@@ -32,6 +36,17 @@ def user_update_stats(username, tactics_elo, tactics_streak, multiplayer_elo):
     user.multiplayer_elo=multiplayer_elo
     db.session.commit()
 
+def validate_user(username, password):
+    testuser=User.query.filter_by(username=username).first()
+    if testuser:
+        print("got user")
+        if testuser.password == password:
+            testuser.is_authenticated = True
+            return testuser
+    return None
+
+
+
 
 def user_get_all():
     """convert Users table into a list of dictionary rows"""
@@ -39,7 +54,7 @@ def user_get_all():
     users = Users.query.all()
     for user in users:
         user_dict = {'id': user.UserID, 'name': user.username, 'password': user.password}
-        # append to records
+
         records.append(user_dict)
     return records
 

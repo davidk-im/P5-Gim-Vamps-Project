@@ -1,4 +1,59 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block pagecontent %}
+<h1 style="font-family:verdana"><b>Profile</b></h1>
 
-<a class="button" href="/logout" role="button">Logout</a>
-</html>
+<html>
+
+<body>
+<section>
+    <div class="hero-body">
+        <div class="container">
+
+            <h2>
+                    Your Current Stats:
+                </div>
+            </h2>
+            <table style="width:100%">
+                <tr>
+                    <th>Tactics Score</th>
+                    <th>Streak Score</th>
+                    <th>Multiplayer Score</th>
+                </tr>
+                <tr>
+                    <td>1500</td>
+                    <td>0</td>
+                    <td>1500</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</section>
+
+</body>
+
+<style>
+
+    h1 {
+    text-align: center;
+    margin-top: 50px;
+    color: white;
+    font-size: 70px;
+    text-decoration: underline
+    }
+
+     h2 {
+    text-align: left;
+    margin-top: px;
+    color: white;
+    font-size: 25px
+    }
+
+    table {
+    font-size: 20px;
+    color: white
+    }
+
+</style>
+
 {% endblock %}
