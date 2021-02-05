@@ -2,17 +2,15 @@ import math
 from chessmain import *
 from zwhitepersp import *
 from zblackpersp import *
+from replaygamedata import *
 
-# Read the replayfile
+# Read the database
 replayfile = open("savereplay.txt").read()
 
 # Defining Variables
-currentletter = ""
-currentmove = ""
-currentcounter = 0
+
 repersp = "white"
 turncounter = 0
-lastturn = False
 autoplay = False
 
 
@@ -30,36 +28,13 @@ def turnprint(currentcounter):
         turnprintx = "\nNext Turn: " + strturn + " White\n"
         print("\nNext Turn: " + strturn + " White")
 
-
-Keylist = ["A", "B", "C", "D", "E", "F"]
-Keycheck = ""
-Keychecked = False
-indexing = -1
 # Checking the Key
-# index = replayfile.find(Key)
-Key = input("\nWhat is your game key?\n")
 
-if len(Key) != 6:
-    print("Please enter a valid game key.\n")
-    mainmenu(Key, key, replaying, exited, settingexit, whitecolor, blackcolor, colorset)
+def keyAsk():
+    Key = input("\nWhat is your game key?\n")
+    if Key not in replaygame.db:
+        print("Please enter a valid game key.\n")
 
-for letter in replayfile:
-    indexing += 1
-    Keylist.pop(0)
-    Keylist.append(replayfile[indexing])
-    for keything in Keylist:
-        Keycheck = Keylist[0] + Keylist[1] + Keylist[2] + Keylist[3] + Keylist[4] + Keylist[5]
-    if Keycheck == Key:
-        index = indexing + 1
-        Keychecked = True
-        replaying = True
-        break
-    else:
-        Keycheck = ""
-
-if not Keychecked:
-    print("Please enter a valid game key.\n")
-    mainmenu(Key, key, replaying, exited, settingexit, whitecolor, blackcolor, colorset)
 
 print("\nNext Turn: 1 White\n\n")
 whitepersp(whitecolor, blackcolor,board)

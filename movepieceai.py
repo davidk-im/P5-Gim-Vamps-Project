@@ -21,7 +21,8 @@ two notations:
         check if queenside castling
 
 """
-
+from replaygamedata import *
+from replaygame import *
 from piecedefinitions import *
 from zwhitepersp import *
 from zblackpersp import *
@@ -71,6 +72,7 @@ def len5(usermove, board, storeboard, whitemove, whitecolor, blackcolor, turnnum
                 whitemove = "B"
                 storeboard = storeboardset(board, storeboard, whitemove, 1)
                 aiturn = True
+                game_create(gameID, movenumber, whitemove, usermove)
             except:
                 print("Please enter a valid move.")
         elif str(whitemove + "R1n") in storeboard["d8"] and board["e8"] == "BK1n":
@@ -92,6 +94,7 @@ def len5(usermove, board, storeboard, whitemove, whitecolor, blackcolor, turnnum
                 whitemove = "W"
                 storeboard = storeboardset(board, storeboard, whitemove, 1)
                 aiturn = True
+                game_create(gameID, movenumber, whitemove, usermove)
             except:
                 print("Please enter a valid move.")
         else:
@@ -111,6 +114,7 @@ def len5(usermove, board, storeboard, whitemove, whitecolor, blackcolor, turnnum
                     whitepersp(whitecolor, blackcolor, board)
                 storeboard = storeboardset(board, storeboard, whitemove, 1)
                 aiturn = True
+                game_create(gameID, movenumber, whitemove, usermove)
             else:
                 print("Please enter a valid move.")
     except Exception as e:
@@ -429,7 +433,7 @@ def primaryai(board, storeboard, whitemove, whitecolor, blackcolor, turnnum):
       if score >= bestmove[1]:
         bestmove = [move, score]
         # print("Changed to " + str(score))
-
+    game_create(gameID, movenumber, whitemove, bestmove[0])
     # print(bestmove[0] + "  BESTMOVE!!!!!!!!!")
     return bestmove[0]
 
