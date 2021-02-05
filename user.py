@@ -6,7 +6,6 @@ app = Flask(__name__)
 db = SQLAlchemy(app)
 
 
-
 class User(db.Model):
     username = db.Column(db.String(255), primary_key=True, nullable=False)
     password = db.Column(db.String(255), nullable=False)
@@ -47,14 +46,4 @@ def validate_user(username, password):
 
 
 
-
-def user_get_all():
-    """convert Users table into a list of dictionary rows"""
-    records = []
-    users = Users.query.all()
-    for user in users:
-        user_dict = {'id': user.UserID, 'name': user.username, 'password': user.password}
-
-        records.append(user_dict)
-    return records
 

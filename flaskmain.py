@@ -49,7 +49,6 @@ def login():
     return render_template("login.html")
 
 
-
 @app.route('/profile')
 @login_required
 def dashboard():
@@ -110,10 +109,6 @@ def leaderboards():
 def logresults():
     return render_template("logresults.html")
 
-#@app.route('/profile')
-#@login_required
-#def profile():
- #   return render_template("profile.html")
 
 @app.route('/lichesslb', methods=['GET', 'POST'])
 def lichesslb():
