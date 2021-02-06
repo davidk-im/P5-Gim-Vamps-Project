@@ -1,5 +1,12 @@
 # Project Plan
 Group Members: Kyle Myint, Lucas Bruner, Ava Brooks, David Kim
+## 2/5 Scrum Master Presentation Evaluation
+* Team score: 9/10
+* Presentation score: 5/5
+* Ava: 10/10, 24/25
+* David: 9/10, 23/25
+* Kyle: 10/10, 24/25
+* Lucas: 10/10, 24/25
 
 ## 2/4 Scrum Team Tickets
 
@@ -17,7 +24,10 @@ Group Members: Kyle Myint, Lucas Bruner, Ava Brooks, David Kim
 
 3. 
 
-4. 
+[4.](https://github.com/kylem314/P5-Gim-Vamps-Project/projects/1#card-53703307) Accessing multiple APIs from the same source
+* created an app route that takes in variables as a second argument
+* created a dropdown menu that sends different modes of chest as the second argument
+* formatted code so that everything would be accessed via variable input
 
 
 ## Website URL: 
