@@ -98,10 +98,6 @@ def playai():
 def signconfirm():
     return render_template("signconfirm.html")
 
-@app.route('/howtoplay')
-def howtoplay():
-    return render_template("howtoplay.html")
-
 @app.route('/easter')
 def easter():
     return render_template("easter.html")
