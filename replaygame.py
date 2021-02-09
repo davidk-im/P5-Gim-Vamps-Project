@@ -2,17 +2,17 @@ import math
 from chessmain import *
 from zwhitepersp import *
 from zblackpersp import *
+from replaygamedata import *
 
-# Read the replayfile
+"""
+note: on checkmate, print the next move as #
+"""
+# Read the database
 replayfile = open("savereplay.txt").read()
 
 # Defining Variables
-currentletter = ""
-currentmove = ""
-currentcounter = 0
-repersp = "white"
+
 turncounter = 0
-lastturn = False
 autoplay = False
 
 
@@ -30,76 +30,35 @@ def turnprint(currentcounter):
         turnprintx = "\nNext Turn: " + strturn + " White\n"
         print("\nNext Turn: " + strturn + " White")
 
-
-Keylist = ["A", "B", "C", "D", "E", "F"]
-Keycheck = ""
-Keychecked = False
-indexing = -1
 # Checking the Key
-# index = replayfile.find(Key)
-Key = input("\nWhat is your game key?\n")
 
-if len(Key) != 6:
-    print("Please enter a valid game key.\n")
-    mainmenu(Key, key, replaying, exited, settingexit, whitecolor, blackcolor, colorset)
-
-for letter in replayfile:
-    indexing += 1
-    Keylist.pop(0)
-    Keylist.append(replayfile[indexing])
-    for keything in Keylist:
-        Keycheck = Keylist[0] + Keylist[1] + Keylist[2] + Keylist[3] + Keylist[4] + Keylist[5]
-    if Keycheck == Key:
-        index = indexing + 1
-        Keychecked = True
-        replaying = True
-        break
+# Post form for this ***
+def keyAsk():
+    Key = input("\nWhat is your game key?\n")
+    if validate_replay_game(Key) == Key:
+        pass
     else:
-        Keycheck = ""
+        print("Please enter a valid game key.")
 
-if not Keychecked:
-    print("Please enter a valid game key.\n")
-    mainmenu(Key, key, replaying, exited, settingexit, whitecolor, blackcolor, colorset)
 
 print("\nNext Turn: 1 White\n\n")
 whitepersp(whitecolor, blackcolor,board)
 
 while lastturn == False:
     if autoplay == False:
+        # post form ***
         forward = input(
             "\nType 'n' or 'next' to continue, 'f' or 'flip' to change perspectives, 'e' or 'exit' to exit, 'a #' or 'auto #' to automatically play the rest of the game, with each move being made at the specified interval of time.\n")
         forward = forward.lower()
     else:
         forward = "n"
         time.sleep(autotimer)
-    # Code for moving through replay by user input
-    if forward == "e" or forward == "exit":
-        break
 
-    elif forward == "f" or forward == "flip":
-        #os.system("clear")
-        print(turnprintx)
-        if repersp == "white":
-            repersp = "black"
-            blackpersp(whitecolor, blackcolor, board)
-        elif repersp == "black":
-            repersp = "white"
-            print("")
-            whitepersp(whitecolor, blackcolor, board)
 
     elif forward == "n" or forward == "next" and lastturn == False:
         #os.system("clear")
         turnprint(currentcounter)
-        for i in range(5):
-            if currentletter != "#":
-                currentletter = replayfile[currentcounter + index]
-                currentmove = currentmove + currentletter
-                currentcounter += 1
-            else:
-                lastturn = True
-                currentletter = replayfile[currentcounter + index]
-                currentmove = currentmove + currentletter
-                currentcounter += 1
+        current_move = replay_game_data(Key)[2]
 
         if currentmove != "0-0B " and currentmove != "0-0-B" and currentmove != "0-0W " and currentmove != "0-0-W" and currentmove != "#W   " and currentmove != "#B   ":
             board[currentmove[3:5]] = board[currentmove[0:2]]

@@ -2,42 +2,49 @@
 {% extends "base.html" %}
 {% block pagecontent %}
 
-<!-- Welcome message -->
-<h1 style="font-family:verdana"><b>Welcome To Chess Offline</b></h1>
 
-<!-- Play Chess button, image/design created by Lucas -->
-<div class="Play" style="padding-left: 35%; padding-top: 8%">
-<a href="/play"><img src="/static/playchess.png" style="width:175px; height:125px" title="Play Chess" alt="PlayChess" id="Play"></a>
+<section class="home">
+</section>
+<div style="height: 1000px">
+    <h2 class="myH2">How To Play</h2>
+    <br>
+    <p class="myP">General:<br>
+        There are 2 sides, Black and White.  Both alternate taking turns by moving a piece, starting with white.  The objective of the game is to checkmate the enemy king, meaning that they are being attacked by one of your pieces and they cannot escape.</p>
+    <p class="myP">Pieces:
+        <br>
+        <br>
+        Pawn - ♟
+        Pawns can move forward, towards the enemy backline.  They typically move one space at a time, though they can move forward 2 spaces on their first turn. Pawns can capture other pieces diagonally - forward one and to either side.  If they reach the final rank on the other side of the board, they can promote to another piece; Rook, Bishop, Knight, or Queen.
+        <br></a></p>
+    <p class="myP">Rook - ♜
+        Rooks can move infinite spaces horizontally or vertically, as long as there are no other pieces in the way.
+        <br></p>
+    <p class="myP">    Knight - ♞
+        Knights move 2 spaces in 1 direction, and 1 space perpendicular to the first direction - making an L shape.  They can 'jump' over other pieces.
+        <br></p>
+    <p class="myP">Bishop - ♝
+        Bishops can move infinite spaces diagonally, as long as there are no other pieces in the way.</p>
+    <p class="myP">Queen - ♛
+        Queens can move infinite spaces diagonally, horizontally, or vertically, as long as there are no other pieces in the way.</p>
+    <p class="myP">    King - <a href="/easter">♚</a>
+        Kings can move a single space in any direction.</p>
+    <br>
+    <br>
+    <p class="myP">Special Moves:<br>
+    <p class="myP">
+        Castling -
+        Provided these conditions are met, the king will move 2 spaces towards either rook, and the rook will move past to the other side of the king.
+        <br>
+    <p class="myP">1. The king and rook being used have not been moved.</p>
+
+    <p class="myP">2. The king is not in check, moving through check, or moving into check</p>
+    <p class="myP">En Passant -
+        A pawn can capture an enemy pawn to the side, provided these conditions are met
+        1. The opposing pawn is directly to the left or right of the attacking pawn
+        2. The opposing pawn had moved forward 2 spaces the turn before
+        The attacking pawn will then capture, moving forward and toward the enemy pawn</p>
+
 </div>
-
-<!-- Sign Up button, image/design created by Lucas -->
-<div class="Sign" style="padding-left: 35%; padding-top:8%">
-<a href="/signup"><img src="/static/signup.png" style="width:170px; height:125px" title="Sign Up" alt="SignUp" id="Sign"></a>
-</div>
-
-
-<style>
-/* formats image buttons to be directly side by side */
-    .Play {
-float: left;
-width: 50%;
-padding: 5px;
-}
-
-.Play::after {
-content: "";
-clear: both;
-display: table;
-}
-
-/* welcome message formatting and placement */
-h1 {
-    text-align: center;
-    margin-top: 250px;
-    color: white;
-    font-size: 70px
-    }
-</style>
 
 
 {% endblock %}

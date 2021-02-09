@@ -98,13 +98,10 @@ def playai():
 def signconfirm():
     return render_template("signconfirm.html")
 
-@app.route('/howtoplay')
-def howtoplay():
-    return render_template("howtoplay.html")
-
 @app.route('/easter')
 def easter():
     return render_template("easter.html")
+
 
 @app.route('/leaderboards')
 def leaderboards():
@@ -115,16 +112,17 @@ def logresults():
     return render_template("logresults.html")
 
 
-@app.route('/lichesslb', methods=['GET', 'POST'])
-def lichesslb():
-    url = "https://lichess.org/player/top/100/classical/"
+@app.route('/lichesslb/<type>/', methods=['GET', 'POST'])
+def lichesslb(type):
+    print(type)
+    url = "https://lichess.org/player/top/100/" + type + "/"
     headers = {
         'Accept': 'application/vnd.lichess.v3+json'
     }
     response = requests.get(url, headers=headers)
     data = response.json().get('users')
-    print(data)
-    return render_template("webapi2.html", data=data)
+    type = type.capitalize()
+    return render_template("webapi2.html", data=data, type=type)
 
 
 
