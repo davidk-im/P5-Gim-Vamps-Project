@@ -1,35 +1,18 @@
 <!DOCTYPE html>
 {% extends "base.html" %}
-{% block pagecontent %}
 
+
+{% block title%}
 <!-- Confirmation message -->
-<h1 style="font-family:verdana"><b>You have successfully signed up!</b></h1>
-
-<!-- Play Chess button, image/design created by Lucas -->
-<div class="Play" style="padding-top: 8%; padding-right: 15%">
-<a href="/play"><img src="/static/playchess.png" style="width:300px; height:200px" title="Play Chess" alt="PlayChess" id="Play"></a>
+<div class="banner">
+    <div class="container">
+        <h1>You have successfully signed up!</h1>
+        <a href="#/play" class="button button-primary">Play Chess</a>
+    </div>
 </div>
 
+{% block pagecontent %}
 
 
-
-<style>
-.Play {
-width:100px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-
-h1 {
-    text-align: center;
-    margin-top: 250px;
-    color: white;
-    font-size: 70px
-    }
-</style>
-
-
+{% endblock %}
 {% endblock %}

@@ -94,7 +94,7 @@ def chessdicttable():
 def playai():
     return render_template("ai.html")
 
-@app.route('/signinsuccess')
+@app.route('/signupsuccess')
 def signconfirm():
     return render_template("signconfirm.html")
 
