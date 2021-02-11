@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 {% extends "base.html" %}
+{% block title %}
 
 
-{% block pagecontent %}
 <!-- this is the template that
 <!-this is the template that allows for the user to  -->
 <head>
@@ -23,7 +23,7 @@
         }
 
         .odd {
-        background-color: #d6d3ba;
+        background-color: #ffffff;
         border: none;
         height: 25px;
         width: 25px;
@@ -35,7 +35,7 @@
         color: black;
         }
         .odd_black {
-        background-color: #d6d3ba;
+        background-color: #ffffff;
         border: none;
         color: black;
         }
@@ -45,7 +45,7 @@
         color: black;
         }
         .odd_black {
-        background-color: #d6d3ba;
+        background-color: #ffffff;
         border: none;
         color: black;
         }
@@ -96,70 +96,80 @@
         }
     </style>
 </head>
-<body onLoad="scrollDiv_init()">
-<table class="center__table">
-    <tr>
-        <th colspan="2" ><a>Chess</a></th>
-    </tr>
-    <tr>
-        <td>
-            <form method="post" id="chessInput"> <!-- this is another post tag to allow for user interaction -->
-                <table>
-                    {%for row in allBoard%}
-                    <tr><!-- if row == board 5 -->
-                        {% if loop.index is divisibleby 2 %} <!-- if the row is even, 8,6,4,2 -->
-                        {% for header,unicode in row.items() %}
-                        {% if unicode == "emptySpace" %}<!-- if there is emtySpace as the value of the dictonary -->
-                        <!-- this is replacing with white space -->
-                        <td><input class = "{{ loop.cycle('even', 'odd') }}" type ="submit" value=&nbsp;&nbsp;&nbsp;&nbsp; inputName="firstButton" formaction={{header}} /></td>
-                        {%else%}
-                        <td><input class = "{{ loop.cycle('even', 'odd') }}" type ="submit" value={{unicode}} inputName="firstButton" formaction={{header}} /></td>
-                        {% endif %}
-                        {% endfor %}
-                        {% else %}
-                        {% for header,unicode  in row.items() %}   <!-- if the row is odd, 7,5,3,1 -->
-                        {% if unicode == "emptySpace" %}<!-- if there is emtySpace as the value of the dictonary -->
-                        <!-- this is replacing with white space -->
-                        <td><input  class = "{{ loop.cycle('odd', 'even') }}" type ="submit" value=&nbsp;&nbsp;&nbsp;&nbsp; inputName="firstButton" formaction={{header}} /></td>
-                        {%else%}
-                        <td><input  class = "{{ loop.cycle('odd', 'even') }}" type ="submit" value={{unicode}} inputName="firstButton" formaction={{header}} /></td>
-                        {% endif %}
-                        {% endfor %}
-                        {% endif %}
-                    </tr>
-                    {% endfor %}
+<div class="banner">
+    <div class="container">
+        <h1>Chess</h1>
+        <body onLoad="scrollDiv_init()">
+        <table class="center__table">
+            <tr>
 
-                </table>
-            </form>
-        </td>
-        <td>
-            <table>
-                <tr>
-                    <td>move #</td>
-                    <td class="turn__values">&nbsp;&nbsp;&nbsp;&nbsp;values</td>
-                </tr>
-            </table>
-            <div id="turn__table">
-                <table>
-                    {% for row in movelist %}
-                    <tr>
-                        <td class="turn__number">&nbsp;&nbsp;&nbsp;&nbsp;{{ loop.index }}</td>
-                        <td class= "{{ loop.cycle('white', 'black') }}" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{row}}</td>
-                    </tr>
-                    {% endfor %}
-                </table>
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td style="color:white" >Previously Selected Cell: {{ displayClicked }}</td><!-- this line is to communicate hints to the player -->
-        <!-- if message == "last two moves were invalid" css = red -->
-        <td style="color: white" >Message to the player: {{message}}</td> <!-- this line is to communicate weather if the move was valid to the player -->
-    </tr>
-    <tr>
+            </tr>
+            <tr>
+                <td>
+                    <form method="post" id="chessInput"> <!-- this is another post tag to allow for user interaction -->
+                        <table>
+                            {%for row in allBoard%}
+                            <tr><!-- if row == board 5 -->
+                                {% if loop.index is divisibleby 2 %} <!-- if the row is even, 8,6,4,2 -->
+                                {% for header,unicode in row.items() %}
+                                {% if unicode == "emptySpace" %}<!-- if there is emtySpace as the value of the dictonary -->
+                                <!-- this is replacing with white space -->
+                                <td><input class = "{{ loop.cycle('even', 'odd') }}" type ="submit" value=&nbsp;&nbsp;&nbsp;&nbsp; inputName="firstButton" formaction={{header}} /></td>
+                                {%else%}
+                                <td><input class = "{{ loop.cycle('even', 'odd') }}" type ="submit" value={{unicode}} inputName="firstButton" formaction={{header}} /></td>
+                                {% endif %}
+                                {% endfor %}
+                                {% else %}
+                                {% for header,unicode  in row.items() %}   <!-- if the row is odd, 7,5,3,1 -->
+                                {% if unicode == "emptySpace" %}<!-- if there is emtySpace as the value of the dictonary -->
+                                <!-- this is replacing with white space -->
+                                <td><input  class = "{{ loop.cycle('odd', 'even') }}" type ="submit" value=&nbsp;&nbsp;&nbsp;&nbsp; inputName="firstButton" formaction={{header}} /></td>
+                                {%else%}
+                                <td><input  class = "{{ loop.cycle('odd', 'even') }}" type ="submit" value={{unicode}} inputName="firstButton" formaction={{header}} /></td>
+                                {% endif %}
+                                {% endfor %}
+                                {% endif %}
+                            </tr>
+                            {% endfor %}
 
-    </tr>
-</table>
+                        </table>
+                    </form>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>move #</td>
+                            <td class="turn__values">&nbsp;&nbsp;&nbsp;&nbsp;values</td>
+                        </tr>
+                    </table>
+                    <div id="turn__table">
+                        <table>
+                            {% for row in movelist %}
+                            <tr>
+                                <td class="turn__number">&nbsp;&nbsp;&nbsp;&nbsp;{{ loop.index }}</td>
+                                <td class= "{{ loop.cycle('white', 'black') }}" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{row}}</td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="color:white" >Previously Selected Cell: {{ displayClicked }}</td><!-- this line is to communicate hints to the player -->
+                <!-- if message == "last two moves were invalid" css = red -->
+                <br>
+                <br>
+
+                <td style="color: white" >{{message}}</td> <!-- this line is to communicate weather if the move was valid to the player -->
+            </tr>
+            <tr>
+
+            </tr>
+        </table>
+        </body>
+    </div>
+</div>
+
 
 <h1>{{ displayRoutes }}</h1> <!-- this line is for debuggin -->
 
@@ -179,5 +189,6 @@ function instant_scroll(){
 }
 </script>
 </body>
-
+{% block pagecontent %}
+{% endblock %}
 {% endblock %}
