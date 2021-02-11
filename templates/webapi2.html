@@ -1,40 +1,49 @@
 <!DOCTYPE html>
 
 {% extends "base.html" %}
+{% block title %}
 
-{% block pagecontent %}
 {% set data = data %}
 {% set type = type %}
 {% set place = namespace(value=0) %}
+
+<div class="banner">
+    <div class="container">
+        <h1><strong>Top 100 {{type}} Chess Players <br> data from lichess.com</strong></h1>
+        <form action={{url_for('.lichesslb', type=type.lower())}}>
+            <button Class="button2">Refresh</button>
+        </form>
+        <div class="data" style="height: 35vh;">
+            <table style="margin: 2%">
+                <tr>
+                    <th style="color: red">Place</th>
+                    <th style="color: red">Username</th>
+                    <th style="color: red">Rating</th>
+                    <th style="color: red">Progress</th>
+                </tr>
+                {% for item in data %}
+                <tr>
+                    {% set place.value = place.value + 1 %}
+                    <td>{{place.value}}</td>
+                    {% set username = item["username"] %}
+                    <td>{{username}}</td>
+                    {% set rating = item["perfs"][type.lower()]["rating"] %}
+                    <td>{{rating}}</td>
+                    {% set progress = item["perfs"][type.lower()]["progress"] %}
+                    <td>{{progress}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+
 <div class="row justify-content-left" style="margin: 2%;">
-    <h1><strong>Top 100 {{type}} Chess Players <br/> data from lichess.com</strong></h1>
-    <form action={{url_for('.lichesslb', type=type.lower())}}>
-        <button Class="button2">Refresh</button>
-    </form>
+
+
 
 </div>
-<div class="data" style="height: 35vh;">
-    <table style="margin: 2%">
-        <tr>
-            <th style="color: red">Place</th>
-            <th style="color: red">Username</th>
-            <th style="color: red">Rating</th>
-            <th style="color: red">Progress</th>
-        </tr>
-        {% for item in data %}
-        <tr>
-            {% set place.value = place.value + 1 %}
-            <td>{{place.value}}</td>
-            {% set username = item["username"] %}
-            <td>{{username}}</td>
-            {% set rating = item["perfs"][type.lower()]["rating"] %}
-            <td>{{rating}}</td>
-            {% set progress = item["perfs"][type.lower()]["progress"] %}
-            <td>{{progress}}</td>
-        </tr>
-        {% endfor %}
-    </table>
-</div>
+
 
 <style>
 
@@ -119,5 +128,6 @@ font-size: 70px;
 padding: 20px;
 }
 </style>
-
+{% block pagecontent %}
+{% endblock %}
 {% endblock %}
