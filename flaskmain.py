@@ -102,6 +102,10 @@ def signconfirm():
 def easter():
     return render_template("easter.html")
 
+@app.route('/testchess')
+def testchess():
+    return render_template("testchess.html")
+
 
 @app.route('/leaderboards')
 def leaderboards():
