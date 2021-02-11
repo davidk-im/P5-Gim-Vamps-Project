@@ -1,38 +1,47 @@
 <!DOCTYPE html>
 {% extends "base.html" %}
-{% block pagecontent %}
-<h1 style="font-family:verdana"><b>Your Profile</b></h1>
-<br>
-<img src="/static/knight.png" style="background color: white">
 
-<html>
-<a class="button" href="/logout" role="button">Logout</a>
-<body>
-<section>
-    <div class="hero-body">
-        <div class="container">
+{% block title %}
 
-            <h2>
-                    Your Current Stats:
+<div class="banner">
+    <div class="container">
+        <h1>Profile</h1>
+        <br>
+        <img src="/static/knight.png" style="align: left">
+        <div>
+
+        <body>
+        <section>
+            <div class="hero-body">
+                <div class="container">
+
+                    <h2>
+                            Your Current Stats:
+                        <br> <br>
+                        <div>
+                    <table style="width:100%">
+                        <tr>
+                            <th>Tactics Score</th>
+                            <th>Streak Score</th>
+                            <th>Multiplayer Score</th>
+                        </tr>
+                        <tr>
+                            <td>1500</td>
+                            <td>0</td>
+                            <td>1500</td>
+                        </tr>
+                    </table>
+                        </div>
+                    </h2>
                 </div>
-            </h2>
-            <table style="width:100%">
-                <tr>
-                    <th>Tactics Score</th>
-                    <th>Streak Score</th>
-                    <th>Multiplayer Score</th>
-                </tr>
-                <tr>
-                    <td>1500</td>
-                    <td>0</td>
-                    <td>1500</td>
-                </tr>
-            </table>
+            </div>
+            <a href="/logout" class="button button-primary">Logout</a>
+        </section>
+        </body>
         </div>
     </div>
-</section>
+</div>
 
-</body>
 
 <style>
 
@@ -58,5 +67,6 @@
     }
 
 </style>
-
+{% block pagecontent %}
+{% endblock %}
 {% endblock %}

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {% extends "base.html" %}
-{% block pagecontent %}
+
+{% block title%}
 
 
 
@@ -17,7 +18,7 @@
         <th class="wins">Wins</th>
         </tr>
     </thead>
-    </header>
+
     <tbody>
     <tr>
         <td class="rank">1</td>
@@ -44,62 +45,62 @@
         <td class="wins">197</td>
     </tr>
     <tr>
-        <td class="rank">3</td>
+        <td class="rank">4</td>
         <td class="name">Player 2</td>
         <td class="cp">1932</td>
         <td class="wins">165</td>
     </tr>
     <tr>
-        <td class="rank">3</td>
+        <td class="rank">5</td>
         <td class="name">Player 3</td>
         <td class="cp">1756</td>
         <td class="wins">189</td>
     </tr>
     <tr>
-        <td class="rank">3</td>
+        <td class="rank">6</td>
         <td class="name">Player 4</td>
         <td class="cp">1745</td>
         <td class="wins">147</td>
     </tr>
     <tr>
-        <td class="rank">3</td>
+        <td class="rank">7</td>
         <td class="name">Player 5</td>
         <td class="cp">1389</td>
         <td class="wins">190</td>
     </tr>
     <tr>
-        <td class="rank">3</td>
+        <td class="rank">8</td>
         <td class="name">Player 6</td>
         <td class="cp">1203</td>
         <td class="wins">89</td>
     </tr>
     <tr>
-        <td class="rank">3</td>
+        <td class="rank">9</td>
         <td class="name">Player 7</td>
         <td class="cp">1165</td>
         <td class="wins">104</td>
     </tr>
     <tr>
-        <td class="rank">3</td>
+        <td class="rank">10</td>
         <td class="name">Player 8</td>
         <td class="cp">1128</td>
         <td class="wins">245</td>
     </tr>
     <tr>
-        <td class="rank">3</td>
+        <td class="rank">11</td>
         <td class="name">Player 9</td>
         <td class="cp">1038</td>
         <td class="wins">118</td>
     </tr>
     <tr>
-        <td class="rank">3</td>
+        <td class="rank">12</td>
         <td class="name">Player 10</td>
         <td class="cp">1023</td>
         <td class="wins">197</td>
     </tr>
     </tbody>
 </table>
-
+    </header>
 
 </div>
 
@@ -108,10 +109,11 @@
 
 
 .leaderboard {
-    max-width: 50rem;
+    max-width: 100rem;
     margin: 5rem auto;
     border-radius: 1.5rem;
     box-shadow: 2px 2px 16px 1px #aaa;
+    padding-top: 100px;
 }
 
 header {
@@ -171,6 +173,7 @@ font-size: 70px;
 padding: 20px;
 }
 </style>
+{% block pagecontent %}
 
-
+{% endblock %}
 {% endblock %}

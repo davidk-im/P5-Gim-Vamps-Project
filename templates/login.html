@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 {% extends "base.html" %}
-{% block pagecontent %}
+{% block title %}
 
 
-<!-- page title-->
-<h1 class ="text" style="font-family:verdana"><b>Login!</b></h1>
 
 <!-- Sign up form-->
-<form method="POST" ID="myForm" action=# class="form1">
-    <p>
-        <label for="Username" class="floatLabel">Username</label>
-        <input id="Username" name="Username" placeholder="Username" type="text" required="required">
-    </p>
-    <p>
-        <label for="password"  class="floatLabel">Password</label>
-        <input id="password" name="password" placeholder="Password" type="password" required="required">
-    </p>
+<div class="banner">
+    <div class="container">
+        <h1>Login!</h1>
+        <form method="POST" ID="myForm" action=# class="form1">
+            <p>
+                <label for="Username" class="floatLabel">Username</label>
+                <input id="Username" name="Username" placeholder="Username" type="text" required="required">
+            </p>
+            <p>
+                <label for="password"  class="floatLabel">Password</label>
+                <input id="password" name="password" placeholder="Password" type="password" required="required">
+            </p>
 
-        <input type="submit" class="button" value="Login" id="submit">
-    </p>
-</form>
+                <input type="submit" class="button button-primary" value="Login">
+            </p>
+        </form>
+    </div>
+</div>
 
 
 <style>
@@ -27,19 +30,11 @@
 h1 {
     text-align: center;
     margin-top: 50px;
-    color: black;
+    color: white;
     font-size: 70px
     }
 
-}
-.button {
-  transition-duration: 0.4s;
-}
 
-.button:hover {
-  background-color: #000000; /* black */
-  color: white;
-}
 body {
   font-family: verdana;
   color: white;
@@ -73,4 +68,6 @@ body {
   }
 
 </style>
+{% block pagecontent %}
+{% endblock %}
 {% endblock %}
