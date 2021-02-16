@@ -1,9 +1,12 @@
 from flask import Flask
+from flask_login import UserMixin, LoginManager
 from flask_sqlalchemy import SQLAlchemy
 
 
 app = Flask(__name__)
 db = SQLAlchemy(app)
+login_manager = LoginManager()
+login_manager.init_app(app)
 
 
 class User(db.Model):
@@ -43,7 +46,15 @@ def validate_user(username, password):
         if testuser.password == password:
             testuser.is_authenticated = True
             return testuser
+
     return None
+
+#@login_manager.user_loader
+#def model_user_loader(testuser):
+ #   """Check if user is logged-in on every page load."""
+  #  if testuser is not None:
+   #     return validate_user(testuser)
+    #return None
 
 
 

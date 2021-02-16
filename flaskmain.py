@@ -50,10 +50,13 @@ def login():
     return render_template("login.html")
 
 
+
+
 @app.route('/profile')
 @login_required
 def dashboard():
     return render_template('profile.html', name=current_user.username)
+
 
 @app.route('/logout')
 @login_required
