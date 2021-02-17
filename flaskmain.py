@@ -1,3 +1,4 @@
+#imports
 from flask import (Flask, g, redirect, render_template, request, session, url_for)
 from user import user_create
 from flask_sqlalchemy import SQLAlchemy
@@ -23,6 +24,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = dbURI
 db = SQLAlchemy(app)
 db.init_app(app)
 
+#login setup
 app.config['SECRET_KEY'] = '1234'
 bootstrap = Bootstrap(app)
 db = SQLAlchemy(app)
@@ -30,11 +32,12 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'login'
 
-
+#using login_manager.user_loader
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.filter_by(username=user_id).first()
 
+#route for login page
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method=='POST':
