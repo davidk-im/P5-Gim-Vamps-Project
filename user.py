@@ -49,12 +49,6 @@ def validate_user(username, password):
 
     return None
 
-#@login_manager.user_loader
-#def model_user_loader(testuser):
- #   """Check if user is logged-in on every page load."""
-  #  if testuser is not None:
-   #     return validate_user(testuser)
-    #return None
 
 
 

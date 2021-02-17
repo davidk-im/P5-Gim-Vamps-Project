@@ -8,24 +8,24 @@
     <meta charset="UTF-8">
     <!--even style is green, odd styles is white -->
     <style>
-        .title{
-            font-size:100px;
-            font-weight: bold;
-            color:white;
-            text-align: left;
+            h1 {
+        text-align: center;
+        margin-top: 50px;
+        color: white;
+        font-size: 70px
         }
         .even {
         background-color: #4CAF50;
         border: none;
-        height: 25px;
-        width: 25px;
+        height: 80px;
+        width: 80px;
         }
 
         .odd {
         background-color: #ffffff;
         border: none;
-        height: 25px;
-        width: 25px;
+        height: 80px;
+        width: 80px;
         }
 
         .even_black {
@@ -71,28 +71,8 @@
         .turn__values {
         text-align: center;
         }
-        .center__table{
-            position: relative;
-            margin: auto;
-            max-width: 500px;
-            top: 50px;
-        }
-        #header-fixed {
-            position: fixed;
-            top: 0px; display:none;
 
-        }
-        th{
-        /* the cell style of the header there is only one Heade int his case*/
-        padding-right:20px;
-        padding-left:20px;
-        padding-bottom:20px;
-        font-size: 100px;
-        font-family: Segoe UI;
-        }
-        .invalid_move_class {
-        color: red;
-        }
+
     </style>
 </head>
 <div class="banner">
@@ -112,7 +92,7 @@
 
                                 <!-- if the row is odd, 7,5,3,1 -->
 
-                                <td><input  class = "odd" type ="submit" value=♜ inputName="firstButton" formaction=a8 /></td>
+                                <td><input  class = "odd" type ="submit" value=♜ inputName="firstButton" formaction=board/a8 /></td>
 
                                 <!-- if the row is odd, 7,5,3,1 -->
 
