@@ -38,85 +38,94 @@ def load_user(user_id):
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method=='POST':
+        #username and password variables from form
         username = request.form['Username']
         password = request.form['password']
+        #just to check if username and password was collected
         print(username +" " + password)
+        #calls validate_user function from user.py
         user=validate_user(username, password)
         if user:
+            #if validate_user = true, log user in and return profile.html template
             login_user(user)
             return render_template("profile.html")
     else:
-          print('Bar')
+        print('Bar')
+        #if validate_user = false, return login page
     return render_template("login.html")
 
 
-
-
+#route for profile page
+#@login_required tag used to ensure that user cannot access profile if not signed in
 @app.route('/profile')
 @login_required
 def dashboard():
     return render_template('profile.html', name=current_user.username)
 
-
+#route for logging out
+#@login_required tag used to ensure that user must be logged in to log out
 @app.route('/logout')
 @login_required
 def logout():
     logout_user()
     return redirect(url_for('home.html'))
 
-
-
-
 #home page route
 @app.route('/')
 def home():
     return render_template("home.html")
 
+#play menu route
 @app.route('/play')
 def playmenu():
     return render_template("playmenu.html")
 
+#sign up page route
 @app.route('/signup' ,methods = ['POST', 'GET'])
 def signup():
     if request.method == 'POST':
+        #get username and password from form
         username = request.form['Username']
         password = request.form['password']
+        #calls user_create function from user.py
         user_create(username, password)
+        #returns signconfirm.html(signup confirmation page)
         return render_template("signconfirm.html")
     else:
         print('Bar')
+        #if for some reason form doesn't go through for some reason, returns signup page again
     return render_template("signup.html")
+
+#sign up success page returned after post process above
+@app.route('/signupsuccess')
+def signconfirm():
+    return render_template("signconfirm.html")
 
 @app.route('/chessdicttable')
 def chessdicttable():
     return render_template("chessdicttable.html")
 
+#main ai chess game route
 @app.route('/playai')
 def playai():
     return render_template("ai.html")
 
-@app.route('/signupsuccess')
-def signconfirm():
-    return render_template("signconfirm.html")
-
+#easter egg route(found on how to play section on home page)
 @app.route('/easter')
 def easter():
     return render_template("easter.html")
 
+#route to test chess game
 @app.route('/testchess')
 def testchess():
     return render_template("testchess.html")
 
-
+#chess offline website leaderboards
 @app.route('/leaderboards')
 def leaderboards():
     return render_template("leaderboards.html")
 
-@app.route('/logresults')
-def logresults():
-    return render_template("logresults.html")
-
-
+#web api route where data is grabbed from different types of chess
 @app.route('/lichesslb/<type>/', methods=['GET', 'POST'])
 def lichesslb(type):
     print(type)
@@ -131,9 +140,6 @@ def lichesslb(type):
 
 
 
-
-########################################################################################################################
-########################################################################################################################
 #Chess code
 @app.route("/createBoardTable", methods=['GET','POST']) #this is is where the website directs to when clicking the submit button
 def createBoardTable():
@@ -408,7 +414,6 @@ def h2():
 def h1():
     if request.method == 'POST':
         return render_template("chessDictTable.html", displayClicked="h1" , movelist=chessdata.movesdata("h1"),   message=chessdata.sample(len(movelist),chessdata.movelist[-2:]), allBoard=chessdata.split_board(board))
-
 
 
 if __name__ == "__main__":
