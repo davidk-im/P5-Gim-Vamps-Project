@@ -9,8 +9,8 @@ Group Members: Kyle Myint, Lucas Bruner, Ava Brooks, David Kim
 * Lucas: 10/10, 24/25
 
 ## 2/18 Tickets
-[1.](https://github.com/kylem314/P5-Gim-Vamps-Project/projects/1#card-55223795)
-* Crossover/CB Requirements
+[1.](https://github.com/kylem314/P5-Gim-Vamps-Project/projects/1#card-55223795) Fix suggestions from crossover and meet CB requirements
+* 
 
 2. 
 3.
