@@ -8,18 +8,20 @@
 <head>
     <title>Play Chess</title>
     <meta charset="UTF-8">
-    <!--even style is green, odd styles is white -->
     <style>
-        #title{
-            font-size:100px;
-            font-weight: bold;
-            color: white;
+            h1 {
+        text-align: center;
+        margin-top: 50px;
+        color: white;
+        font-size: 70px;
         }
         .even {
         background-color: #436FA5;
         border: none;
         height: 80px;
         width: 80px;
+        font-size:48px;
+        line-height: 1.1em;
         }
 
         .odd {
@@ -27,27 +29,37 @@
         border: none;
         height: 80px;
         width: 80px;
+        font-size:48px;
+        line-height: 1.1em;
         }
 
         .even_black {
         background-color: #436FA5;
         border: none;
         color: black;
+        font-size:48px;
+        line-height: 1.1em;
         }
         .odd_black {
         background-color: #ffffff;
         border: none;
         color: black;
+         font-size:48px;
+        line-height: 1.1em;
         }
         .even_white {
         background-color: #436FA5;
         border: none;
         color: black;
+         font-size:48px;
+        line-height: 1.1em;
         }
         .odd_black {
         background-color: #ffffff;
         border: none;
         color: black;
+         font-size:48px;
+        line-height: 1.1em;
         }
 
         .selected{
@@ -63,7 +75,6 @@
 
         #turn__table {
 
-            height: 180px;
             overflow: auto;
         }
         .turn__number {
@@ -72,28 +83,8 @@
         .turn__values {
         text-align: center;
         }
-        .center__table{
-            position: relative;
-            margin: auto;
 
-            top: 50px;
-        }
-        #header-fixed {
-            position: fixed;
-            top: 0px; display:none;
-            background-color:white;
-        }
-        th{
-        /* the cell style of the header there is only one Heade int his case*/
-        padding-right:20px;
-        padding-left:20px;
-        padding-bottom:20px;
-        font-size: 50px;
-        font-family: Segoe UI;
-        }
-        .invalid_move_class {
-        color: red;
-        }
+
     </style>
 </head>
 <div class="banner">
