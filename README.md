@@ -8,30 +8,19 @@ Group Members: Kyle Myint, Lucas Bruner, Ava Brooks, David Kim
 * Kyle: 10/10, 24/25
 * Lucas: 10/10, 24/25
 
-## 2/4 Scrum Team Tickets
+## 2/18 Tickets
+[1.](https://github.com/kylem314/P5-Gim-Vamps-Project/projects/1#card-55223795)
+* Crossover/CB Requirements
 
-[1.](https://github.com/kylem314/P5-Gim-Vamps-Project/projects/1#card-53702943) User login and authentication
-* Created a [validate user function](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/6aec7b701eca6513400c29c0b42a8cf53867f004/user.py#L39-L46) that checks database for correct username and password upon form submission of the login.
-* Created [login.html page](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/login.html) and [profil.html page](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/profile.html) to hold form for logging in and page only accessibly when logged in.
-* Created routes in [flaskmain.py](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/6aec7b701eca6513400c29c0b42a8cf53867f004/flaskmain.py#L27-L62) that calls the validate user function from user.py, and uses flask imports with @login_required and @logout_user.
-* How to run: 
-    1. Try accessing the profile page when not being signed in(the page should redirect you to the login screen rather than letting you see an account).
-    2. Login to your account, and gain access to your profile page. Your current stats will be shown. We are currently working on allowing users to change their profile photos. 
-    3. You are now signed in and successfully authenticated. 
-* [Commit history](https://github.com/kylem314/P5-Gim-Vamps-Project/commits/main) from this week found here. 
-
-2.
-
-3. 
-
-[4.](https://github.com/kylem314/P5-Gim-Vamps-Project/projects/1#card-53703307) Accessing multiple APIs from the same source
-* created an app route that takes in variables as a second argument
-* created a dropdown menu that sends different modes of chest as the second argument
-* formatted code so that everything would be accessed via variable input
+2. 
+3.
+4.
 
 
+## [AP CSP Requirements Reflection](https://docs.google.com/document/d/16iZbqiswnBJm2gSYM1-ZdOmmyctaelcSxfkG7fHDyDc/edit)
 ## Website URL: 
 http://chessthegame.cf
+
 ## Website Direct IP
 http://76.176.72.123:3000/
 
