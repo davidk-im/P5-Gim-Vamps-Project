@@ -137,8 +137,8 @@
                         <table>
                             {% for row in movelist %}
                             <tr>
-                                <td class="turn__number">&nbsp;&nbsp;&nbsp;&nbsp;{{ loop.index }}</td>
-                                <td class= "{{ loop.cycle('white', 'black') }}" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{row}}</td>
+                                <td style="font-size:30px" class="turn__number">&nbsp;&nbsp;&nbsp;&nbsp;{{ loop.index }}</td>
+                                <td style="font-size:30px" class= "{{ loop.cycle('white', 'black') }}" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{row}}</td>
                             </tr>
                             {% endfor %}
                         </table>
@@ -146,7 +146,7 @@
                 </td>
             </tr>
             <tr>
-                <td style="color:white" >Previously Selected Cell: {{ displayClicked }}</td><!-- this line is to communicate hints to the player -->
+                <td style="font-size:30px" >Previously Selected Cell: {{ displayClicked }}</td><!-- this line is to communicate hints to the player -->
                 <!-- if message == "last two moves were invalid" css = red -->
                 <br>
                 <br>
