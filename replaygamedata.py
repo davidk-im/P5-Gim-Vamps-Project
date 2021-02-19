@@ -32,6 +32,6 @@ def validate_replay_game(gameid):
     return None
 
 def replay_game_data(gameid):
-    testid=replay.query.filter_by(gameid=gamid).first()
+    testid=replay.query.filter_by(gameid=gameid).first()
     if testid:
         return movenumber, blackmove, whitemove
