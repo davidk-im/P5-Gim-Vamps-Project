@@ -10,14 +10,21 @@ Group Members: Kyle Myint, Lucas Bruner, Ava Brooks, David Kim
 
 ## 2/18 Tickets
 [1.](https://github.com/kylem314/P5-Gim-Vamps-Project/projects/1#card-55223795) Fix suggestions from crossover and meet CB requirements
-* 
+* Used feedback from crossover to improve user interface when playing chess
+    * Smaller more frequent commits rather than large code dumps
+    * Larger chess pieces 
+    * Different board size/color
+        * Code for both can be found on [ai.html](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/ai.html) and [chessdicTtable.html](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/chessDicTtable.html)
+    * Made sign up forms more protected with min lengths and required using HTML 5. [Code here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/signup.html)
+* Used [AP CSP Requirements Reflection](https://docs.google.com/document/d/16iZbqiswnBJm2gSYM1-ZdOmmyctaelcSxfkG7fHDyDc/edit) to start to make comments, explaining all code
+    * Comments on all python files, still working on html files, however most are still being worked on 
+* [Commit history](https://github.com/kylem314/P5-Gim-Vamps-Project/commits/main) shows work throughout the week
 
 2. 
 3.
 4.
 
 
-## [AP CSP Requirements Reflection](https://docs.google.com/document/d/16iZbqiswnBJm2gSYM1-ZdOmmyctaelcSxfkG7fHDyDc/edit)
 ## Website URL: 
 http://chessthegame.cf
 
