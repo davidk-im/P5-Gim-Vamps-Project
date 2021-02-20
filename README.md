@@ -1,14 +1,6 @@
 # Project Plan
 Group Members: Kyle Myint, Lucas Bruner, Ava Brooks, David Kim
 
-## 2/19 Tickets/Code Review
-
-[1.](https://github.com/kylem314/P5-Gim-Vamps-Project/projects/1#card-55227600) Create function to use HTML inputs and check validity using Python
-* New functions
-   * Modified old user input function to output usable responses and accept incoming data from POST. [See code](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/htmlToPythonAdditions.py)
-   * Created new function to take in data and formulate an output to send back to the website. [See code](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/htmlToPython.py)
-      * Complete for Player vs Player, but AI hasn't been integrated thus far
-
 ## README Guidance Highlights
 [1.](https://github.com/kylem314/P5-Gim-Vamps-Project/projects/1#card-55223795) Fix suggestions from crossover and meet CB requirements
 * Used feedback from crossover to improve user interface when playing chess
@@ -21,9 +13,14 @@ Group Members: Kyle Myint, Lucas Bruner, Ava Brooks, David Kim
     * Comments on all python files, still working on html files, however most are still being worked on 
 * [Commit history](https://github.com/kylem314/P5-Gim-Vamps-Project/commits/main) shows work throughout the week
 
-2. 
-3.
-4.
+
+## 2/19 Tickets/Code Review
+
+[1.](https://github.com/kylem314/P5-Gim-Vamps-Project/projects/1#card-55227600) Create function to use HTML inputs and check validity using Python
+* New functions
+   * Modified old user input function to output usable responses and accept incoming data from POST. [See code](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/htmlToPythonAdditions.py)
+   * Created new function to take in data and formulate an output to send back to the website. [See code](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/htmlToPython.py)
+      * Complete for Player vs Player, but AI hasn't been integrated thus far
 
 ## 2/5 Scrum Master Presentation Evaluation
 * Team score: 9/10
