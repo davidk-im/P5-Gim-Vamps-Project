@@ -11,15 +11,15 @@
         <form method="POST" ID="myForm" action=# class="form1">
             <p>
                 <label for="Username" class="floatLabel">Username</label>
-                <input id="Username" name="Username" placeholder="Username" type="text" required="required">
+                <input id="Username" name="Username" placeholder="Username" type="text" required="required" minlength="4">
             </p>
             <p>
                 <label for="password"  class="floatLabel">Password</label>
-                <input id="password" name="password" placeholder="Password" type="password" required="required">
+                <input id="password" name="password" placeholder="Password" type="password" required="required" minlength="8">
             </p>
             <p>
                 <label for="confirm_password"  class="floatLabel">Confirm Password</label>
-                <input id="confirm_password" name="confirm_password" placeholder="Confirm Password" type="password" required="required">
+                <input id="confirm_password" name="confirm_password" placeholder="Confirm Password" type="password" required="required" minlength="8">
             </p>
             <br><br>
             <p> Already have an account? <a href="/login" style="color: white">Log in</a></p>
@@ -31,6 +31,7 @@
     </div>
 </div>
     <script type="text/javascript">
+
 var password = document.getElementById("password")
   , confirm_password = document.getElementById("confirm_password");
 
