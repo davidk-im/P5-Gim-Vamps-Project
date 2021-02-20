@@ -14,7 +14,7 @@ Group Members: Kyle Myint, Lucas Bruner, Ava Brooks, David Kim
 * [Commit history](https://github.com/kylem314/P5-Gim-Vamps-Project/commits/main) shows work throughout the week
 
 
-## 2/19 Tickets/Code Review
+### 2/19 Tickets/Code Review
 
 [1.](https://github.com/kylem314/P5-Gim-Vamps-Project/projects/1#card-55227600) Create function to use HTML inputs and check validity using Python
 * New functions
