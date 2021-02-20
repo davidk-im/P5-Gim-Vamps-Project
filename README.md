@@ -27,9 +27,9 @@ http://76.176.72.123:3000/
    * Created new function to take in data and formulate an output to send back to the website. [See code](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/htmlToPython.py)
       * Complete for Player vs Player, but AI hasn't been integrated thus far
 
-[2.] (https://github.com/kylem314/P5-Gim-Vamps-Project/projects/1#card-55337542) Rerouted chess routes so that it was cleaner and that variables would be easier to manage.
+[2.](https://github.com/kylem314/P5-Gim-Vamps-Project/projects/1#card-55337542) Rerouted chess routes so that it was cleaner and that variables would be easier to manage.
 * Substituted a variable into the url so that a route to any space would register, without need for 64 routes.
-   * [Code] (https://github.com/kylem314/P5-Gim-Vamps-Project/blob/9ea69f696c9162fd0dde3b4d038bee944feae879/flaskmain.py#L157-L160)
+   * [Code](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/9ea69f696c9162fd0dde3b4d038bee944feae879/flaskmain.py#L157-L160)
 * This should make it easier to take the variable and use it
 * Edited minor things in actual html file for chess board
 
