@@ -1,12 +1,9 @@
 # Project Plan
 Group Members: Kyle Myint, Lucas Bruner, Ava Brooks, David Kim
-## 2/5 Scrum Master Presentation Evaluation
-* Team score: 9/10
-* Presentation score: 5/5
-* Ava: 10/10, 24/25
-* David: 9/10, 23/25
-* Kyle: 10/10, 24/25
-* Lucas: 10/10, 24/25
+
+## 2/19 Tickets/Code Review
+
+
 
 ## README Guidance Highlights
 [1.](https://github.com/kylem314/P5-Gim-Vamps-Project/projects/1#card-55223795) Fix suggestions from crossover and meet CB requirements
@@ -24,6 +21,13 @@ Group Members: Kyle Myint, Lucas Bruner, Ava Brooks, David Kim
 3.
 4.
 
+## 2/5 Scrum Master Presentation Evaluation
+* Team score: 9/10
+* Presentation score: 5/5
+* Ava: 10/10, 24/25
+* David: 9/10, 23/25
+* Kyle: 10/10, 24/25
+* Lucas: 10/10, 24/25
 
 ## Website URL: 
 http://chessthegame.cf
