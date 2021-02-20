@@ -19,7 +19,6 @@ http://76.176.72.123:3000/
     * Comments on all python files, still working on html files, however most are still being worked on 
 * [Commit history](https://github.com/kylem314/P5-Gim-Vamps-Project/commits/main) shows work throughout the week
 
-
 ### 2/18 Tickets/Code Review
 
 [1.](https://github.com/kylem314/P5-Gim-Vamps-Project/projects/1#card-55227600) Create function to use HTML inputs and check validity using Python
@@ -27,6 +26,7 @@ http://76.176.72.123:3000/
    * Modified old user input function to output usable responses and accept incoming data from POST. [See code](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/htmlToPythonAdditions.py)
    * Created new function to take in data and formulate an output to send back to the website. [See code](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/htmlToPython.py)
       * Complete for Player vs Player, but AI hasn't been integrated thus far
+
 [2.] (https://github.com/kylem314/P5-Gim-Vamps-Project/projects/1#card-55337542) Rerouted chess routes so that it was cleaner and that variables would be easier to manage.
 * Substituted a variable into the url so that a route to any space would register, without need for 64 routes.
    * [Code] (https://github.com/kylem314/P5-Gim-Vamps-Project/blob/9ea69f696c9162fd0dde3b4d038bee944feae879/flaskmain.py#L157-L160)
