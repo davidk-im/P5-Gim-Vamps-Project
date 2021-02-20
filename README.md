@@ -22,6 +22,12 @@ Group Members: Kyle Myint, Lucas Bruner, Ava Brooks, David Kim
    * Created new function to take in data and formulate an output to send back to the website. [See code](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/htmlToPython.py)
       * Complete for Player vs Player, but AI hasn't been integrated thus far
 
+## Website URL: 
+http://chessthegame.cf
+
+## Website Direct IP
+http://76.176.72.123:3000/
+
 ## 2/5 Scrum Master Presentation Evaluation
 * Team score: 9/10
 * Presentation score: 5/5
@@ -30,11 +36,6 @@ Group Members: Kyle Myint, Lucas Bruner, Ava Brooks, David Kim
 * Kyle: 10/10, 24/25
 * Lucas: 10/10, 24/25
 
-## Website URL: 
-http://chessthegame.cf
-
-## Website Direct IP
-http://76.176.72.123:3000/
 
 ## 1/15 Scrum Team Tickets
 [1.](https://github.com/kylem314/P5-Gim-Vamps-Project/projects/1#card-52921614) Create database to store Username and Password information from completing the signup form on signup.py
