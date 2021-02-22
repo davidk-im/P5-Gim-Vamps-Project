@@ -4,7 +4,7 @@ from user import user_create
 from flask_sqlalchemy import SQLAlchemy
 import requests
 import chessdata
-from chessdata import board, movelist, og_board, ogstoreboard
+from chessdata import board, movelist, og_board, ogstoreboard, movesdata, actualMove, previousMove
 from markupsafe import escape
 from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
@@ -163,6 +163,11 @@ def createBoardTable():
 def boardprint(space):
     if request.method == 'POST':
         return render_template("chessDictTable.html", displayClicked=space, movelist=chessdata.movesdata(space),   message=chessdata.sample(len(movelist),chessdata.movelist[-2:]), allBoard=chessdata.split_board(board))
+    N = 2
+    res = movelist[-N:]
+    usermove = ' '.join(res)#this is the string that is passed into movePiece
+    print(usermove)
+
 
 
 if __name__ == "__main__":
