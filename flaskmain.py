@@ -123,6 +123,11 @@ def easter():
 def testchess():
     return render_template("testchess.html")
 
+#route to test chess game
+@app.route('/replaygame')
+def replaygame():
+    return render_template("replaygame.html")
+
 #chess offline website leaderboards
 @app.route('/leaderboards')
 def leaderboards():
