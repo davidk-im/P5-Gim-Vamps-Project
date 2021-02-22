@@ -165,7 +165,7 @@ def boardprint(space):
         return render_template("chessDictTable.html", displayClicked=space, movelist=chessdata.movesdata(space),   message=chessdata.sample(len(movelist),chessdata.movelist[-2:]), allBoard=chessdata.split_board(board))
     N = 2
     res = movelist[-N:]
-    usermove = ' '.join(res)#this is the string that is passed into movePiece
+    usermove = ' '.join(res)#string into MovePiece
     print(usermove)
 
 
