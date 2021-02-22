@@ -19,7 +19,6 @@ def HTPlen5(usermove, board, storeboard, whitemove, whitecolor, blackcolor):
                 board["a1"] = "  "
                 whitemove = "B"
                 storeboard = storeboardset(board, storeboard, whitemove, 1)
-                game_create(gameID, movenumber, whitemove, usermove)
             except:
                 print("Please enter a valid move.")
         elif str(whitemove + "R1n") in storeboard["d8"] and board["e8"] == "BK1n":
@@ -39,7 +38,6 @@ def HTPlen5(usermove, board, storeboard, whitemove, whitecolor, blackcolor):
                 board["a8"] = "  "
                 whitemove = "W"
                 storeboard = storeboardset(board, storeboard, whitemove, 1)
-                game_create(gameID, movenumber, whitemove, usermove)
             except:
                 return "invalid"
         else:
@@ -51,7 +49,6 @@ def HTPlen5(usermove, board, storeboard, whitemove, whitecolor, blackcolor):
             if piece in storeboard[usermove[3:5]]:
                 board[startpos] = '  '
                 board[usermove[3:5]] = piece
-                game_create(gameID, movenumber, whitemove, usermove)
                 if whitemove == "W":
                     blackpersp(whitecolor, blackcolor, board)
                     whitemove = "B"
