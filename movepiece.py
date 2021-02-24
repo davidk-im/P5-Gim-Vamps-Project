@@ -57,7 +57,7 @@ from piecedefinitions import *
 from zwhitepersp import *
 from zblackpersp import *
 from checkfunctions import *
-from static.protectionfunctions import *
+from protectionfunctions import *
 #from main import mainmenu, key
 
 

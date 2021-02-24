@@ -12,6 +12,7 @@ from wtforms import StringField, PasswordField, BooleanField
 from wtforms.validators import InputRequired, Email, Length
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 from user import validate_user, User
+from htmlToPythonAdditions import HTPlen5
 
 
 app = Flask(__name__)
@@ -113,6 +114,16 @@ def chessdicttable():
 def playai():
     return render_template("ai.html")
 
+
+#multiplayer chess game route
+@app.route('/MultiplayerMenu')
+def MultiplayerMenu():
+    return render_template("MultiplayerMenu.html")
+
+@app.route('/multiplayermain')
+def multiplayermain():
+    return render_template("multiplayermain.html")
+
 #easter egg route(found on how to play section on home page)
 @app.route('/easter')
 def easter():
@@ -157,16 +168,14 @@ def createBoardTable():
         board = og_board #resets the board
         storeboard = ogstoreboard #resets the storboard
         return render_template("chessDictTable.html", displayClicked="  ", allBoard=chessdata.split_board(board))
-"""    return redirect("/project/chessDictTable/") #redirects to format into the chess board"""
+
 
 @app.route("/board/<space>", methods=['GET','POST'])
 def boardprint(space):
     if request.method == 'POST':
-        return render_template("chessDictTable.html", displayClicked=space, movelist=chessdata.movesdata(space),   message=chessdata.sample(len(movelist),chessdata.movelist[-2:]), allBoard=chessdata.split_board(board))
-    N = 2
-    res = movelist[-N:]
-    usermove = ' '.join(res)#string into MovePiece
-    print(usermove)
+        return render_template("chessDictTable.html", displayClicked=space, movelist=chessdata.movesdata(space),  message=chessdata.sample(len(movelist),chessdata.movelist[-2:]), allBoard=chessdata.split_board(board))
+
+
 
 
 
