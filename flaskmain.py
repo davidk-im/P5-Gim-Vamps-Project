@@ -13,6 +13,7 @@ from wtforms.validators import InputRequired, Email, Length
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 from user import validate_user, User
 from htmlToPythonAdditions import HTPlen5
+import getpass
 
 
 app = Flask(__name__)
@@ -49,9 +50,12 @@ def login():
         print(username +" " + password)
         #calls validate_user function from user.py
         user=validate_user(username, password)
+
         if user:
             #if validate_user = true, log user in and return profile.html template
             login_user(user)
+            db.session.commit()
+            session['user_name'] = username
             return render_template("profile.html")
     else:
         print('Bar')
@@ -63,8 +67,8 @@ def login():
 #@login_required tag used to ensure that user cannot access profile if not signed in
 @app.route('/profile')
 @login_required
-def dashboard():
-    return render_template('profile.html', name=current_user.username)
+def profile():
+        return render_template('profile.html', name=current_user.username)
 
 #route for logging out
 #@login_required tag used to ensure that user must be logged in to log out
@@ -95,6 +99,8 @@ def signup():
         user_create(username, password)
         #returns signconfirm.html(signup confirmation page)
         return render_template("signconfirm.html")
+        db.session.commit()
+
     else:
         print('Bar')
         #if for some reason form doesn't go through for some reason, returns signup page again

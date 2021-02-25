@@ -46,6 +46,8 @@ def validate_user(username, password):
         if testuser.password == password:
             testuser.is_authenticated = True
             return testuser
+            db.session.commit()
+            session['user_name'] = user.firstname + ' ' + user.lastname
 
     return None
 
