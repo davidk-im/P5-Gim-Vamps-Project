@@ -9,11 +9,11 @@ userDatabase = open("accounts.txt").read()
 Goal:
 Create an ELO system to rate chess players on our website -
 
-Tactics: Gain/Lose elo based on completion of the puzzle, with bonuses for solving multiple in a row, and penalties for ansewring multiple in a row incorrectly.  
+Tactics: Gain/Lose elo based on completion of the puzzle, with bonuses for solving multiple in a row, and penalties for ansewring multiple in a row incorrectly.
 Create a formula to create a bell curve distribution of scores, mainly between 500 and 2500, with 1500 as the mode of the users, assuming that players correctly solve puzzles 50% of the time.
 
 Multiplayer games: Gain/Lose elo based on win or draw, based on the elos of the players.  For example, if a higher rated player won against a lower rated player, they would earn less compared to if a lower rated player won against a higher rated player.  In a draw, the lower rated player would gain elo while the higher rated player would lose elo.
-Create a formula with the same goal for distribution as with tactics, though as it's based on the ratings of the individual players, would require more variables. 
+Create a formula with the same goal for distribution as with tactics, though as it's based on the ratings of the individual players, would require more variables.
 """
 
 """
@@ -26,7 +26,7 @@ if PlayerElo > 500 and < 1000
 PlayerElo = PlayerElo + 37000000/(PlayerElo** + 170000) + 10(StreakScore)(500/PlayerElo + 1000)
 PlayerElo cannot go under 500
 
-Equation if player loses: 
+Equation if player loses:
 Same as if player wins, but if the elo gain is x, then
 PlayerElo = (1400000/(x+15)**3)
 
@@ -154,11 +154,11 @@ def Multi(userDatabase):
     player2Elo = int(user2data[2][1:4])
   elif user2data[2][0] != 0:
     player2Elo = int(user2data[2])
-      
-  if result == "1":    
+
+  if result == "1":
     playerDiff = player2Elo - playerElo + 600
-    divisor1 = 1 + 10**(playerDiff/1000)  
-    var1 = 1 / divisor1    
+    divisor1 = 1 + 10**(playerDiff/1000)
+    var1 = 1 / divisor1
     var2 = 1 - var1
     playerElo = playerElo + 50 * var2
     playerElo = int(round(playerElo))
@@ -169,8 +169,8 @@ def Multi(userDatabase):
 
   elif result == "2":
     playerDiff = playerElo - player2Elo + 600
-    divisor1 = 1 + 10**(playerDiff/1000)  
-    var1 = 1 / divisor1    
+    divisor1 = 1 + 10**(playerDiff/1000)
+    var1 = 1 / divisor1
     var2 = 1 - var1
     playerElo = playerElo - 50 * var2
     playerElo = int(round(playerElo))
