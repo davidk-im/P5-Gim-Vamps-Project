@@ -11,7 +11,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField
 from wtforms.validators import InputRequired, Email, Length
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
-from user import validate_user, User
+from user import validate_user, User, user_create, user_update_stats
 from htmlToPythonAdditions import HTPlen5
 import getpass
 
@@ -39,6 +39,8 @@ login_manager.login_view = 'login'
 def load_user(user_id):
     return User.query.filter_by(username=user_id).first()
 
+
+
 #route for login page
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -46,6 +48,8 @@ def login():
         #username and password variables from form
         username = request.form['Username']
         password = request.form['password']
+
+
         #just to check if username and password was collected
         print(username +" " + password)
         #calls validate_user function from user.py
@@ -56,6 +60,9 @@ def login():
             login_user(user)
             db.session.commit()
             session['user_name'] = username
+            #session['tactics_elo'] = tactics_elo
+            #session['tactics_streak'] = tactics_streak
+            #session['multiplayer_elo'] = multiplayer_elo
             return render_template("profile.html")
     else:
         print('Bar')
