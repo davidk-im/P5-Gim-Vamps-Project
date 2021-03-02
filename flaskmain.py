@@ -14,6 +14,8 @@ from flask_login import LoginManager, UserMixin, login_user, login_required, log
 from user import validate_user, User, user_create, user_update_stats
 from htmlToPythonAdditions import HTPlen5
 import getpass
+import mysql.connector
+import webbrowser
 
 
 app = Flask(__name__)
@@ -25,6 +27,14 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = dbURI
 db = SQLAlchemy(app)
 db.init_app(app)
+
+#conn = mysql.connector.connect(user='root', password='',
+                               #host='localhost',database='company')
+
+#if conn:
+    #print ("Connected Successfully")
+#else:
+    #print ("Connection Not Established")
 
 #login setup
 app.config['SECRET_KEY'] = '1234'
@@ -48,21 +58,16 @@ def login():
         #username and password variables from form
         username = request.form['Username']
         password = request.form['password']
-
-
         #just to check if username and password was collected
         print(username +" " + password)
         #calls validate_user function from user.py
-        user=validate_user(username, password)
+        user = validate_user(username, password)
 
         if user:
             #if validate_user = true, log user in and return profile.html template
             login_user(user)
             db.session.commit()
             session['user_name'] = username
-            #session['tactics_elo'] = tactics_elo
-            #session['tactics_streak'] = tactics_streak
-            #session['multiplayer_elo'] = multiplayer_elo
             return render_template("profile.html")
     else:
         print('Bar')

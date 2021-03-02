@@ -34,9 +34,9 @@ def user_create(username, password):
 
 def user_update_stats(username, tactics_elo, tactics_streak, multiplayer_elo):
     user = User.query.filter_by(username=username).first()
-    user.tactics_elo=tactics_elo
-    user.tactics_streak=tactics_streak
-    user.multiplayer_elo=multiplayer_elo
+    user.tactics_elo = tactics_elo
+    user.tactics_streak = tactics_streak
+    user.multiplayer_elo = multiplayer_elo
     db.session.commit()
 
 def validate_user(username, password):
