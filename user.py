@@ -8,7 +8,7 @@ db = SQLAlchemy(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 
-
+#database set up
 class User(db.Model):
     username = db.Column(db.String(255), primary_key=True, nullable=False)
     password = db.Column(db.String(255), nullable=False)
@@ -21,10 +21,12 @@ class User(db.Model):
     def get_id(self):
         return self.username
 
+#default scores for ELO system
 TACTICS_ELO_DEFAULT = 1500
 TACTICS_STREAK_DEFAULT = 0
 MULTIPLAYER_ELO_DEFAULT = 1500
 
+#function creates user
 def user_create(username, password):
     print('User name is ' + username + ' and password is ' + password)
 
@@ -32,6 +34,7 @@ def user_create(username, password):
     db.session.add(new_user)
     db.session.commit()
 
+#call function after game is done to update user stats regarding ELO system
 def user_update_stats(username, tactics_elo, tactics_streak, multiplayer_elo):
     user = User.query.filter_by(username=username).first()
     user.tactics_elo = tactics_elo
@@ -39,6 +42,7 @@ def user_update_stats(username, tactics_elo, tactics_streak, multiplayer_elo):
     user.multiplayer_elo = multiplayer_elo
     db.session.commit()
 
+#function for logging in
 def validate_user(username, password):
     testuser=User.query.filter_by(username=username).first()
     if testuser:
