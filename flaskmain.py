@@ -133,7 +133,7 @@ def chessdicttable():
 #main ai chess game route
 @app.route('/playai')
 def playai():
-    return render_template("ai.html")
+    return render_template("chess.html")
 
 
 #multiplayer chess game route
