@@ -66,6 +66,7 @@ def login():
             #if validate_user = true, log user in and return profile.html template
             login_user(user)
             db.session.commit()
+            #variables that are called in profile.html
             session['user_name'] = user.username
             session['tactics_elo'] = user.tactics_elo
             session['tactics_streak'] = user.tactics_streak
@@ -150,11 +151,6 @@ def easter():
     return render_template("easter.html")
 
 #route to test chess game
-@app.route('/testchess')
-def testchess():
-    return render_template("testchess.html")
-
-#route to test chess game
 @app.route('/replaygame')
 def replaygame():
     return render_template("replaygame.html")
@@ -194,8 +190,6 @@ def createBoardTable():
 def boardprint(space):
     if request.method == 'POST':
         return render_template("chessDictTable.html", displayClicked=space, movelist=chessdata.movesdata(space),  message=chessdata.sample(len(movelist),chessdata.movelist[-2:]), allBoard=chessdata.split_board(board))
-
-
 
 
 
