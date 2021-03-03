@@ -50,7 +50,6 @@ def load_user(user_id):
     return User.query.filter_by(username=user_id).first()
 
 
-
 #route for login page
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -67,7 +66,10 @@ def login():
             #if validate_user = true, log user in and return profile.html template
             login_user(user)
             db.session.commit()
-            session['user_name'] = username
+            session['user_name'] = user.username
+            session['tactics_elo'] = user.tactics_elo
+            session['tactics_streak'] = user.tactics_streak
+            session['multiplayer_elo'] = user.multiplayer_elo
             return render_template("profile.html")
     else:
         print('Bar')
