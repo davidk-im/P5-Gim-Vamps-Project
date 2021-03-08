@@ -16,6 +16,7 @@ from htmlToPythonAdditions import HTPlen5
 import getpass
 import mysql.connector
 import webbrowser
+import random
 
 
 app = Flask(__name__)
@@ -131,9 +132,9 @@ def chessdicttable():
     return render_template("chessdicttable.html")
 
 #main ai chess game route
-@app.route('/playai')
+@app.route('/multiplayermain')
 def playai():
-    return render_template("chess.html")
+    return render_template("multiplayermain.html")
 
 
 #multiplayer chess game route
@@ -150,10 +151,15 @@ def multiplayermain():
 def easter():
     return render_template("easter.html")
 
-#route to test chess game
+#route to replay a chess game
 @app.route('/replaygame')
 def replaygame():
     return render_template("replaygame.html")
+
+#route to join a chess game
+@app.route('/joingame')
+def joingame():
+    return render_template("joingame.html")
 
 #chess offline website leaderboards
 @app.route('/leaderboards')
