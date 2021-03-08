@@ -240,7 +240,6 @@ def check(board, storeboard, kingpos, whitemove):
                 kingpos2, storeboard2 = storeboardset(board1, whitemove, 2)
                 if len(storeboard2[kingpos2]) == 0:
                     storeboard1[move].append(piece)
-    print(storeboard1)
     return storeboard1
 
 def aidictionarything(storeboard):
