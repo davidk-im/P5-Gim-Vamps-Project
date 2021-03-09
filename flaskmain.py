@@ -17,7 +17,9 @@ import getpass
 import mysql.connector
 import webbrowser
 import random
-from replaygamehtml import validate_replay_game
+import time
+from replaygamehtml import get_next_game_id
+
 
 
 app = Flask(__name__)
@@ -132,19 +134,9 @@ def signconfirm():
 def chessdicttable():
     return render_template("chessdicttable.html")
 
-#main ai chess game route
-@app.route('/multiplayermain')
-def playai():
-    return render_template("multiplayermain.html")
 
-#multiplayer chess game route
-@app.route('/MultiplayerMenu')
-def MultiplayerMenu():
-    return render_template("MultiplayerMenu.html")
 
-@app.route('/multiplayermain')
-def multiplayermain():
-    return render_template("multiplayermain.html")
+
 
 #easter egg route(found on how to play section on home page)
 @app.route('/easter')
@@ -208,7 +200,19 @@ def boardprint(space):
     if request.method == 'POST':
         return render_template("chessDictTable.html", displayClicked=space, movelist=chessdata.movesdata(space),  message=chessdata.sample(len(movelist),chessdata.movelist[-2:]), allBoard=chessdata.split_board(board))
 
+@app.route('/multiplayermain')
+def multiplayermain():
+    return render_template("multiplayermain.html")
 
+
+#multiplayer chess game route
+@app.route('/MultiplayerMenu' , methods=['GET' , 'POST'])
+def MultiplayerMenu():
+    if request.method == 'POST':
+        session['game_id'] = get_next_game_id()
+        return render_template("multiplayermain.html")
+
+    return render_template("MultiplayerMenu.html")
 
 if __name__ == "__main__":
     app.run(port='3000', host='127.0.0.1')

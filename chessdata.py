@@ -136,25 +136,22 @@ def len5(usermove, board, storeboard, whitemove, whitecolor, blackcolor):
         piece = board[usermove[0:2]]#the value in the board dictonary will represent the piece
         startpos = usermove[0:2]#the
         print(usermove)
-        print(usermove[3:5])
+        #print(usermove[3:5])
         if piece in storeboard[usermove[3:5]]:
             board[startpos] = '  '
             board[usermove[3:5]] = piece
-            print(board)
-            print("finish moving piece")#the board has updated by then
+            #print(board)
             if whitemove == "W":
                 #blackpersp(whitecolor, blackcolor, board) #print the board in black perspective
-                print("white finished moving")
                 whitemove = "B"
             else:
                 whitemove = "W"
-                print("black finished moving")
                 #whitepersp(whitecolor, blackcolor, board) #print the board in black perspective
             storeboard = storeboardset(board, storeboard, whitemove, 1)
         else:
             message = "Please enter a valid move."
             print("you have arrived")
-            print(board)#split_board(board)
+            #print(board)#split_board(board)
             """for board in split_board(board):
                 print(board)"""
 
@@ -185,13 +182,13 @@ def storeboardset(board, storeboard, whitemove, setting):
         storeboard = check(board, storeboard, kingpos, whitemove)
     checkmate = False
     settings = ["?", storeboard, checkmate, stalemate]
-    print(protdictfunc(board, storeboard, whitemove))
+    #print(protdictfunc(board, storeboard, whitemove))
 
     return storeboard
 
 
 def check(board, storeboard, kingpos, whitemove):
-    print(kingpos)
+    #print(kingpos)
     king = board[kingpos]
     storeboard1 = {
         "a8": [], "b8": [], "c8": [], "d8": [], "e8": [], "f8": [], "g8": [], "h8": [],
@@ -240,7 +237,7 @@ def aidictionarything(storeboard):
     for i in storeboard:
         for k in storeboard[i]:
             dictionary[k[0:3]].append(i)
-    return dictionary
+    return #dictionary
 
 
 # this gets a dict with key = protected, term = list of protectors
@@ -258,7 +255,6 @@ def protdictfunc(board, storeboard, whitemove):
         if piece != '  ' and piece[1] != 'K':
             protdict = protfunc[piece](board, protdict, board[i][0:3], i[0], int(i[1]))
         elif piece[1] == 'K':
-            print("Ky")
             protdict = kingprot(board, protdict, board[i][0:3], i[0], int(i[1]), storeboard)
     return protdict
 
