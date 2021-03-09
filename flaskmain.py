@@ -167,7 +167,16 @@ def joingame():
 #chess offline website leaderboards
 @app.route('/leaderboards')
 def leaderboards():
-    return render_template("leaderboards.html")
+    users = User.query.order_by(User.tactics_elo.desc()).all()
+    ranks = dict()
+    rank = 1
+    for u in users:
+        print(u)
+        ranks[u.username] = rank
+        rank += 1
+    return render_template("leaderboards.html",rows=users,ranks=ranks)
+
+
 
 #web api route where data is grabbed from different types of chess
 @app.route('/lichesslb/<type>/', methods=['GET', 'POST'])
