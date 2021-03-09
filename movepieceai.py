@@ -465,13 +465,28 @@ def primaryai(board, storeboard, whitemove, whitecolor, blackcolor, turnnum):
 
     #    movescoredict.update({move: random.randrange(0,1000)})
 
-    ## print(movescoredict)
-    bestmove = ["", -9999]
+    difficulty = 4
+    bestmoves = [["", -9999]]
     for move, score in movescoredict.items():
-        if score >= bestmove[1]:
-            bestmove = [move, score]
-            # print("Changed to " + str(score))
-    print(bestmove)
-    print(bestmove[0] + "  BESTMOVE!!!!!!!!!")
+        for i in range(difficulty):
+            try:
+                if score > bestmoves[i][1]:
+                    bestmoves.insert(i, [move, score])
+                    break
+                elif score == bestmoves[i][1]:
+                    randomnumber = i + random.randrange(0,2)
+                    if randomnumber >= 0:
+                        bestmoves.insert(randomnumber, [move, score])
+                    else:
+                        bestmoves.insert(0, [move, score])
+                    break
+            except KeyError:
+                bestmoves.append([move, score])
+                break
+    # print(bestmoves)
+    bestmoves = bestmoves[0:difficulty]
+    # print("Changed to " + str(score))
+    bestmove = bestmoves[random.randrange(0,difficulty)]
+    # print(bestmove)
+    # print(bestmove[0] + "  BESTMOVE!!!!!!!!!")
     return bestmove[0]
-
