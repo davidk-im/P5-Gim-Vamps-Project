@@ -7,18 +7,18 @@ db = SQLAlchemy(app)
 
 
 
-class Replay(db.Model):
+class replay(db.Model):
     gameID = db.Column(db.String(255), primary_key=True, nullable=False)
-    movenumber = db.Column(db.String(255), nullable=False)
-    blackmove = db.Column(db.String(255), nullable=False)
+    usermove1 = db.Column(db.String(255), nullable=False)
+    usermove2 = db.Column(db.String(255), nullable=False)
     whitemove = db.Column(db.String(255), nullable=False)
+    board = db.Column(db.String(255), nullable=False)
 
 
 
-def game_create(gameID, movenumber, blackmove, whitemove):
-    print('User name is ' + gameID )
-
-    new_game = gameID(gameID=gameID, movenumber=movenumber, blackmove=blackmove, whitemove=whitemove)
+def game_create(gameID, usermove1, usermove2, whitemove, board):
+    print('gameid is ' + gameID )
+    new_game = gameID(gameID=gameID, usermove1=usermove1, usermove2=usermove2, whitemove=whitemove, board=board)
     db.session.add(new_game)
     db.session.commit()
 
@@ -31,7 +31,3 @@ def validate_replay_game(gameid):
             return testid
     return None
 
-def replay_game_data(gameid):
-    testid=replay.query.filter_by(gameid=gameid).first()
-    if testid:
-        return movenumber, blackmove, whitemove

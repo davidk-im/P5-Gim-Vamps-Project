@@ -17,6 +17,7 @@ import getpass
 import mysql.connector
 import webbrowser
 import random
+from replaygamehtml import validate_replay_game
 
 
 app = Flask(__name__)
@@ -153,6 +154,17 @@ def easter():
 #route to replay a chess game
 @app.route('/replaygame')
 def replaygame():
+    if request.method=='POST':
+        gameid = request.form['gameid']
+        #just to check if username and password was collected
+        print(gameid)
+        gameid = validate_replay_game(gameid)
+
+        if gameid:
+            #return list of moves from database?
+            return render_template("replaygamedata.html")
+    else:
+        print('Bar')
     return render_template("replaygame.html")
 
 #route to join a chess game

@@ -1,5 +1,5 @@
 from movepieceai import *
-from replaygamedata import *
+from replaygamehtml import *
 from replaygame import *
 from piecedefinitions import *
 from zwhitepersp import *
