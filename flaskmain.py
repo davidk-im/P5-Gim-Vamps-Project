@@ -136,7 +136,6 @@ def chessdicttable():
 def playai():
     return render_template("multiplayermain.html")
 
-
 #multiplayer chess game route
 @app.route('/MultiplayerMenu')
 def MultiplayerMenu():
