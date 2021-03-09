@@ -6,7 +6,7 @@ app = Flask(__name__)
 db = SQLAlchemy(app)
 
 class game_move(db.Model):
-    game_id = db.Column(db.Integer, nullable=False)
+    game_id = db.Column(db.Integer, primary_key=True, nullable=False)
     move = db.Column(db.Integer, nullable=False)
     usermove1 = db.Column(db.String(255), nullable=False)
     usermove2 = db.Column(db.String(255), nullable=False)
