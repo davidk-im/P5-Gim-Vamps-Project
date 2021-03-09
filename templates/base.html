@@ -14,7 +14,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 </head>
-
+<!-- navbar-->
     <header class="header-area overlay">
         <nav class="navbar navbar-expand-md navbar-dark">
             <div class="container">
@@ -29,8 +29,9 @@
                 <div id="main-nav" class="collapse navbar-collapse">
                     <ul class="navbar-nav ml-auto">
                         <li><a href="/play" class="nav-item nav-link active">Play!</a></li>
-                        <li><a href="/leaderboards" class="nav-item nav-link">Leaderboards</a></li>
+                        <li><a href="/leaderboards" class="nav-item nav-link">Leaderboard</a></li>
                         <li class="dropdown">
+                            <!-- WEB API drop down menu-->
                             <a href="#" class="nav-item nav-link" data-toggle="dropdown">Web API</a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="/lichesslb/classical/">Classical</a>
@@ -48,7 +49,7 @@
             </div>
         </nav>
         {% block title %}
-
+<!-- home page title and button-->
         <div class="banner">
             <div class="container">
                 <h1>Welcome To Chess Offline!</h1>
@@ -58,6 +59,7 @@
         {% endblock %}
     </header>
 
+<!-- CSS styling from Bootstrap-->
 <style>
     @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800');
 @import url('https://fonts.googleapis.com/css?family=Lobster');
@@ -383,6 +385,7 @@ p {
 
 </style>
 
+<!-- javascript for scroll down function-->
 <script type="text/javascript">
     jQuery(function($) {
     $(window).on('scroll', function() {

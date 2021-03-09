@@ -125,7 +125,7 @@ def sample(currentMove,res):
     else: #this means that two cells have been slected
         usermove = ' '.join(res)#this is the string that is passed into movePiece
         message = "last two moves were"+ " " + usermove
-        print(str(res))
+        #print(str(res))
         len5(usermove, board, storeboard, whitemove, whitecolor, blackcolor)
         return message
     #if the move was invalid message = "last two moves were invalid"+ " " + usermove

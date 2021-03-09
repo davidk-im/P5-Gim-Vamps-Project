@@ -5,9 +5,9 @@
 
 <div class="banner">
     <div class="container">
-        <h1>{{Username}}'s Profile</h1>
+        <h1> {{session['user_name']}}'s Profile</h1>
         <br>
-        <img src="/static/knight.png" style="align: left">
+        <!--img src="/static/knight.png" style="align: left"-->
         <div>
 
         <body>
@@ -25,11 +25,13 @@
                             <th>Streak Score</th>
                             <th>Multiplayer Score</th>
                         </tr>
+
                         <tr>
-                            <td>1500</td>
-                            <td>0</td>
-                            <td>1500</td>
+                            <td>{{session['tactics_elo']}}</td>
+                            <td>{{session['tactics_streak']}}</td>
+                            <td>{{session['multiplayer_elo']}}</td>
                         </tr>
+
                     </table>
                         </div>
                     </h2>
