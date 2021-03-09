@@ -11,6 +11,7 @@
 
             <header>
                 <h1 style="font-family:verdana"><b>⠀⠀LEADERBOARD</b></h1>
+
                 <table>
                     <thead>
                     <tr>
@@ -20,93 +21,19 @@
                         <th class="Streak Score">Streak Score</th>
                     </tr>
                     </thead>
-
                     <tbody>
+                    {% for row in rows %}
                     <tr>
-                        <td class="rank">1</td>
-                        <td class="name">Lucasman123</td>
-                        <td class="Tactics Score">1500</td>
-                        <td class="Streak Score">264</td>
+                        <td class="rank">{{ranks[row["username"]]}}</td>
+                        <td class="name">{{row["username"]}}</td>
+                        <td class="Tactics Score">{{row["tactics_elo"]}}</td>
+                        <td class="Streak Score">{{row["tactics_streak"]}}</td>
                     </tr>
-                    <tr>
-                        <td class="rank">2</td>
-                        <td class="name">Kyleiscool</td>
-                        <td class="Tactics Score">1500</td>
-                        <td class="Streak Score">214</td>
-                    </tr>
-                    <tr>
-                        <td class="rank">3</td>
-                        <td class="name">Avalikeschess</td>
-                        <td class="Tactics Score">1498</td>
-                        <td class="Streak Score">197</td>
-                    </tr>
-                    <tr>
-                        <td class="rank">3</td>
-                        <td class="name">Davidrocks9876</td>
-                        <td class="Tactics Score">1497</td>
-                        <td class="Streak Score">197</td>
-                    </tr>
-                    <tr>
-                        <td class="rank">4</td>
-                        <td class="name">Player 2</td>
-                        <td class="Tactics Score">1490</td>
-                        <td class="Streak Score">165</td>
-                    </tr>
-                    <tr>
-                        <td class="rank">5</td>
-                        <td class="name">Player 3</td>
-                        <td class="Tactics Score">1380</td>
-                        <td class="Streak Score">189</td>
-                    </tr>
-                    <tr>
-                        <td class="rank">6</td>
-                        <td class="name">Player 4</td>
-                        <td class="Tactics Score">1345</td>
-                        <td class="Streak Score">147</td>
-                    </tr>
-                    <tr>
-                        <td class="rank">7</td>
-                        <td class="name">Player 5</td>
-                        <td class="Tactics Score">1289</td>
-                        <td class="Streak Score">190</td>
-                    </tr>
-                    <tr>
-                        <td class="rank">8</td>
-                        <td class="name">Player 6</td>
-                        <td class="Tactics Score">1203</td>
-                        <td class="Streak Score">89</td>
-                    </tr>
-                    <tr>
-                        <td class="rank">9</td>
-                        <td class="name">Player 7</td>
-                        <td class="Tactics Score">1165</td>
-                        <td class="Streak Score">104</td>
-                    </tr>
-                    <tr>
-                        <td class="rank">10</td>
-                        <td class="name">Player 8</td>
-                        <td class="Tactics Score">1128</td>
-                        <td class="Streak Score">245</td>
-                    </tr>
-                    <tr>
-                        <td class="rank">11</td>
-                        <td class="name">Player 9</td>
-                        <td class="Tactics Score">1038</td>
-                        <td class="Streak Score">118</td>
-                    </tr>
-                    <tr>
-                        <td class="rank">12</td>
-                        <td class="name">Player 10</td>
-                        <td class="Tactics Score">1023</td>
-                        <td class="Streak Score">197</td>
-                    </tr>
+                    {% endfor %}
                     </tbody>
                 </table>
             </header>
-
         </div>
-
-
     </div>
 </div>
 
@@ -119,10 +46,11 @@
     margin: 5rem auto;
     border-radius: 1.5rem;
     padding-top: 100px;
+
 }
 
 header {
-background-color: #3DBCFF;
+background-color: #436FA5;
 color: white;
 
 }
@@ -136,6 +64,10 @@ table {
 width: 100%;
 border-bottom-left-radius: 1.5rem;
 border-bottom-right-radius: 1.5rem;
+
+}
+
+
 }
 
 thead {

@@ -1,6 +1,7 @@
 from movepieceai import *
 from movepiece import *
 from htmlToPythonAdditions import *
+from htmlToPythonAdditions2 import *
 
 # This is just for user games, not AI
 
@@ -20,7 +21,7 @@ def htmlToPython(usermove1, usermove2, whitemove, board):
     whitecolor = "red"
     blackcolor = "lighter blue"
     usermove = usermove1 + usermove2
-    HTPlen5(usermove, board, storeboard, whitemove, whitecolor, blackcolor)
+    return HTPlen5(usermove, board, storeboard, whitemove, whitecolor, blackcolor)
 
 # For AI Games
 
@@ -41,7 +42,7 @@ def htmlToPythonAI(usermove1, usermove2, whitemove, aiside, board):
         whitecolor = "red"
         blackcolor = "lighter blue"
         usermove = usermove1 + usermove2
-        HTPlen5(usermove, board, storeboard, whitemove, whitecolor, blackcolor)
+        return HTPlen5(usermove, board, storeboard, whitemove, whitecolor, blackcolor)
 
     elif whitemove == aiside:
         storeboard = {
@@ -57,4 +58,4 @@ def htmlToPythonAI(usermove1, usermove2, whitemove, aiside, board):
         storeboard = storeboardset(board, storeboard, whitemove, setting)
         whitecolor = "red"
         blackcolor = "lighter blue"
-        # Make function for aimove
+        return HTPaimovepiece(board, storeboard, whitemove, whitecolor, blackcolor, turnnum, aiturn, aicolor)

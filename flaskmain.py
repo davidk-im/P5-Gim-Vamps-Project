@@ -16,6 +16,10 @@ from htmlToPythonAdditions import HTPlen5
 import getpass
 import mysql.connector
 import webbrowser
+import random
+import time
+from replaygamehtml import get_next_game_id
+
 
 
 app = Flask(__name__)
@@ -130,35 +134,49 @@ def signconfirm():
 def chessdicttable():
     return render_template("chessdicttable.html")
 
-#main ai chess game route
-@app.route('/playai')
-def playai():
-    return render_template("chess.html")
 
 
-#multiplayer chess game route
-@app.route('/MultiplayerMenu')
-def MultiplayerMenu():
-    return render_template("MultiplayerMenu.html")
 
-@app.route('/multiplayermain')
-def multiplayermain():
-    return render_template("multiplayermain.html")
 
 #easter egg route(found on how to play section on home page)
 @app.route('/easter')
 def easter():
     return render_template("easter.html")
 
-#route to test chess game
+#route to replay a chess game
 @app.route('/replaygame')
 def replaygame():
+    if request.method=='POST':
+        gameid = request.form['gameid']
+        #just to check if username and password was collected
+        print(gameid)
+        gameid = validate_replay_game(gameid)
+
+        if gameid:
+            #return list of moves from database?
+            return render_template("replaygamedata.html")
+    else:
+        print('Bar')
     return render_template("replaygame.html")
+
+#route to join a chess game
+@app.route('/joingame')
+def joingame():
+    return render_template("joingame.html")
 
 #chess offline website leaderboards
 @app.route('/leaderboards')
 def leaderboards():
-    return render_template("leaderboards.html")
+    users = User.query.order_by(User.tactics_elo.desc()).all()
+    ranks = dict()
+    rank = 1
+    for u in users:
+        print(u)
+        ranks[u.username] = rank
+        rank += 1
+    return render_template("leaderboards.html",rows=users,ranks=ranks)
+
+
 
 #web api route where data is grabbed from different types of chess
 @app.route('/lichesslb/<type>/', methods=['GET', 'POST'])
@@ -191,7 +209,19 @@ def boardprint(space):
     if request.method == 'POST':
         return render_template("chessDictTable.html", displayClicked=space, movelist=chessdata.movesdata(space),  message=chessdata.sample(len(movelist),chessdata.movelist[-2:]), allBoard=chessdata.split_board(board))
 
+@app.route('/multiplayermain')
+def multiplayermain():
+    return render_template("multiplayermain.html")
 
+
+#multiplayer chess game route
+@app.route('/MultiplayerMenu' , methods=['GET' , 'POST'])
+def MultiplayerMenu():
+    if request.method == 'POST':
+        session['game_id'] = get_next_game_id()
+        return render_template("multiplayermain.html")
+
+    return render_template("MultiplayerMenu.html")
 
 if __name__ == "__main__":
     app.run(port='3000', host='127.0.0.1')
