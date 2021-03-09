@@ -7,8 +7,7 @@ http://chessthegame.cf
 ## Website Direct IP
 http://76.176.72.123:3000/
 
-##
-[Commerical]()
+## [Commerical]()
 
 ## README Guidance 
 ### Major Technicals:
