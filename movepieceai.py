@@ -36,7 +36,6 @@ def aimovepiece(board, storeboard, whitemove, whitecolor, blackcolor, turnnum, a
         input("Press enter")
         #usermove = "a2 a4"
         usermove = primaryai(board, storeboard, whitemove, whitecolor, blackcolor, turnnum)
-        # print(usermove + "UWUWUWU")
         ailen5(usermove, board, storeboard, whitemove, whitecolor, blackcolor, turnnum, False)
     else:
         usermove = input(

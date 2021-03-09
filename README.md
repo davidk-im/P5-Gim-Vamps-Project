@@ -1,6 +1,6 @@
 # Project Plan
 Group Members: Kyle Myint, Lucas Bruner, Ava Brooks, David Kim
-
+    
 ## Website URL: 
 http://chessthegame.cf
 

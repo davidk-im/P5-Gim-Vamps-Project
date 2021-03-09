@@ -1,6 +1,7 @@
 from movepieceai import *
 from movepiece import *
 from htmlToPythonAdditions import *
+from htmlToPythonAdditions2 import *
 
 # This is just for user games, not AI
 
@@ -57,4 +58,4 @@ def htmlToPythonAI(usermove1, usermove2, whitemove, aiside, board):
         storeboard = storeboardset(board, storeboard, whitemove, setting)
         whitecolor = "red"
         blackcolor = "lighter blue"
-        # Make function for aimove
+        HTPaimovepiece(board, storeboard, whitemove, whitecolor, blackcolor, turnnum, aiturn, aicolor)
