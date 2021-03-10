@@ -55,7 +55,11 @@ http://76.176.72.123:3000/
    * Digital divide, computing bias, and safe computing
 
 ### Incorporating Tech Talks
-
+* Databases
+    * One db chess.db
+        * 3 tables: user defined in ([user.py](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/user.py#L12-L22)), 
+* HTML 5/JS
+* Lists/dictionaries
 
 
 
