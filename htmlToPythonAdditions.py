@@ -61,4 +61,4 @@ def HTPlen5(usermove, board, storeboard, whitemove, whitecolor, blackcolor):
     except Exception as e:
         return "invalid"
 
-    return board, whitemove
+    return board, whitemove, usermove

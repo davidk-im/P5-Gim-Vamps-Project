@@ -20,7 +20,7 @@ def htmlToPython(usermove1, usermove2, whitemove, board):
     storeboard = storeboardset(board, storeboard, whitemove, setting)
     whitecolor = "red"
     blackcolor = "lighter blue"
-    usermove = usermove1 + usermove2
+    usermove = usermove1 + " " + usermove2
     return HTPlen5(usermove, board, storeboard, whitemove, whitecolor, blackcolor)
 
 # For AI Games
@@ -41,7 +41,7 @@ def htmlToPythonAI(usermove1, usermove2, whitemove, aiside, board):
         storeboard = storeboardset(board, storeboard, whitemove, setting)
         whitecolor = "red"
         blackcolor = "lighter blue"
-        usermove = usermove1 + usermove2
+        usermove = usermove1 + " " + usermove2
         return HTPlen5(usermove, board, storeboard, whitemove, whitecolor, blackcolor)
 
     elif whitemove == aiside:
