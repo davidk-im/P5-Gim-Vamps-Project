@@ -78,8 +78,8 @@ This trimester's project built upon some of our work from the first trimester, i
     * Use data compression and extracting information from data to explore how computers use and handle data to produce information and solve problems
     * Store data for future use: 
 Within our website, we store data on each game in a database as the game is played.  Users are able to view their past games, and we are able to search through the database to find relevant information which is used to replay the game.
-    * Other uses: 
-By storing data in real time to a database, users are able to play with eachother on different devices.  The website will ask for a game key, which will be used to connect the two players, and then by reading the database used to store moves, both users will be able to play against eachother.
+    * Other uses: Data is stored in real time allowing for other users to 'pull' that data from a replaygame. This can be used to see other moves/strategies and connects users on the site
+
 * Algorithms and programming
    * Use algorithms and simulations to create programs that solve problems or show creativity
    * Algorithmic efficiency 
