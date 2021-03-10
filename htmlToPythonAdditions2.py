@@ -1,11 +1,11 @@
 from movepieceai import *
 from replaygamehtml import *
-from replaygame import *
+#from replaygame import *
 from piecedefinitions import *
 from zwhitepersp import *
 from zblackpersp import *
 from checkfunctions import *
-from static.protectionfunctions import *
+#from static.protectionfunctions import *
 
 def HTPailen5(usermove, board, storeboard, whitemove, whitecolor, blackcolor, turnnum, aicolor):
     piece = board[usermove[0:2]]

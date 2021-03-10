@@ -19,6 +19,7 @@ import webbrowser
 import random
 import time
 from replaygamehtml import get_next_game_id, save_game_move, get_game_replay
+from htmlToPython import htmlToPython
 
 
 
@@ -204,10 +205,15 @@ def createBoardTable():
 @app.route("/board/<space>", methods=['GET','POST'])
 def boardprint(space):
     if request.method == 'POST':
+        #moves piece
         sets = chessdata.movesdata(space)
         if chessdata.didMove():
-            game_id = session['game_id']
-            save_game_move(game_id, chessdata.getMove(), chessdata.getUserMove1(), chessdata.getUserMove2(), chessdata.getColor())
+            #um1=chessdata.getUserMove1()
+            #um2=chessdata.getUserMove2()
+            #wm=chessdata.getColor()
+            #if htmlToPython(um1, um2, wm, board) != "invalid":
+                game_id = session['game_id']
+                save_game_move(game_id, chessdata.getMove(), um1, um2, wm)
         return render_template("chessDictTable.html", displayClicked=space, movelist=sets,  message=chessdata.sample(len(movelist),chessdata.movelist[-2:]), allBoard=chessdata.split_board(board))
 
 @app.route('/multiplayermain')
