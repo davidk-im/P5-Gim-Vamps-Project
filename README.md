@@ -53,6 +53,7 @@ http://76.176.72.123:3000/
    * Effect of computing on society, economy, culture, and everyday life
    * Legal and ethical responsibilities as a programmer
    * Digital divide, computing bias, and safe computing
+* Practiced not voicing over for [commerical](https://www.youtube.com/watch?v=6gtWMTjAztI) which are the requirements for the final project
 
 ### Incorporating Tech Talks
 * Databases
