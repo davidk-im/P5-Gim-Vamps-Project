@@ -16,7 +16,7 @@ def HTPailen5(usermove, board, storeboard, whitemove, whitecolor, blackcolor, tu
             whitemove = "B"
     else:
         whitemove = "W"
-    storeboard = storeboardset(board, storeboard, whitemove, 1)
+    storeboard = storeboardset(board, whitemove, 1)
     return [storeboard, whitemove, board]
 
 def HTPaimovepiece(board, storeboard, whitemove, whitecolor, blackcolor, turnnum, aiturn, aicolor):
