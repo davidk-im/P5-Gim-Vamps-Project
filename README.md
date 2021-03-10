@@ -102,7 +102,7 @@ Within our website, we store data on each game in a database as the game is play
         * Used for user creation and storing information from chess games(move number, color move, etc)     
 * HTML 5/JS
     * Used attributes such as min and max length, input required, and place holders [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/signup.html#L11-L27)
-    * Used JS functions to validate passwords matching[here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/signup.html#L33-L44)
+    * Used JS functions to validate passwords matching [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/signup.html#L33-L44)
 * REST APIs
     * Used [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/webapi2.html)(front end) using jinja variables and loops
     * Backend [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/flaskmain.py#L180-L190)
