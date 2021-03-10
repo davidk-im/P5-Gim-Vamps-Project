@@ -4,7 +4,7 @@ from user import user_create
 from flask_sqlalchemy import SQLAlchemy
 import requests
 import chessdata
-from chessdata import board, movelist, og_board, ogstoreboard, movesdata, actualMove, previousMove
+from chessdata import board, movelist, og_board, ogstoreboard, movesdata, actualMove, previousMove, getMove, didMove, getUserMove2, getUserMove1, getColor
 from markupsafe import escape
 from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
@@ -18,7 +18,8 @@ import mysql.connector
 import webbrowser
 import random
 import time
-from replaygamehtml import get_next_game_id
+from replaygamehtml import get_next_game_id, save_game_move, get_game_replay
+from htmlToPython import htmlToPython
 
 
 
@@ -144,19 +145,16 @@ def easter():
     return render_template("easter.html")
 
 #route to replay a chess game
-@app.route('/replaygame')
+@app.route('/replaygame' , methods= ['POST', 'GET'])
 def replaygame():
     if request.method=='POST':
-        gameid = request.form['gameid']
-        #just to check if username and password was collected
-        print(gameid)
-        gameid = validate_replay_game(gameid)
-
-        if gameid:
-            #return list of moves from database?
-            return render_template("replaygamedata.html")
-    else:
-        print('Bar')
+        game_id = request.form['game_id']
+        print(game_id)
+        replay=get_game_replay(game_id)
+        if replay.count() >0:
+            return render_template("replaygamedata.html", replay=replay, game_id=game_id)
+    #else:
+        #print('Bar')
     return render_template("replaygame.html")
 
 #route to join a chess game
@@ -167,7 +165,16 @@ def joingame():
 #chess offline website leaderboards
 @app.route('/leaderboards')
 def leaderboards():
-    return render_template("leaderboards.html")
+    users = User.query.order_by(User.tactics_elo.desc()).all()
+    ranks = dict()
+    rank = 1
+    for u in users:
+        print(u)
+        ranks[u.username] = rank
+        rank += 1
+    return render_template("leaderboards.html",rows=users,ranks=ranks)
+
+
 
 #web api route where data is grabbed from different types of chess
 @app.route('/lichesslb/<type>/', methods=['GET', 'POST'])
@@ -198,7 +205,16 @@ def createBoardTable():
 @app.route("/board/<space>", methods=['GET','POST'])
 def boardprint(space):
     if request.method == 'POST':
-        return render_template("chessDictTable.html", displayClicked=space, movelist=chessdata.movesdata(space),  message=chessdata.sample(len(movelist),chessdata.movelist[-2:]), allBoard=chessdata.split_board(board))
+        #moves piece
+        sets = chessdata.movesdata(space)
+        if chessdata.didMove():
+            #um1=chessdata.getUserMove1()
+            #um2=chessdata.getUserMove2()
+            #wm=chessdata.getColor()
+            #if htmlToPython(um1, um2, wm, board) != "invalid":
+                game_id = session['game_id']
+                save_game_move(game_id, chessdata.getMove(), um1, um2, wm)
+        return render_template("chessDictTable.html", displayClicked=space, movelist=sets,  message=chessdata.sample(len(movelist),chessdata.movelist[-2:]), allBoard=chessdata.split_board(board))
 
 @app.route('/multiplayermain')
 def multiplayermain():
