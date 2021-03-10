@@ -18,7 +18,7 @@ def HTPlen5(usermove, board, storeboard, whitemove, whitecolor, blackcolor):
                 board["c1"] = "WK1"
                 board["a1"] = "  "
                 whitemove = "B"
-                storeboard = storeboardset(board, storeboard, whitemove, 1)
+                storeboard = storeboardset(board, whitemove, 1)
             except:
                 print("Please enter a valid move.")
         elif str(whitemove + "R1n") in storeboard["d8"] and board["e8"] == "BK1n":
@@ -37,7 +37,7 @@ def HTPlen5(usermove, board, storeboard, whitemove, whitecolor, blackcolor):
                 board["c8"] = "BK1"
                 board["a8"] = "  "
                 whitemove = "W"
-                storeboard = storeboardset(board, storeboard, whitemove, 1)
+                storeboard = storeboardset(board, whitemove, 1)
             except:
                 return "invalid"
         else:
@@ -55,7 +55,7 @@ def HTPlen5(usermove, board, storeboard, whitemove, whitecolor, blackcolor):
                 else:
                     whitemove = "W"
                     whitepersp(whitecolor, blackcolor, board)
-                storeboard = storeboardset(board, storeboard, whitemove, 1)
+                storeboard = storeboardset(board, whitemove, 1)
             else:
                 return "invalid"
     except Exception as e:
