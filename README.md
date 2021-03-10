@@ -10,6 +10,7 @@ http://76.176.72.123:3000/
 ## [Commerical](https://www.youtube.com/watch?v=6gtWMTjAztI)
 
 ## README Guidance 
+### Planning on [Scrumboard](https://github.com/kylem314/P5-Gim-Vamps-Project/projects/1)
 ### Major Technicals:
 * Web API(David)
 * ELO System(Kyle)
