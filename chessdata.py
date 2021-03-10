@@ -97,6 +97,7 @@ for square,piece in board.items():
 allBoard = [board8, board7, board6, board5, board4, board3, board2, board1]
 
 def split_board(board):
+    print(type(board))
     for square,piece in board.items():
         if piece != "  ":
             # if the values is not empty then replace the cell value with the unicode of the value
@@ -147,7 +148,7 @@ def len5(usermove, board, storeboard, whitemove, whitecolor, blackcolor):
             else:
                 whitemove = "W"
                 #whitepersp(whitecolor, blackcolor, board) #print the board in black perspective
-            storeboard = storeboardset(board, storeboard, whitemove, 1)
+            storeboard = storeboardset(board, whitemove, 1)
         else:
             message = "Please enter a valid move."
             print("you have arrived")
@@ -156,7 +157,7 @@ def len5(usermove, board, storeboard, whitemove, whitecolor, blackcolor):
                 print(board)"""
 
 
-def storeboardset(board, storeboard, whitemove, setting):
+def storeboardset(board, whitemove, setting):
     storeboard = {
         "a8": [], "b8": [], "c8": [], "d8": [], "e8": [], "f8": [], "g8": [], "h8": [],
         "a7": [], "b7": [], "c7": [], "d7": [], "e7": [], "f7": [], "g7": [], "h7": [],
@@ -172,24 +173,30 @@ def storeboardset(board, storeboard, whitemove, setting):
     for i in board:
         piece = board[i][0:2]
         if piece != '  ':
-            storeboard1 = storeboard
-            storeboard = piecefunc[piece](board, storeboard, board[i], i[0], int(i[1]))
-            if storeboard == storeboard1 and piece[0].upper() == whitemove:
+            storeboard1 = dict(storeboard)
+            storeboard = dict(piecefunc[piece](dict(board), dict(storeboard), board[i], i[0], int(i[1])))
+            if storeboard != storeboard1 and piece[0].upper() == whitemove:
                 stalemate = False
-            if board[i][0:3] == whitemove.upper() + "K1":
+            if board[i][0:3] == whitemove + "K1":
                 kingpos = i
-    if len(storeboard[kingpos]) > 0:
-        storeboard = check(board, storeboard, kingpos, whitemove)
-    checkmate = False
-    settings = ["?", storeboard, checkmate, stalemate]
-    #print(protdictfunc(board, storeboard, whitemove))
+                print("Kingpos = " + kingpos)
 
-    return storeboard
+    checkmate = False
+    if setting != 2:
+        if len(storeboard[kingpos]) > 0:
+            storeboard = check(board, storeboard, kingpos, whitemove)
+            # if storeboard:
+                # checkmate is true
+            #     pass
+        return storeboard
+    else:
+        return kingpos, storeboard
 
 
 def check(board, storeboard, kingpos, whitemove):
-    #print(kingpos)
+    # note that because it is calculating the upcoming move, whitemove is the side that will be in check
     king = board[kingpos]
+    piecedict = aidictionarything(storeboard)
     storeboard1 = {
         "a8": [], "b8": [], "c8": [], "d8": [], "e8": [], "f8": [], "g8": [], "h8": [],
         "a7": [], "b7": [], "c7": [], "d7": [], "e7": [], "f7": [], "g7": [], "h7": [],
@@ -201,30 +208,24 @@ def check(board, storeboard, kingpos, whitemove):
         "a1": [], "b1": [], "c1": [], "d1": [], "e1": [], "f1": [], "g1": [], "h1": []}
     check = True
     checkmate = True
-    attacking = storeboard[kingpos[0]]
-    try:
-        attacking1 = storeboard[kingpos[1]]
-    except Exception:
-        doublecheck = False
-
-    for i in storeboard.values():
-        if king in i:
-            try:
-                for k in i:
-                    if k[0].upper() == whitemove:
-                        raise Exception("exception")
-                storeboard1[i].append(king)
-            except Exception:
-                pass
-            checkmate = False
-    if not doublecheck:
-        for key, value in board.items():
-            if value == attacking:
-                attackingpos = key
-                break
-        checkfunctions = {"N": Ncheck, "B": Bcheck, "R": Rcheck, "Q": Qcheck, "p": whitemove.lower() + check}
-        checkfunctions[attacking[0]](kingpos, attackingpos, storeboard, storeboard1)
-
+    board1 = dict(board)
+    for piece in piecedict.keys():
+        if piece[0].upper() == whitemove:
+            for space in board.keys():
+                if board[space][0:3] == piece:
+                    piecepos = space
+                    break
+            for move in piecedict[piece]:
+                board1 = dict(board)
+                board1[piecepos] = '  '
+                board1[move] = board[piecepos]
+                kingpos2, storeboard2 = storeboardset(board1, whitemove, 2)
+                if len(storeboard2[kingpos2]) == 0:
+                    storeboard1[move].append(piece)
+                    checkmate = False
+    # if checkmate:
+    #     return True
+    # else:
     return storeboard1
 
 

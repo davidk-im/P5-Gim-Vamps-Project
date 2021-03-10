@@ -38,7 +38,7 @@ def htmlToPythonAI(usermove1, usermove2, whitemove, aiside, board):
         "a2": [], "b2": [], "c2": [], "d2": [], "e2": [], "f2": [], "g2": [], "h2": [],
         "a1": [], "b1": [], "c1": [], "d1": [], "e1": [], "f1": [], "g1": [], "h1": []}
         setting = storeboard
-        storeboard = storeboardset(board, storeboard, whitemove, setting)
+        storeboard = storeboardset(board, whitemove, setting)
         whitecolor = "red"
         blackcolor = "lighter blue"
         usermove = usermove1 + " " + usermove2
@@ -55,7 +55,7 @@ def htmlToPythonAI(usermove1, usermove2, whitemove, aiside, board):
         "a2": [], "b2": [], "c2": [], "d2": [], "e2": [], "f2": [], "g2": [], "h2": [],
         "a1": [], "b1": [], "c1": [], "d1": [], "e1": [], "f1": [], "g1": [], "h1": []}
         setting = storeboard
-        storeboard = storeboardset(board, storeboard, whitemove, setting)
+        storeboard = storeboardset(board, whitemove, setting)
         whitecolor = "red"
         blackcolor = "lighter blue"
-        return HTPaimovepiece(board, storeboard, whitemove, whitecolor, blackcolor, turnnum, aiturn, aicolor)
+        return HTPaimovepiece(board, storeboard, whitemove, whitecolor, blackcolor) #, turnnum, aiturn, aicolor)
