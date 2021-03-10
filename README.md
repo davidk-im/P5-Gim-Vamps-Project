@@ -14,7 +14,7 @@ http://76.176.72.123:3000/
 * Web API
 * ELO System
 * Databases
-    * Chess.db holds 3 tables: user, game, and game_move
+    * Chess.db holds 3 tables: user([found here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/user.py#L12-L22)), game, and game_move(both found [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/replaygamehtml.py#L8-L17)
         * User holds username/password info as well as ELO stats
         * Game holds game ids
             * Back end where game is created on [replaygame.html](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/replaygamehtml.py#L18-L34)
