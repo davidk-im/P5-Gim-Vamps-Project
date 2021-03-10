@@ -7,7 +7,7 @@ http://chessoffline.cf
 ## Website Direct IP
 http://76.176.72.123:3000/
 
-## [Commerical](https://www.youtube.com/watch?v=6gtWMTjAztI)
+## [Commerical](https://www.youtube.com/watch?v=VVEMsOZa-p0)
 
 ## README Guidance 
 ### Planning on [Scrumboard](https://github.com/kylem314/P5-Gim-Vamps-Project/projects/1)
