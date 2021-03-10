@@ -226,6 +226,9 @@ def ai():
 def aiform():
     return render_template("aiform.html")
 
+@app.route('/winchess')
+def winchess():
+    return render_template("winchess.html")
 
 #simple pages routes
 #easter egg route(found on how to play section on home page)
