@@ -97,11 +97,10 @@ http://76.176.72.123:3000/
 ## Summary: 
 Create a chess-based website using Python, Flask, SQLAlchamy, and a Raspberry Pi with an internet domain that has the following features:
 * Username/Password login system w/ profiles
+    * Profiles show data from database about stats
 * Database of profiles with statistics based on previous games
-    * For example, a user could search for their win rate against another user, or find their games with that user
-* Be able to view match history, and see game codes to see your past games
 * Play against other players, or against an AI with different difficulties
-* Be able to replay past games from a database
+* Be able to replay past games from a database and see moves
 * Rules & Settings
 
 ## Big Ticket Goals:
