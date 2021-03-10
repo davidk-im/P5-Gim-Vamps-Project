@@ -23,6 +23,9 @@ def save_game_move(game_id, move, usermove1, usermove2, color):
     db.session.commit()
 
 
+#def delete_move(usermove1, usermove2):
+
+
 def get_next_game_id():
     id = 0
     result = db.engine.execute("SELECT MAX(game_id) + 1 FROM game")

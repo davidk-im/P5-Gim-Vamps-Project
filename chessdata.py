@@ -300,6 +300,6 @@ def getUserMove2():
 def getColor():
     turn=round(len(movelist)/2)
     if turn%2==0:
-        return "black"
-    return "white"
+        return "B"
+    return "W"
 

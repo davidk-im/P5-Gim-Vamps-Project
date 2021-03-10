@@ -177,7 +177,7 @@ def createBoardTable():
         form = request.form
         movelist.clear()#resets the stored moves when create board is selected
         board = og_board #resets the board
-        storeboard = ogstoreboard #resets the storboard
+        storeboard = dict(ogstoreboard) #resets the storboard
         return render_template("chessDicTtableMulti.html", displayClicked="  ", allBoard=chessdata.split_board(board))
 
 
@@ -186,12 +186,14 @@ def boardprint(space):
     if request.method == 'POST':
         #moves piece
         sets = chessdata.movesdata(space)
+        game_id=session['game_id']
         if chessdata.didMove():
             um1=chessdata.getUserMove1()
             um2=chessdata.getUserMove2()
             wm=chessdata.getColor()
-            #if htmlToPython(um1, um2, wm, board) != "invalid":
-            game_id = session['game_id']
+            if htmlToPython(um1, um2, wm, board) != "invalid":
+
+                game_id = session['game_id']
             save_game_move(game_id, chessdata.getMove(), um1, um2, wm)
         return render_template("chessDicTtableMulti.html", displayClicked=space, movelist=sets,  message=chessdata.sample(len(movelist),chessdata.movelist[-2:]), allBoard=chessdata.split_board(board))
 

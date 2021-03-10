@@ -209,10 +209,11 @@ def storeboardset(board, whitemove, setting):
                 stalemate = False
             if board[i][0:3] == whitemove + "K1":
                 kingpos = i
-                print("Kingpos = " + kingpos)
+                #print("Kingpos = " + kingpos)
 
     checkmate = False
     if setting != 2:
+        #print(whitemove)
         if len(storeboard[kingpos]) > 0:
             storeboard = check(board, storeboard, kingpos, whitemove)
         return storeboard

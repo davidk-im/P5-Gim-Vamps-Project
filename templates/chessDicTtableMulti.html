@@ -128,17 +128,13 @@
                 </td>
                 <td>
                     <table>
-                        <tr>
-                            <td>move #</td>
-                            <td class="turn__values">&nbsp;&nbsp;&nbsp;&nbsp;values</td>
-                        </tr>
+
                     </table>
                     <div id="turn__table">
                         <table>
                             {% for row in movelist %}
                             <tr>
-                                <td style="font-size:30px" class="turn__number">&nbsp;&nbsp;&nbsp;&nbsp;{{ loop.index }}</td>
-                                <td style="font-size:30px" class= "{{ loop.cycle('white', 'black') }}" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{row}}</td>
+                                <td style="font-size:30px" class="turn__values">For a full movelist of the game enter your game key <a href="/replaygame" style="color: blue">Replay Game</a></td>
                             </tr>
                             {% endfor %}
                         </table>
