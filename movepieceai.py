@@ -209,14 +209,13 @@ def storeboardset(board, whitemove, setting):
                 stalemate = False
             if board[i][0:3] == whitemove + "K1":
                 kingpos = i
-                #print("Kingpos = " + kingpos)
+                # print("Kingpos = " + kingpos)
 
     checkmate = False
     if setting != 2:
-        #print(whitemove)
         if len(storeboard[kingpos]) > 0:
-            storeboard = check(board, storeboard, kingpos, whitemove)
-        return storeboard
+            storeboard, checkmate = check(board, storeboard, kingpos, whitemove)
+        return storeboard, checkmate
     else:
         return kingpos, storeboard
 
@@ -250,7 +249,7 @@ def check(board, storeboard, kingpos, whitemove):
                 kingpos2, storeboard2 = storeboardset(board1, whitemove, 2)
                 if len(storeboard2[kingpos2]) == 0:
                     storeboard1[move].append(piece)
-    return storeboard1
+    return storeboard1, checkmate
 
 
 def aidictionarything(storeboard):

@@ -4,7 +4,7 @@ from user import user_create
 from flask_sqlalchemy import SQLAlchemy
 import requests
 import chessdata
-from chessdata import board, movelist, og_board, ogstoreboard, movesdata, actualMove, previousMove, getMove, didMove, getUserMove2, getUserMove1, getColor
+from chessdata import board, movelist, og_board, ogstoreboard, checkmate, movesdata, actualMove, previousMove, getMove, didMove, getUserMove2, getUserMove1, getColor
 from markupsafe import escape
 from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
@@ -158,7 +158,6 @@ def leaderboards():
 #web api route where data is grabbed from different types of chess
 @app.route('/lichesslb/<type>/', methods=['GET', 'POST'])
 def lichesslb(type):
-    print(type)
     url = "https://lichess.org/player/top/100/" + type + "/"
     headers = {
         'Accept': 'application/vnd.lichess.v3+json'
@@ -176,7 +175,7 @@ def createBoardTable():
     if request.method == 'POST': #if the meathod is post
         form = request.form
         movelist.clear()#resets the stored moves when create board is selected
-        board = og_board #resets the board
+        board = dict(og_board) #resets the board
         storeboard = dict(ogstoreboard) #resets the storboard
         return render_template("chessDicTtableMulti.html", displayClicked="  ", allBoard=chessdata.split_board(board))
 
@@ -186,16 +185,18 @@ def boardprint(space):
     if request.method == 'POST':
         #moves piece
         sets = chessdata.movesdata(space)
-        game_id=session['game_id']
         if chessdata.didMove():
             um1=chessdata.getUserMove1()
             um2=chessdata.getUserMove2()
             wm=chessdata.getColor()
-            if htmlToPython(um1, um2, wm, board) != "invalid":
-
-                game_id = session['game_id']
+            #if htmlToPython(um1, um2, wm, board) != "invalid":
+            game_id = session['game_id']
             save_game_move(game_id, chessdata.getMove(), um1, um2, wm)
-        return render_template("chessDicTtableMulti.html", displayClicked=space, movelist=sets,  message=chessdata.sample(len(movelist),chessdata.movelist[-2:]), allBoard=chessdata.split_board(board))
+        if checkmate:
+            # render checkmate screen here
+            pass
+        else:
+            return render_template("chessDicTtableMulti.html", displayClicked=space, movelist=sets,  message=chessdata.sample(len(movelist),chessdata.movelist[-2:]), allBoard=chessdata.split_board(board))
 
 @app.route('/chessDicTtableMulti')
 def chessDicTtableMulti():
