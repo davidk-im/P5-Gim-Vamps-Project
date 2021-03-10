@@ -69,9 +69,17 @@ http://76.176.72.123:3000/
 
 ### Incorporating College Board Requirements: 
 * Creative development
-   * Use collaboration and program design and development to learn how these 2 topics are very important to creating programs
+    * Collaboration
+Throughout the development of our website, we have collaborated with either partners or teams in order to complete different big ticket goals that we wouldn't have been able to complete on our own.  By ourselves, we wouldn't have been able to code a complete chess website, but with input and collaboration with a team, we were able to complete it.
+    * Creative Development
+This trimester's project built upon some of our work from the first trimester, in which we had coded a working game of chess in Python.  Here, we converted that program into a website, complete with databases and accounts for users to save their scores and data on previous games.  A challenge that our team faced in the development process was figuring out how to use Python functions with HTML code, but we managed to overcome it through saving data on databases in real time (which enabled playing the game with people on other devices) and using POST forms to extract data from the site.
+
 * Data
-   * Use data compression and extracting information from data to explore how computers use and handle data to produce information and solve problems
+    * Use data compression and extracting information from data to explore how computers use and handle data to produce information and solve problems
+    * Store data for future use
+Within our website, we store data on each game in a database as the game is played.  Users are able to view their past games, and we are able to search through the database to find relevant information which is used to replay the game.
+    * Other uses
+By storing data in real time to a database, users are able to play with eachother on different devices.  The website will ask for a game key, which will be used to connect the two players, and then by reading the database used to store moves, both users will be able to play against eachother.
 * Algorithms and programming
    * Use algorithms and simulations to create programs that solve problems or show creativity
    * Algorithmic efficiency 
@@ -104,7 +112,7 @@ http://76.176.72.123:3000/
 
 
 ## Summary: 
-Create a chess-based website using Python, Flask, SQLAlchamy, and a Raspberry Pi with an internet domain that has the following features:
+Create a chess-based website using Python, Flask, SQLAlchemy, and a Raspberry Pi with an internet domain that has the following features:
 * Username/Password login system w/ profiles
     * Profiles show data from database about stats
 * Database of profiles with statistics based on previous games
