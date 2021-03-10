@@ -37,6 +37,15 @@ http://76.176.72.123:3000/
         3. Start playing
 * Raspberry Pi
 * WOW(chess)
+    * Creating game and storing data:
+        * Each game id is unique using get_next_game function [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/replaygamehtml.py#L26-L41)
+        * Functions [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/chessdata.py#L277-L303) on chessdata.py get usermove1, usermove2, color of the move, and the number in sequence of the move
+        * Saves to database after each turn is done [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/flaskmain.py#L184-L196) by calling [this function](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/replaygamehtml.py#L19-L23) from chessdata.py
+    * Replaying a Game
+        * Games are sorted by gameid in database
+        * Use post to submit form with entered game id [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/flaskmain.py#L127-L137)
+        * Calls [get_game_replay](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/replaygamehtml.py#L43-L45) function that query's through database to find game id
+        * Data is then printed accordingly [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/replaygamedata.html#L20-L28) using jinja forloops and variables
 
 ### Incorporating College Board Requirements: 
 * Creative development
