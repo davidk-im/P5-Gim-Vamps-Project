@@ -98,15 +98,6 @@ def logout():
     logout_user()
     return redirect(url_for('home.html'))
 
-#home page route
-@app.route('/')
-def home():
-    return render_template("home.html")
-
-#play menu route
-@app.route('/play')
-def playmenu():
-    return render_template("playmenu.html")
 
 #sign up page route
 @app.route('/signup' ,methods = ['POST', 'GET'])
@@ -131,18 +122,6 @@ def signup():
 def signconfirm():
     return render_template("signconfirm.html")
 
-@app.route('/chessdicttable')
-def chessdicttable():
-    return render_template("chessdicttable.html")
-
-
-
-
-
-#easter egg route(found on how to play section on home page)
-@app.route('/easter')
-def easter():
-    return render_template("easter.html")
 
 #route to replay a chess game
 @app.route('/replaygame' , methods= ['POST', 'GET'])
@@ -199,7 +178,7 @@ def createBoardTable():
         movelist.clear()#resets the stored moves when create board is selected
         board = og_board #resets the board
         storeboard = ogstoreboard #resets the storboard
-        return render_template("chessDictTable.html", displayClicked="  ", allBoard=chessdata.split_board(board))
+        return render_template("chessDicTtableMulti.html", displayClicked="  ", allBoard=chessdata.split_board(board))
 
 
 @app.route("/board/<space>", methods=['GET','POST'])
@@ -208,13 +187,18 @@ def boardprint(space):
         #moves piece
         sets = chessdata.movesdata(space)
         if chessdata.didMove():
-            #um1=chessdata.getUserMove1()
-            #um2=chessdata.getUserMove2()
-            #wm=chessdata.getColor()
-            #if htmlToPython(um1, um2, wm, board) != "invalid":
+            um1=chessdata.getUserMove1()
+            um2=chessdata.getUserMove2()
+            wm=chessdata.getColor()
+            if htmlToPython(um1, um2, wm, board) != "invalid":
                 game_id = session['game_id']
                 save_game_move(game_id, chessdata.getMove(), um1, um2, wm)
-        return render_template("chessDictTable.html", displayClicked=space, movelist=sets,  message=chessdata.sample(len(movelist),chessdata.movelist[-2:]), allBoard=chessdata.split_board(board))
+        return render_template("chessDicTtableMulti.html", displayClicked=space, movelist=sets,  message=chessdata.sample(len(movelist),chessdata.movelist[-2:]), allBoard=chessdata.split_board(board))
+
+@app.route('/chessDicTtableMulti')
+def chessDicTtableMulti():
+    return render_template("chessDicTtableMulti.html")
+
 
 @app.route('/multiplayermain')
 def multiplayermain():
@@ -230,6 +214,32 @@ def MultiplayerMenu():
 
     return render_template("MultiplayerMenu.html")
 
+@app.route('/ai')
+def ai():
+    return render_template("ai.html")
+
+@app.route('/aiform' , methods=['GET' , 'POST'])
+def aiform():
+    return render_template("aiform.html")
+
+
+#simple pages routes
+#easter egg route(found on how to play section on home page)
+@app.route('/easter')
+def easter():
+    return render_template("easter.html")
+
+
+#play menu route
+@app.route('/play')
+def playmenu():
+    return render_template("playmenu.html")
+
+
+#home page route
+@app.route('/')
+def home():
+    return render_template("home.html")
 if __name__ == "__main__":
     app.run(port='3000', host='127.0.0.1')
 
