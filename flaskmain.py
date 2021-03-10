@@ -216,6 +216,8 @@ def MultiplayerMenu():
 
 @app.route('/ai')
 def ai():
+    #htmltopythonai
+    #set variables: aicolor = B/W
     return render_template("ai.html")
 
 @app.route('/aiform' , methods=['GET' , 'POST'])
