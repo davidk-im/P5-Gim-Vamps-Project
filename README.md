@@ -13,6 +13,12 @@ http://76.176.72.123:3000/
 ### Major Technicals:
 * Web API(David)
 * ELO System(Kyle)
+    * [Repl.it demonstration of the system](https://repl.it/@KyleMyint/Chess-ELO-System#main.py), thought process, and equations
+        * Wow and thought process explained in comments in repl link
+        * How to run:
+                * Run repl (linked above)
+                * Choose a mode and enter 1 or 2 of the usernames (found in accounts.txt)
+    * When a game ends, the [elo function](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/elopupdate.py) is run, and the results are used to edit the user database with the new scores.
 * Databases(Ava)
     * Chess.db holds 3 tables: user([found here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/user.py#L12-L22)), game, and game_move(both found [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/replaygamehtml.py#L8-L17)
         * User holds username/password info as well as ELO stats
@@ -37,22 +43,20 @@ http://76.176.72.123:3000/
         3. Start playing
 * Raspberry Pi(Lucas)
 * WOW(chess)(Ava/Kyle/David)
-    * (Ava)Creating game and storing data:
+    * Creating game and storing data:
         * Each game id is unique using get_next_game function [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/replaygamehtml.py#L26-L41)
         * Functions [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/chessdata.py#L277-L303) on chessdata.py get usermove1, usermove2, color of the move, and the number in sequence of the move
         * Saves to database after each turn is done [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/flaskmain.py#L184-L196) by calling [this function](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/replaygamehtml.py#L19-L23) from chessdata.py
-    * (Ava)Replaying a Game
+    * Replaying a Game
         * Games are sorted by gameid in database
         * Use post to submit form with entered game id [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/flaskmain.py#L127-L137)
         * Calls [get_game_replay](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/replaygamehtml.py#L43-L45) function that query's through database to find game id
         * Data is then printed accordingly [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/replaygamedata.html#L20-L28) using jinja forloops and variables
-    * Backend(David/Kyle)
     * How to run:
         * Start new multiplayer game
             *Can play or just move a few pieces around for testing purposes
         * Remember game ID
         * Input game ID into replay game under play menu(some games with data already include 24 and 33)
-        * *note: multiplayer games are played on the same computer, by alternating between black move and white move. This data can be saved and be replayed from anyone's account with the correct game ID
 
 ### Incorporating College Board Requirements: 
 * Creative development
