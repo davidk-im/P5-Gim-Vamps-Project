@@ -2,12 +2,12 @@
 Group Members: Kyle Myint, Lucas Bruner, Ava Brooks, David Kim
     
 ## Website URL: 
-http://chessthegame.cf
+http://chessoffline.cf
 
 ## Website Direct IP
 http://76.176.72.123:3000/
 
-## [Commerical]()
+## [Commerical](https://www.youtube.com/watch?v=6gtWMTjAztI)
 
 ## README Guidance 
 ### Major Technicals:
