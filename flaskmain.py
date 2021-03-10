@@ -4,7 +4,7 @@ from user import user_create
 from flask_sqlalchemy import SQLAlchemy
 import requests
 import chessdata
-from chessdata import board, movelist, og_board, ogstoreboard, movesdata, actualMove, previousMove
+from chessdata import board, movelist, og_board, ogstoreboard, movesdata, actualMove, previousMove, getMove, didMove, getUserMove2, getUserMove1, getColor
 from markupsafe import escape
 from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
@@ -18,7 +18,7 @@ import mysql.connector
 import webbrowser
 import random
 import time
-from replaygamehtml import get_next_game_id
+from replaygamehtml import get_next_game_id, save_game_move, get_game_replay
 
 
 
@@ -144,19 +144,16 @@ def easter():
     return render_template("easter.html")
 
 #route to replay a chess game
-@app.route('/replaygame')
+@app.route('/replaygame' , methods= ['POST', 'GET'])
 def replaygame():
     if request.method=='POST':
-        gameid = request.form['gameid']
-        #just to check if username and password was collected
-        print(gameid)
-        gameid = validate_replay_game(gameid)
-
-        if gameid:
-            #return list of moves from database?
-            return render_template("replaygamedata.html")
-    else:
-        print('Bar')
+        game_id = request.form['game_id']
+        print(game_id)
+        replay=get_game_replay(game_id)
+        if replay.count() >0:
+            return render_template("replaygamedata.html", replay=replay, game_id=game_id)
+    #else:
+        #print('Bar')
     return render_template("replaygame.html")
 
 #route to join a chess game
@@ -207,7 +204,11 @@ def createBoardTable():
 @app.route("/board/<space>", methods=['GET','POST'])
 def boardprint(space):
     if request.method == 'POST':
-        return render_template("chessDictTable.html", displayClicked=space, movelist=chessdata.movesdata(space),  message=chessdata.sample(len(movelist),chessdata.movelist[-2:]), allBoard=chessdata.split_board(board))
+        sets = chessdata.movesdata(space)
+        if chessdata.didMove():
+            game_id = session['game_id']
+            save_game_move(game_id, chessdata.getMove(), chessdata.getUserMove1(), chessdata.getUserMove2(), chessdata.getColor())
+        return render_template("chessDictTable.html", displayClicked=space, movelist=sets,  message=chessdata.sample(len(movelist),chessdata.movelist[-2:]), allBoard=chessdata.split_board(board))
 
 @app.route('/multiplayermain')
 def multiplayermain():

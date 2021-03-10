@@ -273,3 +273,32 @@ def previousMove(acutalMove):
         print("previously: white's move")
     else:
         print("previously: black's move") #this is the player that is wi
+
+def getMove():
+    return actualMove(len(movelist))
+
+def didMove():
+    if len(movelist)>0 and len(movelist)%2 ==0:
+        return True
+    return False
+
+def getUserMove1():
+    if len(movelist)==0:
+        return ""
+    if len(movelist)%2 ==0:
+        return movelist[len(movelist)-2]
+    return movelist[len(movelist)-1]
+
+def getUserMove2():
+    if len(movelist)==0:
+        return ""
+    if len(movelist)%2 ==0:
+        return movelist[len(movelist)-1]
+    return ""
+
+def getColor():
+    turn=round(len(movelist)/2)
+    if turn%2==0:
+        return "black"
+    return "white"
+

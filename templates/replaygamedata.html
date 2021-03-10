@@ -7,8 +7,23 @@
 <!-- Login form-->
 <div class="banner">
     <div class="container">
-        <h1>Game ID: </h1>
-        <p> Table of Moves</p>
+        <h1>Game ID: {{game_id}}</h1>
+        <table>
+            <tr>
+                <th>Move #</th>
+                <th>Color</th>
+                <th>From</th>
+                <th>To</th>
+            </tr>
+            {%for row in replay%}
+            <tr>
+                <td>{{row.move}}</td>
+                <td>{{row.color}}</td>
+                <td>{{row.usermove1}}</td>
+                <td>{{row.usermove2}}</td>
+            </tr>
+            {% endfor %}
+        </table>
 
 
     </div>
