@@ -28,7 +28,7 @@ http://76.176.72.123:3000/
         * User holds username/password info as well as ELO stats
         * Game holds game ids
             * Back end where game is created on [replaygame.html](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/replaygamehtml.py#L18-L34)
-* Signup/Login
+* Signup/Login(Ava)
     * Signup form is created on [signup.html](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/signup.html) where users input username and password
         * Includes elements of HTML5 [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/signup.html#L14) and java script [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/signup.html#L33-L45)
     * User_create function in [user.py](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/user.py#L30-L35) creates user and sends data to chess.db and default ELO scores are added
