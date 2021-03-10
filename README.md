@@ -13,6 +13,9 @@ http://76.176.72.123:3000/
 ### Planning on [Scrumboard](https://github.com/kylem314/P5-Gim-Vamps-Project/projects/1)
 ### Major Technicals:
 * Web API(David)
+  * Created an app route that takes in variables as a second argument [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/flaskmain.py#L159-L169)
+  * Created a dropdown menu that sends different modes of chest as the second argument on menu [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/base.html#L35-L43)
+  * Formatted code so that everything would be accessed via variable input on html page [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/webapi2.html)
 * ELO System(Kyle)
     * [Repl.it demonstration of the system](https://repl.it/@KyleMyint/Chess-ELO-System#main.py), thought process, and equations
         * Wow and thought process explained in comments in repl link
