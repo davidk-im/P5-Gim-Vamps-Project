@@ -11,9 +11,9 @@ http://76.176.72.123:3000/
 
 ## README Guidance 
 ### Major Technicals:
-* Web API
-* ELO System
-* Databases
+* Web API(David)
+* ELO System(Kyle)
+* Databases(Ava)
     * Chess.db holds 3 tables: user([found here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/user.py#L12-L22)), game, and game_move(both found [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/replaygamehtml.py#L8-L17)
         * User holds username/password info as well as ELO stats
         * Game holds game ids
@@ -35,8 +35,8 @@ http://76.176.72.123:3000/
         1. If you are a new user, create an account by signing up
         2. Once signed up, you can either go straight to playing, or log in to see your current stats. 
         3. Start playing
-* Raspberry Pi
-* WOW(chess)
+* Raspberry Pi(Lucas)
+* WOW(chess)(Ava/Kyle/David)
     * Creating game and storing data:
         * Each game id is unique using get_next_game function [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/replaygamehtml.py#L26-L41)
         * Functions [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/chessdata.py#L277-L303) on chessdata.py get usermove1, usermove2, color of the move, and the number in sequence of the move
