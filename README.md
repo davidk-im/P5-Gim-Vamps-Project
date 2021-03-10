@@ -46,6 +46,11 @@ http://76.176.72.123:3000/
         * Use post to submit form with entered game id [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/flaskmain.py#L127-L137)
         * Calls [get_game_replay](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/replaygamehtml.py#L43-L45) function that query's through database to find game id
         * Data is then printed accordingly [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/replaygamedata.html#L20-L28) using jinja forloops and variables
+    * How to run:
+        * Start new multiplayer game
+            *Can play or just move a few pieces around for testing purposes
+        * Remember game ID
+        * Input game ID into replay game under play menu(some games with data already include 24 and 33)
 
 ### Incorporating College Board Requirements: 
 * Creative development
