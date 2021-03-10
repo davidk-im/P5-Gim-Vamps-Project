@@ -43,6 +43,11 @@ http://76.176.72.123:3000/
         2. Once signed up, you can either go straight to playing, or log in to see your current stats. 
         3. Start playing
 * Raspberry Pi(Lucas)
+    * Port forwarded Pi IP using internet console dashboard, this way other users can connect to it when the server is online.'
+    * Used a free domain website to create a custom domain for the website that cloaks the original IP. ([URL](chessoffline.cf)
+    * Runs on Gunicorn and Nginx
+    * Since the Pi is always on, it runs 24/7!
+    * Able to clone project on Pi using 'git clone' and can easily update with 'git pull'
 * WOW(chess)(Ava/Kyle/David)
     * Creating game and storing data:
         * Each game id is unique using get_next_game function [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/replaygamehtml.py#L26-L41)
