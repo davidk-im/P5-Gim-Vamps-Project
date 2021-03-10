@@ -15,6 +15,22 @@ http://76.176.72.123:3000/
 * ELO System
 * Databases
 * Signup/Login
+    * Signup form is created on [signup.html](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/signup.html) where users input username and password
+        * Includes elements of HTML5 [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/signup.html#L14) and java script [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/signup.html#L33-L45)
+    * User_create function in [user.py](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/user.py#L30-L35) creates user and sends data to chess.db and default ELO scores are added
+        * Back end uses POST to get info on [flaskmain.py](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/flaskmain.py#L111-L121)
+        * If successful, user is redirected to a signup confirm page
+    * Login form is created on [login.html](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/login.html)
+        * Uses validate_user function on [user.py](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/user.py#L46-L53) to check for inputted username in the database
+            * Back end uses POST and calls validate_user function
+            * If username is found and passwords match, user will be logged in
+            * Login function uses flask attributes such as login_required, @login_manager.user.loader, and login_user
+    * Profile.html page uses login_required
+        * [Flaskmain.py](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/flaskmain.py#L74-L77) grabs session info for username and 3 ELO scores which are displayed on [profile.html](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/profile.html) using jinja variables
+    * How to run:
+        1. If you are a new user, create an account by signing up
+        2. Once signed up, you can either go straight to playing, or log in to see your current stats. 
+        3. Start playing
 * Raspberry Pi
 * WOW
 
