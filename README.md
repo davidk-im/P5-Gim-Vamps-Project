@@ -10,15 +10,25 @@ http://76.176.72.123:3000/
 ## [Commerical](https://www.youtube.com/watch?v=6gtWMTjAztI)
 
 ## README Guidance 
+### Planning on [Scrumboard](https://github.com/kylem314/P5-Gim-Vamps-Project/projects/1)
 ### Major Technicals:
-* Web API
-* ELO System
-* Databases
+* Web API(David)
+  * Created an app route that takes in variables as a second argument [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/flaskmain.py#L159-L169)
+  * Created a dropdown menu that sends different modes of chest as the second argument on menu [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/base.html#L35-L43)
+  * Formatted code so that everything would be accessed via variable input on html page [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/webapi2.html)
+* ELO System(Kyle)
+    * [Repl.it demonstration of the system](https://repl.it/@KyleMyint/Chess-ELO-System#main.py), thought process, and equations
+        * Wow and thought process explained in comments in repl link
+        * How to run:
+        * Run repl (linked above)
+        * Choose a mode and enter 1 or 2 of the usernames (found in accounts.txt)
+    * When a game ends, the [elo function](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/elopupdate.py) is run, and the results are used to edit the user database with the new scores.
+* Databases(Ava)
     * Chess.db holds 3 tables: user([found here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/user.py#L12-L22)), game, and game_move(both found [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/replaygamehtml.py#L8-L17)
         * User holds username/password info as well as ELO stats
         * Game holds game ids
             * Back end where game is created on [replaygame.html](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/replaygamehtml.py#L18-L34)
-* Signup/Login
+* Signup/Login(Ava)
     * Signup form is created on [signup.html](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/signup.html) where users input username and password
         * Includes elements of HTML5 [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/signup.html#L14) and java script [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/signup.html#L33-L45)
     * User_create function in [user.py](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/user.py#L30-L35) creates user and sends data to chess.db and default ELO scores are added
@@ -35,8 +45,13 @@ http://76.176.72.123:3000/
         1. If you are a new user, create an account by signing up
         2. Once signed up, you can either go straight to playing, or log in to see your current stats. 
         3. Start playing
-* Raspberry Pi
-* WOW(chess)
+* Raspberry Pi(Lucas)
+    * Port forwarded Pi IP using internet console dashboard, this way other users can connect to it when the server is online.'
+    * Used a free domain website to create a custom domain for the website that cloaks the original IP. ([URL](chessoffline.cf)
+    * Runs on Gunicorn and Nginx
+    * Since the Pi is always on, it runs 24/7!
+    * Able to clone project on Pi using 'git clone' and can easily update with 'git pull'
+* WOW(chess)(Ava/Kyle/David)
     * Creating game and storing data:
         * Each game id is unique using get_next_game function [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/replaygamehtml.py#L26-L41)
         * Functions [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/chessdata.py#L277-L303) on chessdata.py get usermove1, usermove2, color of the move, and the number in sequence of the move
@@ -91,11 +106,10 @@ http://76.176.72.123:3000/
 ## Summary: 
 Create a chess-based website using Python, Flask, SQLAlchamy, and a Raspberry Pi with an internet domain that has the following features:
 * Username/Password login system w/ profiles
+    * Profiles show data from database about stats
 * Database of profiles with statistics based on previous games
-    * For example, a user could search for their win rate against another user, or find their games with that user
-* Be able to view match history, and see game codes to see your past games
 * Play against other players, or against an AI with different difficulties
-* Be able to replay past games from a database
+* Be able to replay past games from a database and see moves
 * Rules & Settings
 
 ## Big Ticket Goals:
