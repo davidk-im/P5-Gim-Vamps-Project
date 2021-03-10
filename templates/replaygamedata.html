@@ -7,10 +7,12 @@
 <!-- Login form-->
 <div class="banner">
     <div class="container">
-        <h1>Game ID: {{game_id}}</h1>
-        <table>
+        <h1>Game ID: {{game_id}}
+            <img src="/static/chessboardreference.jpg">
+        </h1>
+        <table border = "1" cellpadding = "1" cellspacing = "1">
             <tr>
-                <th>Move #</th>
+                <th>Move Number</th>
                 <th>Color</th>
                 <th>From</th>
                 <th>To</th>
@@ -22,15 +24,18 @@
                 <td>{{row.usermove1}}</td>
                 <td>{{row.usermove2}}</td>
             </tr>
+
             {% endfor %}
         </table>
-
-
     </div>
 </div>
 
 
 <style>
+table {
+font-size: 30px;
+width: 75%;
+}
 
 </style>
 {% block pagecontent %}
