@@ -56,9 +56,19 @@ http://76.176.72.123:3000/
 
 ### Incorporating Tech Talks
 * Databases
-    * One db chess.db
-        * 3 tables: user defined in ([user.py](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/user.py#L12-L22)), 
+    * CRUD
+        * Create, read, update, delete
+        * Use different data types(INT, String, ETC) and parameters(primary_key, notnull, null, etc) to create table
+    * One db, chess.db in project
+        * 3 tables: user created in ([user.py](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/user.py#L12-L22)), game_move and game created in [replaygame.html](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/replaygamehtml.py#L8-L23)
+        * Used for user creation and storing information from chess games(move number, color move, etc)     
 * HTML 5/JS
+    * Used attributes such as min and max length, input required, and place holders [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/signup.html#L11-L27)
+    * Used JS functions to validate passwords matching[here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/signup.html#L33-L44)
+* REST APIs
+    * Used [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/webapi2.html)(front end) using jinja variables and loops
+    * Backend [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/flaskmain.py#L180-L190)
+    * Data is pulled from lichess and displays ranked players on different sites
 * Lists/dictionaries
 
 
