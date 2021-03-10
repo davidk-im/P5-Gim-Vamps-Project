@@ -13,7 +13,7 @@ def HTPailen5(usermove, board, storeboard, whitemove, whitecolor): #, blackcolor
     board[startpos] = '  '
     board[usermove[3:5]] = piece
     if whitemove == "W":
-        whitemove = "B"
+            whitemove = "B"
     else:
         whitemove = "W"
     storeboard = storeboardset(board, whitemove, 1)
