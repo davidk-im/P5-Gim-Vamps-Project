@@ -51,6 +51,7 @@ http://76.176.72.123:3000/
             *Can play or just move a few pieces around for testing purposes
         * Remember game ID
         * Input game ID into replay game under play menu(some games with data already include 24 and 33)
+        * *note: multiplayer games are played on the same computer, by alternating between black move and white move. This data can be saved and be replayed from anyone's account with the correct game ID
 
 ### Incorporating College Board Requirements: 
 * Creative development
