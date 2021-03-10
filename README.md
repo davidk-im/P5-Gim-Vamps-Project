@@ -16,8 +16,8 @@ http://76.176.72.123:3000/
     * [Repl.it demonstration of the system](https://repl.it/@KyleMyint/Chess-ELO-System#main.py), thought process, and equations
         * Wow and thought process explained in comments in repl link
         * How to run:
-                * Run repl (linked above)
-                * Choose a mode and enter 1 or 2 of the usernames (found in accounts.txt)
+        * Run repl (linked above)
+        * Choose a mode and enter 1 or 2 of the usernames (found in accounts.txt)
     * When a game ends, the [elo function](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/elopupdate.py) is run, and the results are used to edit the user database with the new scores.
 * Databases(Ava)
     * Chess.db holds 3 tables: user([found here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/user.py#L12-L22)), game, and game_move(both found [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/replaygamehtml.py#L8-L17)
