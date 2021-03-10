@@ -190,9 +190,9 @@ def boardprint(space):
             um1=chessdata.getUserMove1()
             um2=chessdata.getUserMove2()
             wm=chessdata.getColor()
-            if htmlToPython(um1, um2, wm, board) != "invalid":
-                game_id = session['game_id']
-                save_game_move(game_id, chessdata.getMove(), um1, um2, wm)
+            #if htmlToPython(um1, um2, wm, board) != "invalid":
+            game_id = session['game_id']
+            save_game_move(game_id, chessdata.getMove(), um1, um2, wm)
         return render_template("chessDicTtableMulti.html", displayClicked=space, movelist=sets,  message=chessdata.sample(len(movelist),chessdata.movelist[-2:]), allBoard=chessdata.split_board(board))
 
 @app.route('/chessDicTtableMulti')
