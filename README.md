@@ -7,7 +7,7 @@ http://chessoffline.cf
 ## Website Direct IP
 http://76.176.72.123:3000/
 
-## [Commerical](https://www.youtube.com/watch?v=6gtWMTjAztI)
+## [Commerical](https://www.youtube.com/watch?v=VVEMsOZa-p0)
 
 ## README Guidance 
 ### Planning on [Scrumboard](https://github.com/kylem314/P5-Gim-Vamps-Project/projects/1)
@@ -69,19 +69,31 @@ http://76.176.72.123:3000/
 
 ### Incorporating College Board Requirements: 
 * Creative development
-   * Use collaboration and program design and development to learn how these 2 topics are very important to creating programs
+    * Collaboration: 
+Throughout the development of our website, we have collaborated with either partners or teams in order to complete different big ticket goals that we wouldn't have been able to complete on our own.  By ourselves, we wouldn't have been able to code a complete chess website, but with input and collaboration with a team, we were able to complete it.
+    * Creative Development: 
+This trimester's project built upon some of our work from the first trimester, in which we had coded a working game of chess in Python.  Here, we converted that program into a website, complete with databases and accounts for users to save their scores and data on previous games.  A challenge that our team faced in the development process was figuring out how to use Python functions with HTML code, but we managed to overcome it through saving data on databases in real time (which enabled playing the game with people on other devices) and using POST forms to extract data from the site.
+
 * Data
-   * Use data compression and extracting information from data to explore how computers use and handle data to produce information and solve problems
+    * Use data compression and extracting information from data to explore how computers use and handle data to produce information and solve problems
+    * Store data for future use: 
+Within our website, we store data on each game in a database as the game is played.  Users are able to view their past games, and we are able to search through the database to find relevant information which is used to replay the game.
+    * Other uses: Data is stored in real time allowing for other users to 'pull' that data from a replaygame. This can be used to see other moves/strategies and connects users on the site
+
 * Algorithms and programming
-   * Use algorithms and simulations to create programs that solve problems or show creativity
-   * Algorithmic efficiency 
+    * Used for: 
+Creating a function that can be used multiple times within a program, with variable inputs and outputs, in order to repeat a process in different locations.
+    * In our project: 
+We use algorithms in *many* different places, as they are useful in expediting portions of code. For example, in movepieceai, there is a [function](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/ba9db2517c6aa9f4fa7add61df93a5280ee885a8/movepieceai.py#L422) to evaluate moves which is run for every move possible given a certain board.
 * Computer systems and networks
    * How computers and network systems work using the internet and parallel distributed computing
    * How to use multiple computers to split up work and make process faster
+    * In our project, multiple computers and networks are used to make the games possible. The user's device connects with the backend on our server to ensure the most quality in our game as possible. 
 * Impact of computing/ethics
    * Effect of computing on society, economy, culture, and everyday life
    * Legal and ethical responsibilities as a programmer
    * Digital divide, computing bias, and safe computing
+    * In our project, you can clearly see the impact of ethics and computing simply by the enjoyment of the users using the website in-hand. Our approach to an online competitive chess website is completely legal and ethical, and provides a lot of value for the user playing the game. 
 * Practiced not voicing over for [commerical](https://www.youtube.com/watch?v=6gtWMTjAztI) which are the requirements for the final project
 
 ### Incorporating Tech Talks
@@ -94,7 +106,7 @@ http://76.176.72.123:3000/
         * Used for user creation and storing information from chess games(move number, color move, etc)     
 * HTML 5/JS
     * Used attributes such as min and max length, input required, and place holders [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/signup.html#L11-L27)
-    * Used JS functions to validate passwords matching[here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/signup.html#L33-L44)
+    * Used JS functions to validate passwords matching [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/signup.html#L33-L44)
 * REST APIs
     * Used [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/webapi2.html)(front end) using jinja variables and loops
     * Backend [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/flaskmain.py#L180-L190)
@@ -104,7 +116,7 @@ http://76.176.72.123:3000/
 
 
 ## Summary: 
-Create a chess-based website using Python, Flask, SQLAlchamy, and a Raspberry Pi with an internet domain that has the following features:
+Create a chess-based website using Python, Flask, SQLAlchemy, and a Raspberry Pi with an internet domain that has the following features:
 * Username/Password login system w/ profiles
     * Profiles show data from database about stats
 * Database of profiles with statistics based on previous games
