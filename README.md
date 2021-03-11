@@ -56,6 +56,7 @@ http://76.176.72.123:3000/
         * Each game id is unique using get_next_game function [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/replaygamehtml.py#L26-L41)
         * Functions [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/chessdata.py#L277-L303) on chessdata.py get usermove1, usermove2, color of the move, and the number in sequence of the move
         * Saves to database after each turn is done [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/flaskmain.py#L184-L196) by calling [this function](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/replaygamehtml.py#L19-L23) from chessdata.py
+        * Backend code and logic found in [chessdata.py](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/chessdata.py), [htmlToPython](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/htmlToPython.py), and [htmlToPythonAdditions](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/htmlToPythonAdditions.py)
     * Replaying a Game
         * Games are sorted by gameid in database
         * Use post to submit form with entered game id [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/flaskmain.py#L127-L137)
@@ -74,8 +75,7 @@ http://76.176.72.123:3000/
                    * On window 1, create a new multiplayer game and make as many moves as desired
                    * On window 2, input the game ID into join game, here you should be able to see all the moves coming from the other tab/user, modeling the multiplayer function
                    * By updating after every move and pulling on another tab, players are able to play at the same time
-                        * *reminder: because the backend code of the board storing only happens once, unable to replicate the board on multiple tabs on the same site
-
+                       
 ### Incorporating College Board Requirements: 
 * Creative development
     * Collaboration: 
