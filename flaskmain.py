@@ -4,7 +4,7 @@ from user import user_create
 from flask_sqlalchemy import SQLAlchemy
 import requests
 import chessdata
-from chessdata import board, movelist, og_board, ogstoreboard, movesdata, actualMove, previousMove, getMove, didMove, getUserMove2, getUserMove1, getColor
+from chessdata import board, movelist, og_board, ogstoreboard, movesdata, actualMove, previousMove, getMove, didMove, getUserMove2, getUserMove1, getColor, newGame
 from markupsafe import escape
 from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
@@ -124,21 +124,27 @@ def signconfirm():
 
 
 #route to replay a chess game
-@app.route('/replaygame' , methods= ['POST', 'GET'])
+@app.route('/replaygame' , methods=['POST', 'GET'])
 def replaygame():
-    if request.method=='POST':
+    if request.method =='POST':
         game_id = request.form['game_id']
         print(game_id)
-        replay=get_game_replay(game_id)
-        if replay.count() >0:
+        replay = get_game_replay(game_id)
+        if replay.count() > 0:
             return render_template("replaygamedata.html", replay=replay, game_id=game_id)
     #else:
         #print('Bar')
     return render_template("replaygame.html")
 
 #route to join a chess game
-@app.route('/joingame')
+@app.route('/joingame' , methods=['POST' , 'GET'])
 def joingame():
+    if request.method == 'POST':
+        game_id = request.form['game_id']
+        print(game_id)
+        replay = get_game_replay(game_id)
+        if replay.count() > 0:
+            return render_template("joingamedata.html", replay=replay, game_id=game_id)
     return render_template("joingame.html")
 
 #chess offline website leaderboards
@@ -218,8 +224,6 @@ def MultiplayerMenu():
 
 @app.route('/ai')
 def ai():
-    #htmltopythonai
-    #set variables: aicolor = B/W
     return render_template("ai.html")
 
 @app.route('/aiform' , methods=['GET' , 'POST'])

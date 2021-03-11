@@ -303,3 +303,5 @@ def getColor():
         return "B"
     return "W"
 
+def newGame():
+    movelist.clear()
