@@ -88,10 +88,12 @@ We use algorithms in *many* different places, as they are useful in expediting p
 * Computer systems and networks
    * How computers and network systems work using the internet and parallel distributed computing
    * How to use multiple computers to split up work and make process faster
+    * In our project, multiple computers and networks are used to make the games possible. The user's device connects with the backend on our server to ensure the most quality in our game as possible. 
 * Impact of computing/ethics
    * Effect of computing on society, economy, culture, and everyday life
    * Legal and ethical responsibilities as a programmer
    * Digital divide, computing bias, and safe computing
+    * In our project, you can clearly see the impact of ethics and computing simply by the enjoyment of the users using the website in-hand. Our approach to an online competitive chess website is completely legal and ethical, and provides a lot of value for the user playing the game. 
 * Practiced not voicing over for [commerical](https://www.youtube.com/watch?v=6gtWMTjAztI) which are the requirements for the final project
 
 ### Incorporating Tech Talks
