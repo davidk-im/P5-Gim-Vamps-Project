@@ -66,6 +66,15 @@ http://76.176.72.123:3000/
             *Can play or just move a few pieces around for testing purposes
         * Remember game ID
         * Input game ID into replay game under play menu(some games with data already include 24 and 33)
+     * Multiplayer games:
+         * With the code from first trimester, the chess board is being stored in one place and cannot be duplicated on multiple webpages on the same device, thus making it hard to code and check using Intellij
+         * Back end shows data updating by pulling and showing data on [joingamedata.html](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/joingamedata.html). Shows data being constantly updated after every move
+              * How to run a test:
+                   * Open 2 windows of the chess website
+                   * On window 1, create a new multiplayer game and make as many moves as desired
+                   * On window 2, input the game ID into join game, here you should be able to see all the moves coming from the other tab/user, modeling the multiplayer function
+                   * By updating after every move and pulling on another tab, players are able to play at the same time
+                        * *reminder: because the backend code of the board storing only happens once, unable to replicate the board on multiple tabs on the same site
 
 ### Incorporating College Board Requirements: 
 * Creative development
@@ -78,7 +87,7 @@ This trimester's project built upon some of our work from the first trimester, i
     * Use data compression and extracting information from data to explore how computers use and handle data to produce information and solve problems
     * Store data for future use: 
 Within our website, we store data on each game in a database as the game is played.  Users are able to view their past games, and we are able to search through the database to find relevant information which is used to replay the game.
-    * Other uses: Data is stored in real time allowing for other users to 'pull' that data from a replaygame. This can be used to see other moves/strategies and connects users on the site
+    * Other uses: Data is stored in real time allowing for other users to 'pull' that data from a replaygame. This can be used to see other moves/strategies and connects users on the site by following the how to run instructions under the WOW/chess. 
 
 * Algorithms and programming
     * Used for: 
@@ -104,6 +113,7 @@ We use algorithms in *many* different places, as they are useful in expediting p
     * One db, chess.db in project
         * 3 tables: user created in ([user.py](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/user.py#L12-L22)), game_move and game created in [replaygame.html](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/replaygamehtml.py#L8-L23)
         * Used for user creation and storing information from chess games(move number, color move, etc)     
+        * Data in db is pulled and shown on website using jinja for loops and variables on replaygamedata and joingamedata
 * HTML 5/JS
     * Used attributes such as min and max length, input required, and place holders [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/signup.html#L11-L27)
     * Used JS functions to validate passwords matching [here](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/main/templates/signup.html#L33-L44)
