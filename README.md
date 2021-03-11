@@ -81,8 +81,10 @@ Within our website, we store data on each game in a database as the game is play
     * Other uses: Data is stored in real time allowing for other users to 'pull' that data from a replaygame. This can be used to see other moves/strategies and connects users on the site
 
 * Algorithms and programming
-   * Use algorithms and simulations to create programs that solve problems or show creativity
-   * Algorithmic efficiency 
+    * Used for: 
+Creating a function that can be used multiple times within a program, with variable inputs and outputs, in order to repeat a process in different locations.
+    * In our project: 
+We use algorithms in *many* different places, as they are useful in expediting portions of code. For example, in movepieceai, there is a [function](https://github.com/kylem314/P5-Gim-Vamps-Project/blob/ba9db2517c6aa9f4fa7add61df93a5280ee885a8/movepieceai.py#L422) to evaluate moves which is run for every move possible given a certain board.
 * Computer systems and networks
    * How computers and network systems work using the internet and parallel distributed computing
    * How to use multiple computers to split up work and make process faster
